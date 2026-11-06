@@ -1117,15 +1117,16 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
       $('a-rank').textContent = '100명 중 ' + (p < 1 ? '1등 안쪽' : '약 ' + Math.max(1, Math.round(p)) + '등') + '이고 전국으로 치면 약 ' + fmtN(p / 100 * N) + '등' + (vals.length > 1 && hi - lo >= 0.1 ? '  (자료에 따라 ' + lo.toFixed(1) + '~' + hi.toFixed(1) + '%)' : '');
     }
 
-    var gi = gyoLine(x), ji = jongLine(x), txt, sub = [];
-    if (gi >= 0) txt = '교과 합격선으로 보면 ' + red(IL[gi].name) + ' 라인';
-    else txt = '교과 합격선으로는 ' + red('이 표의 인서울 대학 다음') + ' 라인';
-    if (ji >= 0 && ji < (gi >= 0 ? gi : IL.length)) sub.push('학종 합격선으로 보면 ' + IL[ji].name + ' 라인까지 노려볼 만해');
-    else sub.push('학종은 세특과 활동을 같이 봐서 이보다 넓게 지원해 볼 수 있어');
-    if ((gi >= 0 && IL[gi].name === 'SKY') || (ji >= 0 && ji < (gi >= 0 ? gi : IL.length) && IL[ji].name === 'SKY')) sub.push('서울대는 수시가 전부 학종이라 교과 합격선은 연고대 기준이야');
-    if ((gi >= 0 && IL[gi].med) || (ji >= 0 && IL[ji].med)) sub.push('의대는 입결 대신 정원 기준 위치로 잡은 값이야');
-    if (gi < 0) sub.push('수도권 대학과 거점국립대 입결은 어디가에서 같이 찾아봐');
-    txt += '<span class="ans-sub">' + sub.join('<br>') + '</span>';
+    // 수시 전체: 교과와 학종 중 더 높은 라인까지 닿는 쪽으로 보여줌
+    var gi = gyoLine(x), ji = jongLine(x), sub = [];
+    var bi = gi < 0 ? ji : (ji >= 0 ? Math.min(gi, ji) : gi);
+    var nm = function (i) { return i >= 0 ? IL[i].name : '그 밖의 대학'; };
+    var txt = bi >= 0 ? '수시로 보면 ' + red(IL[bi].name) + ' 라인까지' : '수시로 보면 ' + red('이 표의 인서울 대학 다음') + ' 라인';
+    if (gi !== ji) sub.push('교과는 ' + nm(gi) + ' · 학종은 ' + nm(ji));
+    if (bi >= 0 && IL[bi].name === 'SKY') sub.push(bi === ji && bi !== gi ? '학종 기준이라 서울대도 포함이야' : '서울대는 수시가 전부 학종이라 교과는 연고대 기준이야');
+    if (bi >= 0 && IL[bi].med) sub.push('의대는 입결 대신 정원 기준 위치로 잡은 값이야');
+    if (bi < 0) sub.push('수도권 대학과 거점국립대 입결은 어디가에서 같이 찾아봐');
+    if (sub.length) txt += '<span class="ans-sub">' + sub.join('<br>') + '</span>';
     $('a-line').innerHTML = txt;
 
     track.hidden = false;
