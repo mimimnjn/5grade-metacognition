@@ -7,10 +7,10 @@
 <meta name="description" content="2028 대입 5등급 평균을 넣으면 전국 상위 몇 %인지와 교과 학종 합격선 기준으로 어느 대학 라인인지 보여주는 계산기">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&family=Barlow+Condensed:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&family=Nunito:wght@800&display=swap">
 <style>
 /* Hallmark · shape: app screen · genre: modern-minimal · theme: brand · redesign: full
- * paper: oklch(99.3% 0.003 18) · accent: oklch(51% 0.2 22) · display: IBM Plex Sans KR · body: IBM Plex Sans KR · outlier: Barlow Condensed (the headline figure only)
+ * paper: oklch(99.3% 0.003 18) · accent: oklch(51% 0.2 22) · display: IBM Plex Sans KR · body: IBM Plex Sans KR · outlier: Nunito (the headline figures only)
  * nav: top bar, the page name and one anchor to sources · signature: the 정원 사다리, your percentile laid on cumulative 2028 seat counts · states: full, out of range, invalid input
  * axes: light/grotesk-sans/chromatic-red · posture: full palette (field: grey paper-2, signal: red, seal: the ink band, ink) · contrast: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H5 E4 S5 R4 V3 · weakest: V, a calculator over a reference column is the category's familiar shape; kept it familiar on purpose and put the variety in the ladder, which no other 5등급 tool draws */
@@ -64,7 +64,7 @@
   --shadow-card: 0 1px 2px oklch(20% 0.01 18 / 0.05);
   --font-display: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
   --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
-  --font-outlier: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-outlier: "Nunito", "IBM Plex Sans KR", system-ui, sans-serif;
   --radius-panel: 24px; --radius-row: 16px; --radius-pill: 999px; --rule-hair: 1px;
   --tracking-display: -0.025em;
   color-scheme: light;
@@ -112,7 +112,7 @@ button, input { font: inherit; }
 .field label { font-size: var(--text-sm); font-weight: 700; }
 .avg-wrap { display: flex; align-items: baseline; gap: var(--space-sm); border-bottom: 3px solid var(--color-ink); padding-bottom: var(--space-2xs); max-width: 320px; }
 .avg-wrap:focus-within { border-bottom-color: var(--color-accent); }
-#avg { font-family: var(--font-outlier); font-weight: 700; font-size: var(--text-figure-m); line-height: 1; width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--color-ink); padding: 0; -moz-appearance: textfield; font-variant-numeric: tabular-nums; }
+#avg { font-family: var(--font-outlier); font-weight: 800; font-size: var(--text-figure-m); line-height: 1; width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--color-ink); padding: 0; -moz-appearance: textfield; font-variant-numeric: tabular-nums; }
 #avg::-webkit-outer-spin-button, #avg::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .avg-wrap:has(#avg:focus-visible) { outline: 2px solid var(--color-focus); outline-offset: var(--space-2xs); }
 .avg-wrap span { font-size: var(--text-sm); color: var(--color-ink-2); white-space: nowrap; }
@@ -155,8 +155,8 @@ summary:hover { color: var(--color-accent); }
 .ans-fig { display: grid; gap: var(--space-2xs); }
 .ans-fig .lbl { font-size: var(--text-md); font-weight: 700; }
 .ans-fig .row { display: flex; align-items: baseline; gap: var(--space-xs); }
-.ans-fig .v { font-family: var(--font-outlier); font-weight: 700; font-size: var(--text-figure); line-height: 0.9; color: var(--color-accent); font-variant-numeric: tabular-nums; }
-.ans-fig .u { font-family: var(--font-outlier); font-weight: 700; font-size: var(--text-figure-s); color: var(--color-accent); }
+.ans-fig .v { font-family: var(--font-outlier); font-weight: 800; font-size: var(--text-figure); line-height: 0.9; color: var(--color-accent); font-variant-numeric: tabular-nums; }
+.ans-fig .u { font-family: var(--font-outlier); font-weight: 800; font-size: var(--text-figure-s); color: var(--color-accent); }
 .ans-rank { font-size: var(--text-md); }
 .ans-sub { display: block; margin-top: var(--space-xs); font-size: var(--text-md); font-weight: 600; letter-spacing: 0; line-height: 1.5; }
 .gl { padding-block: var(--space-xs); }
@@ -218,7 +218,7 @@ summary:hover { color: var(--color-accent); }
 .trend { display: grid; gap: var(--space-lg); }
 @media (min-width: 48rem) { .trend { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .step { display: grid; gap: var(--space-2xs); border-top: 2px solid var(--color-on-accent-rule); padding-top: var(--space-sm); }
-.step .v { font-family: var(--font-outlier); font-weight: 700; font-size: 3.25rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.step .v { font-family: var(--font-outlier); font-weight: 800; font-size: 3.25rem; line-height: 1; font-variant-numeric: tabular-nums; }
 .step .t { font-size: var(--text-sm); font-weight: 600; }
 .step.fore { border-top-style: dashed; }
 .step.fore .v { color: var(--color-pink-soft); }
