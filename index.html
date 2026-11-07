@@ -9,27 +9,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;600;700&family=Nunito:wght@800&display=swap">
 <style>
-/* Hallmark · shape: app screen · genre: modern-minimal · theme: brand · redesign: full
- * paper: oklch(99.3% 0.003 18) · accent: oklch(51% 0.2 22) · display: IBM Plex Sans KR · body: IBM Plex Sans KR · outlier: Nunito (the headline figures only)
- * nav: top bar, the page name and one anchor to sources · signature: the 정원 사다리, your percentile laid on cumulative 2028 seat counts · states: full, out of range, invalid input
- * axes: light/grotesk-sans/chromatic-red · posture: full palette (field: grey paper-2, signal: red, seal: the ink band, ink) · contrast: pass · v2.0.0 */
-/* Hallmark · pre-emit critique: P4 H5 E4 S5 R4 V3 · weakest: V, a calculator over a reference column is the category's familiar shape; kept it familiar on purpose and put the variety in the ladder, which no other 5등급 tool draws */
-/* Hallmark · waive 24b · one optical nudge, the range thumb margin-top -9px · centres the 24px thumb on the 6px slider track */
-/* Hallmark · dismissed 23 · the red headline figure is the declared signal of the full palette posture in the stamp */
-/* Hallmark · dismissed F4 · the 1.000 to 2.000 chips are aria-pressed preset toggles, not actions, and only the pressed one fills */
-/* Hallmark · reworded "lad-mark" to "lad-track" · 10a, the marker now moves by transform so its element changed */
-/* Hallmark · waive 38iii · one red phrase in the h1 only, 어느 대학 라인 · the brand's own decks set one red keyword per title and this page keeps it once, in the opening head */
-/* Hallmark · waive 1 · IBM Plex Sans KR as display and body · a Korean tool page where one Hangul family carries the brand and a Latin display face would not cover Hangul */
 
 :root {
-  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
-  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.2rem; --text-xl: 1.44rem; --text-2xl: 1.728rem; --text-3xl: 2.074rem;
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px;
+  --text-xs: 0.8125rem; --text-sm: 0.875rem; --text-md: 1rem; --text-xl: 1.44rem; --text-2xl: 1.728rem;
   --text-display: 2.074rem; --text-section: 1.728rem; --text-title: 1.2rem;
   --text-figure: 6.5rem; --text-figure-m: 4.5rem; --text-figure-s: 2.074rem;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
   --container: 1120px; --gutter: 40px;
-  --z-base: 1; --z-raised: 10;
+  --z-base: 1;
 
   --color-paper: oklch(99.3% 0.003 18);
   --color-paper-2: oklch(96.4% 0.004 18);
@@ -49,17 +38,6 @@
   --color-seg-2: oklch(64% 0.15 15);
   --color-seg-3: oklch(82% 0.07 12);
   --color-seg-4: oklch(90% 0.04 12);
-  --color-seg-5: oklch(93% 0.006 18);
-  --color-l-0: oklch(21.5% 0.006 18);
-  --color-l-1: oklch(51% 0.2 22);
-  --color-l-2: oklch(58% 0.18 20);
-  --color-l-3: oklch(66% 0.14 16);
-  --color-l-4: oklch(74% 0.11 14);
-  --color-l-5: oklch(81% 0.08 12);
-  --color-l-6: oklch(87% 0.05 12);
-  --color-l-7: oklch(91% 0.03 12);
-  --color-l-8: oklch(88% 0.008 18);
-  --color-l-9: oklch(93% 0.006 18);
   --color-ink-line: oklch(21.5% 0.006 18);
   --shadow-card: 0 1px 2px oklch(20% 0.01 18 / 0.05);
   --font-display: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
@@ -87,7 +65,6 @@ p { margin: 0; text-wrap: pretty; }
 button, input { font: inherit; }
 [hidden] { display: none !important; }
 .k { color: var(--color-accent); }
-.num { font-variant-numeric: tabular-nums; }
 .small { font-size: var(--text-sm); color: var(--color-ink-2); }
 .parts { display: flex; flex-wrap: wrap; column-gap: var(--space-md); row-gap: var(--space-3xs); }
 .parts > span + span { padding-left: var(--space-md); border-left: var(--rule-hair) solid var(--color-rule); }
@@ -159,24 +136,32 @@ summary:hover { color: var(--color-accent); }
 .ans-fig .u { font-family: var(--font-outlier); font-weight: 800; font-size: var(--text-figure-s); color: var(--color-accent); }
 .ans-rank { font-size: var(--text-md); }
 .ans-sub { display: block; margin-top: var(--space-xs); font-size: var(--text-md); font-weight: 600; letter-spacing: 0; line-height: 1.5; }
-.gl { padding-block: var(--space-xs); }
 .ans-line { font-size: var(--text-2xl); font-weight: 700; line-height: 1.3; letter-spacing: -0.02em; text-wrap: balance; }
 
-.ladder { display: grid; gap: var(--space-xs); min-width: 0; }
-.lad-scroll { overflow-x: auto; overscroll-behavior-x: contain; padding-top: var(--space-xl); padding-bottom: var(--space-xs); scrollbar-color: var(--color-seg-3) transparent; -webkit-overflow-scrolling: touch; }
-.lad-scroll:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
-.lad-inner { width: calc(112px * 10 + 2 * var(--space-lg)); padding-inline: var(--space-lg); display: grid; gap: var(--space-xs); }
+.uchart { display: grid; gap: var(--space-xs); min-width: 0; --name: 92px; --share: 64px; }
+.uc-axis, .uc-row { display: grid; grid-template-columns: var(--name) 1fr var(--share); align-items: center; column-gap: var(--space-sm); }
+.uc-axis { position: relative; font-size: var(--text-xs); color: var(--color-ink-2); font-variant-numeric: tabular-nums; }
+.uc-axis { height: 44px; }
+.uc-axis .tr { position: relative; height: 100%; }
+.uc-axis .tr span { position: absolute; bottom: 2px; transform: translateX(-50%); }
+.uc-axis .tr .me { bottom: auto; top: 0; }
+.uc-axis .me { min-height: 22px; padding: 0 var(--space-xs); display: flex; align-items: center; border-radius: var(--radius-pill); background: var(--color-ink); color: var(--color-paper); font-weight: 700; transition: left var(--dur-long) var(--ease-out); }
+.uc-rows { display: grid; }
+.uc-row { min-height: 36px; border-top: var(--rule-hair) solid var(--color-rule); }
+.uc-row .nm { display: flex; flex-direction: column; font-size: var(--text-sm); font-weight: 700; line-height: 1.25; }
+.uc-row .nm small { font-size: var(--text-xs); font-weight: 600; color: var(--color-ink-2); }
+.uc-row .tr { position: relative; height: 20px; }
+.uc-row .tr::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--color-rule); }
+.uc-row .rng { position: absolute; top: 4px; bottom: 4px; border-radius: var(--radius-pill); background: var(--color-seg-4); }
+.uc-row .pin { position: absolute; top: -8px; bottom: -8px; width: 2px; margin-left: -1px; background: var(--color-ink); transition: left var(--dur-long) var(--ease-out); }
+.uc-row .sh { font-size: var(--text-xs); font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; color: var(--color-ink-2); }
+.uc-row.in .rng { background: var(--color-seg-3); }
+.uc-row.in .sh { color: var(--color-accent); }
+.uc-row.out .nm { color: var(--color-muted); }
+.uc-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-sm); padding-top: var(--space-xs); }
+.uc-more { min-height: 36px; padding: 0 15px; border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-pill); background: var(--color-paper); color: var(--color-ink); font: inherit; font-size: var(--text-sm); font-weight: 600; cursor: pointer; }
+.uc-more:hover { border-color: var(--color-ink-2); }
 .lad-hint { font-size: var(--text-xs); color: var(--color-ink-2); }
-.lad-bar { position: relative; height: 40px; border-radius: var(--radius-pill); background: var(--color-paper-2); }
-.lad-seg { position: absolute; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; font-size: var(--text-xs); font-weight: 700; white-space: nowrap; overflow: hidden; }
-.lad-seg.first { border-radius: var(--radius-pill) 0 0 var(--radius-pill); }
-.lad-seg.last { border-radius: 0 var(--radius-pill) var(--radius-pill) 0; }
-.lad-seg + .lad-seg { box-shadow: inset 1px 0 0 var(--color-paper); }
-.lad-track { position: absolute; inset: -12px 0; pointer-events: none; transition: transform var(--dur-long) var(--ease-out); }
-.lad-pin { position: absolute; left: -2px; top: 0; bottom: 0; width: 4px; border-radius: var(--radius-pill); background: var(--color-ink); }
-.lad-tag { position: absolute; left: 0; top: -26px; transform: translateX(-50%); min-height: 24px; padding: 0 var(--space-xs); display: flex; align-items: center; border-radius: var(--radius-pill); background: var(--color-ink); color: var(--color-paper); font-size: var(--text-xs); font-weight: 700; white-space: nowrap; }
-.lad-axis { position: relative; height: 20px; font-size: var(--text-xs); color: var(--color-ink-2); font-variant-numeric: tabular-nums; }
-.lad-axis span { position: absolute; transform: translateX(-50%); }
 
 .sub-res { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: var(--space-sm); }
 .sres { border-top: 2px solid var(--color-ink); padding-top: var(--space-sm); display: grid; gap: var(--space-2xs); }
@@ -252,9 +237,6 @@ td.no { color: var(--color-muted); font-weight: 400; }
 .notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; max-width: 760px; }
 .notes li { padding-block: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); max-width: 62ch; }
 .notes li:last-child { border-bottom: var(--rule-hair) solid var(--color-rule); }
-.src { display: grid; gap: var(--space-xs); }
-.src div { display: grid; gap: var(--space-3xs); padding-block: var(--space-xs); border-top: var(--rule-hair) solid var(--color-rule); }
-.src a { overflow-wrap: anywhere; font-size: var(--text-sm); }
 footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule-hair) solid var(--color-rule); }
 
 @keyframes grow { from { transform: scaleX(0); } to { transform: none; } }
@@ -285,7 +267,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
         </div>
         <input id="range" type="range" min="1" max="2.5" step="0.001" value="1.2" aria-label="5등급 평균 슬라이더">
       </div>
-      <div class="chips" id="presets" role="group" aria-label="자주 보는 평균"><button class="chip" type="button" data-v="1" aria-pressed="false">1.000</button><button class="chip" type="button" data-v="1.083" aria-pressed="false">1.083</button><button class="chip" type="button" data-v="1.1" aria-pressed="false">1.100</button><button class="chip" type="button" data-v="1.2" aria-pressed="true">1.200</button><button class="chip" type="button" data-v="1.333" aria-pressed="false">1.333</button><button class="chip" type="button" data-v="1.5" aria-pressed="false">1.500</button><button class="chip" type="button" data-v="2" aria-pressed="false">2.000</button></div>
+      <div class="chips" id="presets" role="group" aria-label="자주 보는 평균"></div>
       <details>
         <summary>평균을 모르겠으면 과목 수로 계산하기</summary>
         <div class="counts">
@@ -306,19 +288,18 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
           <div class="row"><span class="v" id="a-pct">3.6</span><span class="u">%</span></div>
           <p class="ans-rank" id="a-rank">100명 중 약 4등이고 전국으로 치면 약 15,050등  (자료에 따라 3.5~3.6%)</p>
         </div>
-        <p class="ans-line" id="a-line">교과 합격선으로 보면 <span class="k">국숭세단과</span> 라인<span class="ans-sub">학종은 세특과 활동을 같이 봐서 이보다 넓게 지원해 볼 수 있어</span></p>
-        <div class="ladder">
-          <div class="lad-scroll" id="lad-scroll" tabindex="0" role="region" aria-label="교과 합격선 기준 대학 라인 막대, 옆으로 스크롤">
-            <div class="lad-inner" id="lad-inner">
-              <div class="lad-bar" id="lad-bar"><div class="lad-seg first" style="left:0.00%;width:14.29%;background:var(--color-l-1);color:var(--color-accent-ink)" title="SKY">SKY</div><div class="lad-seg" style="left:14.29%;width:14.29%;background:var(--color-l-2);color:var(--color-accent-ink)" title="서성한">서성한</div><div class="lad-seg" style="left:28.57%;width:14.29%;background:var(--color-l-3);color:var(--color-accent-ink)" title="중경외시이">중경외시이</div><div class="lad-seg" style="left:42.86%;width:14.29%;background:var(--color-l-4);color:var(--color-ink)" title="건동홍숙">건동홍숙</div><div class="lad-seg on" style="left:57.14%;width:14.29%;background:var(--color-l-5);color:var(--color-ink)" title="국숭세단과">국숭세단과</div><div class="lad-seg" style="left:71.43%;width:14.29%;background:var(--color-l-6);color:var(--color-ink)" title="광명상가 인아성">광명상가 인아성</div><div class="lad-seg last" style="left:85.71%;width:14.29%;background:var(--color-l-7);color:var(--color-ink)" title="그 밖의 대학">그 밖의 대학</div><div class="lad-track" id="lad-track" style="transform: translateX(59.15%);"><span class="lad-pin"></span><span class="lad-tag" id="lad-tag">나</span></div></div>
-              <div class="lad-axis" id="lad-axis"><span style="left:0%">1.00</span><span style="left:14.29%">1.00</span><span style="left:28.57%">1.06</span><span style="left:42.86%">1.13</span><span style="left:57.14%">1.17</span><span style="left:71.43%">1.36</span><span style="left:85.71%">1.46</span></div>
-            </div>
+        <p class="ans-line" id="a-line"></p>
+        <div class="uchart" id="uchart">
+          <div class="uc-axis" id="uc-axis"></div>
+          <div class="uc-rows" id="uc-rows"></div>
+          <div class="uc-foot">
+            <p class="lad-hint">막대는 그 라인 자리가 전국 상위 몇 %부터 몇 %까지인지 · 세로선이 나</p>
+            <button type="button" class="uc-more" id="uc-more">전체 라인 보기</button>
           </div>
-          <p class="lad-hint">옆으로 밀면 다른 라인도 보여<br>칸 사이 숫자는 그 라인 교과 합격선(50%컷)을 5등급으로 바꾼 값</p>
         </div>
       </div>
-      <div class="sub-res" id="sub-res"><div class="sres" id="s-gg1"><div class="n"><span>경기진협 기준</span><span class="tag">추정</span></div><div class="v"><span class="sv" data-v="3.4995180722891557">3.50</span>%</div><div class="small g">9등급으로 치면 <b class="sg">약 1.79등급</b></div></div><div class="sres" id="s-busan1"><div class="n"><span>부산 기준</span><span class="tag">추정</span></div><div class="v"><span class="sv" data-v="3.611999999999999">3.61</span>%</div><div class="small g">9등급으로 치면 <b class="sg">약 1.85등급</b></div></div></div>
-      <p class="small">상위 %는 교육청이 공개한 점 사이를 직선으로 이은 추정이고<br>라인은 작년 입결을 5등급으로 바꾼 참고값이라 합격을 보장하진 않아</p>
+      <div class="sub-res" id="sub-res"></div>
+      <p class="small">상위 %는 교육청이 공개한 점 사이를 직선으로 이은 추정이고<br>대학 합격선은 작년 입결을 5등급으로 바꾼 참고값이라 합격을 보장하진 않아</p>
     </div>
   </div>
 </section>
@@ -326,20 +307,20 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
 <section class="band tint" aria-labelledby="h-lines">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="h-lines">정원으로만 줄 세우면</h2>
-      <p id="lines-sub">전국 423,257명이 의대부터 차례로 정원을 채운다고 치면 각 라인이 상위 몇 %까지인지<br>재수생과 정시와 지역 선택을 빼고 계산한 거라 실제보다 넉넉하게 나오는 최대 범위야<br>그래서 위 결과 칸의 라인은 이 표가 아니라 실제 합격선으로 정해</p>
+      <h2 id="h-lines">수시 자리로 줄 세우면</h2>
+      <p id="lines-sub">전국 423,257명이 내신 순서대로 의대부터 수시 학생부 자리를 채운다고 치면 각 라인이 상위 몇 %까지인지<br>정시와 논술과 실기 자리는 내신 줄이 아니라서 뺐어</p>
     </div>
-    <div class="lines" id="lines"><div class="lrow"><div class="nm"><b>의대</b><span class="small parts"><span>3,616명</span><span>누적 3,616명</span></span></div><div class="cum">0.85%<small>까지</small></div><div class="st"></div></div><div class="lrow me"><div class="nm"><b>SKY</b><span class="small parts"><span>11,509명</span><span>누적 15,125명</span></span></div><div class="cum">3.57%<small>까지</small></div><div class="st"><span class="tag">정원상 위치</span></div></div><div class="lrow"><div class="nm"><b>과기원</b><span class="small parts"><span>2,080명</span><span>누적 17,205명</span><span>범위가 다른 수치 섞임</span></span></div><div class="cum">4.06%<small>까지</small></div><div class="st"></div></div><div class="lrow"><div class="nm"><b>서성한</b><span class="small parts"><span>8,052명</span><span>누적 25,257명</span></span></div><div class="cum">5.97%<small>까지</small></div><div class="st"></div></div><div class="lrow"><div class="nm"><b>중경외시이</b><span class="small parts"><span>18,678명</span><span>누적 43,935명</span><span>범위가 다른 수치 섞임</span></span></div><div class="cum">10.38%<small>까지</small></div><div class="st"></div></div><div class="lrow"><div class="nm"><b>건동홍숙</b><span class="small parts"><span>10,825명</span><span>누적 54,760명</span><span>범위가 다른 수치 섞임</span></span></div><div class="cum">12.94%<small>까지</small></div><div class="st"></div></div><div class="lrow"><div class="nm"><b>국숭세단과</b><span class="small parts"><span>13,127명</span><span>누적 67,887명</span></span></div><div class="cum">16.04%<small>까지</small></div><div class="st"></div></div><div class="lrow"><div class="nm"><b>광명상가 인아성</b><span class="small parts"><span>16,062명</span><span>누적 83,949명</span><span>범위가 다른 수치 섞임</span></span></div><div class="cum">19.83%<small>까지</small></div><div class="st"></div></div><div class="lrow"><div class="nm"><b>거점국립대</b><span class="small parts"><span>36,183명</span><span>누적 120,132명</span><span>부산대 경북대 등 9곳</span><span>학과마다 여러 라인에 걸쳐 있어서 따로 묶음</span><span>순서가 수준을 뜻하지 않음</span><span>범위가 다른 수치 섞임</span></span></div><div class="cum">28.38%<small>까지</small></div><div class="st"></div></div><div class="lrow"><div class="nm"><b>교대</b><span class="small parts"><span>3,693명</span><span>누적 123,825명</span><span>학교마다 여러 라인에 걸쳐 있어서 따로 묶음</span><span>순서가 수준을 뜻하지 않음</span><span>범위가 다른 수치 섞임</span></span></div><div class="cum">29.26%<small>까지</small></div><div class="st"></div></div></div>
+    <div class="lines" id="lines"></div>
   </div>
 </section>
 
 <section class="band" aria-labelledby="h-seats">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="h-seats">2028학년도 대학별 모집인원</h2>
-      <p>각 대학 2028학년도 시행계획에서 가져온 숫자야<br>빨간 글씨는 정원 외나 다른 캠퍼스가 섞여 있어서 조금 크게 잡힌 숫자</p>
+      <h2 id="h-seats">2028학년도 대학별 수시 학생부 자리</h2>
+      <p>각 대학 2028학년도 전형계획에서 학생부교과와 학생부종합 인원만 모은 숫자야<br>빨간 글씨는 2028 숫자를 아직 못 옮겨서 추정한 곳이야</p>
     </div>
-    <div class="groups" id="groups"><div class="gcol"><div class="gh"><h3>의대</h3><b>3,616명</b></div><div class="urow"><span class="u">전국 의대 39곳</span><span class="c">3,616</span><span class="small parts"><span>2028 정원 내</span><span>지방 의대 포함</span><span>정부 발표 총정원은 3,671</span></span></div></div><div class="gcol"><div class="gh"><h3>SKY</h3><b>11,509명</b></div><p class="small parts gl"><span>교과 50%컷 9등급 1.32 → 5등급 약 1.00</span><span>학종 50%컷 9등급 1.77 → 5등급 약 1.17</span></p><div class="urow"><span class="u">서울대</span><span class="c">3,468</span><span class="small parts"><span>정원 내 3,603</span><span>의학과 135 빼고 계산</span></span></div><div class="urow"><span class="u">연세대</span><span class="c">3,494</span><span class="small parts"><span>서울캠퍼스 3,604</span><span>의예과 110 빼고 계산</span></span></div><div class="urow"><span class="u">고려대</span><span class="c">4,547</span><span class="small parts"><span>서울캠퍼스 입학정원 4,653</span><span>의학과 106 빼고 계산</span></span></div></div><div class="gcol"><div class="gh"><h3>과기원</h3><b>2,080명</b></div><div class="urow"><span class="u">KAIST</span><span class="c">690</span><span class="small parts warn"><span>2027 전형별 인원 합</span><span>2028 계획 미공개</span></span></div><div class="urow"><span class="u">POSTECH</span><span class="c">320</span><span class="small parts"><span>2028 수시 정원 내</span></span></div><div class="urow"><span class="u">UNIST</span><span class="c">410</span><span class="small parts warn"><span>2027 전형별 인원 합</span><span>2028 계획 미공개</span></span></div><div class="urow"><span class="u">GIST</span><span class="c">330</span><span class="small parts warn"><span>2027 약 330명</span><span>2028 계획 미공개</span></span></div><div class="urow"><span class="u">DGIST</span><span class="c">330</span><span class="small parts warn"><span>2027 수시 322 + 정시 약 8</span><span>2028 계획 미공개</span></span></div></div><div class="gcol"><div class="gh"><h3>서성한</h3><b>8,052명</b></div><p class="small parts gl"><span>교과 50%컷 9등급 1.54 → 5등급 약 1.06</span><span>학종 50%컷 9등급 2.73 → 5등급 약 1.66</span></p><div class="urow"><span class="u">서강대</span><span class="c">1,664</span><span class="small parts"><span>정원 내</span></span></div><div class="urow"><span class="u">성균관대</span><span class="c">3,489</span><span class="small parts"><span>정원 내 3,533</span><span>의예과 44 빼고 계산</span></span></div><div class="urow"><span class="u">한양대</span><span class="c">2,899</span><span class="small parts"><span>서울캠퍼스 3,009</span><span>의예과 110 빼고 계산</span></span></div></div><div class="gcol"><div class="gh"><h3>중경외시이</h3><b>18,678명</b></div><p class="small parts gl"><span>교과 50%컷 9등급 1.68 → 5등급 약 1.13</span><span>학종 50%컷 9등급 2.31 → 5등급 약 1.46</span></p><div class="urow"><span class="u">중앙대</span><span class="c">4,363</span><span class="small parts warn"><span>서울 + 다빈치캠퍼스 4,449</span><span>의예과 86 빼고 계산</span></span></div><div class="urow"><span class="u">경희대</span><span class="c">5,506</span><span class="small parts warn"><span>서울 + 국제캠퍼스</span><span>정원 외 포함 (대교협 수치)</span><span>의대 정원 미확인</span></span></div><div class="urow"><span class="u">한국외대</span><span class="c">3,479</span><span class="small parts warn"><span>서울 + 글로벌캠퍼스 합산</span></span></div><div class="urow"><span class="u">서울시립대</span><span class="c">1,802</span><span class="small parts"><span>정원 내</span></span></div><div class="urow"><span class="u">이화여대</span><span class="c">3,528</span><span class="small parts warn"><span>정원 외 포함 (대교협 수치)</span><span>의대 정원 미확인</span></span></div></div><div class="gcol"><div class="gh"><h3>건동홍숙</h3><b>10,825명</b></div><p class="small parts gl"><span>교과 50%컷 9등급 1.77 → 5등급 약 1.17</span><span>학종 50%컷 9등급 2.34 → 5등급 약 1.44</span></p><div class="urow"><span class="u">건국대</span><span class="c">3,000</span><span class="small parts"><span>서울캠퍼스 정원 내</span></span></div><div class="urow"><span class="u">동국대</span><span class="c">3,298</span><span class="small parts warn"><span>서울캠퍼스</span><span>정원 외 포함 (대교협 수치)</span></span></div><div class="urow"><span class="u">홍익대</span><span class="c">2,375</span><span class="small parts"><span>서울캠퍼스</span></span></div><div class="urow"><span class="u">숙명여대</span><span class="c">2,152</span><span class="small parts"><span>정원 내</span></span></div></div><div class="gcol"><div class="gh"><h3>국숭세단과</h3><b>13,127명</b></div><p class="small parts gl"><span>교과 50%컷 9등급 2.11 → 5등급 약 1.36</span><span>학종 50%컷 9등급 2.64 → 5등급 약 1.61</span></p><div class="urow"><span class="u">국민대</span><span class="c">2,971</span><span class="small parts"><span>정원 내</span></span></div><div class="urow"><span class="u">숭실대</span><span class="c">3,011</span><span class="small parts"><span>정원 내</span></span></div><div class="urow"><span class="u">세종대</span><span class="c">2,579</span><span class="small parts"><span>정원 내</span></span></div><div class="urow"><span class="u">단국대</span><span class="c">2,293</span><span class="small parts"><span>죽전캠퍼스 정원 내</span></span></div><div class="urow"><span class="u">서울과기대</span><span class="c">2,273</span><span class="small parts"><span>정원 내</span></span></div></div><div class="gcol"><div class="gh"><h3>광명상가 인아성</h3><b>16,062명</b></div><p class="small parts gl"><span>교과 50%컷 9등급 2.37 → 5등급 약 1.46</span><span>학종 50%컷 9등급 2.98 → 5등급 약 1.79</span></p><div class="urow"><span class="u">광운대</span><span class="c">1,684</span><span class="small parts"><span>정원 내</span></span></div><div class="urow"><span class="u">명지대</span><span class="c">2,908</span><span class="small parts warn"><span>인문 + 자연(용인)캠퍼스 합산</span></span></div><div class="urow"><span class="u">상명대</span><span class="c">1,582</span><span class="small parts warn"><span>서울캠퍼스</span><span>정원 외 포함 (대교협 수치)</span></span></div><div class="urow"><span class="u">가톨릭대</span><span class="c">1,750</span><span class="small parts"><span>정원 내 1,843</span><span>의예과 93 빼고 계산</span></span></div><div class="urow"><span class="u">인하대</span><span class="c">3,904</span><span class="small parts warn"><span>3,960</span><span>의예과 입학정원 56 빼고 계산</span><span>정원 내외 표기 없음</span></span></div><div class="urow"><span class="u">아주대</span><span class="c">2,170</span><span class="small parts"><span>2,217</span><span>의예과 47 빼고 계산</span></span></div><div class="urow"><span class="u">성신여대</span><span class="c">2,064</span><span class="small parts"><span>정원 내</span></span></div></div><div class="gcol"><div class="gh"><h3>거점국립대</h3><b>36,183명</b></div><div class="urow"><span class="u">부산대</span><span class="c">4,934</span><span class="small parts warn"><span>본교 5,097 정원 외 포함</span><span>의예과 163 빼고 계산</span></span></div><div class="urow"><span class="u">경북대</span><span class="c">5,466</span><span class="small parts warn"><span>5,586 상주 포함</span><span>의예과 수시 120만 빼고 계산</span></span></div><div class="urow"><span class="u">전남대</span><span class="c">4,503</span><span class="small parts warn"><span>정원 내 여수 포함</span><span>의예과 미분리</span></span></div><div class="urow"><span class="u">충남대</span><span class="c">4,024</span><span class="small parts"><span>4,170</span><span>의예과 146 빼고 계산</span></span></div><div class="urow"><span class="u">전북대</span><span class="c">3,959</span><span class="small parts"><span>입학정원 4,128</span><span>의예과 169 빼고 계산</span></span></div><div class="urow"><span class="u">충북대</span><span class="c">3,291</span><span class="small parts warn"><span>의예과 미분리</span></span></div><div class="urow"><span class="u">강원대</span><span class="c">3,363</span><span class="small parts warn"><span>춘천 본교</span><span>정원 외 포함 (대교협 수치)</span><span>의예과 미분리</span></span></div><div class="urow"><span class="u">경상국립대</span><span class="c">4,228</span><span class="small parts"><span>정원 내 4,359</span><span>의예과 131 빼고 계산</span></span></div><div class="urow"><span class="u">제주대</span><span class="c">2,415</span><span class="small parts"><span>2,490</span><span>의예과 75 빼고 계산</span></span></div></div><div class="gcol"><div class="gh"><h3>교대</h3><b>3,693명</b></div><div class="urow"><span class="u">교대 10곳</span><span class="c">3,583</span><span class="small parts warn"><span>서울 경인 공주 광주 대구 부산 전주 진주 청주 춘천</span><span>정원 외 포함 (대교협 수치)</span></span></div><div class="urow"><span class="u">한국교원대 초등교육과</span><span class="c">110</span><span class="small parts"><span>정원 내</span></span></div></div></div>
+    <div class="groups" id="groups"></div>
   </div>
 </section>
 
@@ -349,7 +330,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
       <h2 id="h-trend">전 과목 1등급 유지는 학기마다 반 토막</h2>
       <p class="parts" id="b2meta"><span>부산시교육청학력개발원</span><span>발표 2026.9.4</span><span>98개교 15,978명</span></p>
     </div>
-    <div class="trend" id="trend"><div class="step"><span class="v">2.07%</span><span class="t parts"><span>고1 1학기</span></span></div><div class="step"><span class="v">1.30%</span><span class="t parts"><span>고1 1년 누적</span></span></div><div class="step"><span class="v">0.68%</span><span class="t parts"><span>고2 1학기까지 누적</span><span>109명</span></span></div><div class="step fore"><span class="v">0.2~0.4%</span><span class="t parts"><span>고3 1학기까지 기관 전망</span></span></div></div>
+    <div class="trend" id="trend"></div>
     <p class="note">학기가 쌓일수록 전 과목 1등급을 지키는 학생이 줄어들어<br>그래서 고2까지 누적하면 같은 평균이라도 위 계산보다 조금 더 앞일 가능성이 커<br>다만 1.00과 2.0 사이 구간별 수치는 아직 공개되지 않아서 계산에는 못 넣었어</p>
   </div>
 </section>
@@ -360,8 +341,8 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
       <h2 id="h-dist">부산 고2 15,978명 평균 분포</h2>
       <p>1학년 1학기부터 2학년 1학기까지 3개 학기 누적</p>
     </div>
-    <div class="dist" id="dist"><div style="width:0.68%;background:var(--color-seg-1);animation-delay:0ms" title="1.00 0.68%"></div><div style="width:15.92%;background:var(--color-seg-2);animation-delay:80ms" title="1.00 초과 ~ 2.0 15.92%"></div><div style="width:69%;background:var(--color-seg-3);animation-delay:160ms" title="2.0 초과 ~ 4.0 69%"></div><div style="width:14.5%;background:var(--color-seg-4);animation-delay:240ms" title="4.0 초과 14.5%"></div></div>
-    <div class="distleg" id="distleg"><div><i class="d" style="background:var(--color-seg-1)"></i><span>1.00</span><b>0.68%</b></div><div><i class="d" style="background:var(--color-seg-2)"></i><span>1.00 초과 ~ 2.0</span><b>15.92%</b></div><div><i class="d" style="background:var(--color-seg-3)"></i><span>2.0 초과 ~ 4.0</span><b>69%</b></div><div><i class="d" style="background:var(--color-seg-4)"></i><span>4.0 초과</span><b>14.5%</b></div></div>
+    <div class="dist" id="dist"></div>
+    <div class="distleg" id="distleg"></div>
   </div>
 </section>
 
@@ -372,15 +353,15 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
       <p>그래프의 점이 교육청과 경기진협이 공개한 값이고 점 사이는 직선으로 이었어</p>
     </div>
     <div class="chart-box">
-      <div class="legend" id="legend"><span><i class="sw" style="background:var(--color-accent)"></i>경기진협 1학년 1년 누적</span><span><i class="sw" style="background:var(--color-ink-line)"></i>부산 1학년 1년 누적</span><span><i class="sw" style="background:var(--color-pink-soft)"></i>입력한 평균</span></div>
-      <div class="chart-inner"><svg id="chart" class="chart" viewBox="0 0 640 300" width="100%" role="img" aria-label="5등급 평균에 따른 상위 누적비 그래프"><line x1="46" x2="622" y1="258" y2="258" style="stroke:var(--color-rule)" stroke-width="1"></line><text x="36" y="262" text-anchor="end">0%</text><line x1="46" x2="622" y1="188.28571428571428" y2="188.28571428571428" style="stroke:var(--color-rule)" stroke-width="1"></line><text x="36" y="192.28571428571428" text-anchor="end">10%</text><line x1="46" x2="622" y1="118.57142857142858" y2="118.57142857142858" style="stroke:var(--color-rule)" stroke-width="1"></line><text x="36" y="122.57142857142858" text-anchor="end">20%</text><line x1="46" x2="622" y1="48.85714285714287" y2="48.85714285714287" style="stroke:var(--color-rule)" stroke-width="1"></line><text x="36" y="52.85714285714287" text-anchor="end">30%</text><text x="46" y="278" text-anchor="middle">1.00</text><text x="238" y="278" text-anchor="middle">1.50</text><text x="430" y="278" text-anchor="middle">2.00</text><text x="622" y="278" text-anchor="middle">2.50</text><text x="622" y="296" text-anchor="end">5등급 평균</text><line x1="122.79999999999998" x2="122.79999999999998" y1="14" y2="258" style="stroke:var(--color-pink-soft)" stroke-width="2" stroke-dasharray="5 5"></line><path d="M46.0 249.6 L77.9 244.4 L110.1 236.5 L173.9 222.1" style="fill:none;stroke:var(--color-accent)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></path><circle cx="46" cy="249.6342857142857" r="4.5" style="fill:var(--color-accent)"></circle><circle cx="77.87199999999999" cy="244.40571428571428" r="4.5" style="fill:var(--color-accent)"></circle><circle cx="110.12800000000001" cy="236.45828571428572" r="4.5" style="fill:var(--color-accent)"></circle><circle cx="173.87199999999999" cy="222.09714285714287" r="4.5" style="fill:var(--color-accent)"></circle><path d="M46.0 248.9 L238.0 208.6 L430.0 136.6 L622.0 39.2" style="fill:none;stroke:var(--color-ink-line)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></path><circle cx="46" cy="248.93714285714285" r="4.5" style="fill:var(--color-ink-line)"></circle><circle cx="238" cy="208.64228571428572" r="4.5" style="fill:var(--color-ink-line)"></circle><circle cx="430" cy="136.55771428571427" r="4.5" style="fill:var(--color-ink-line)"></circle><circle cx="622" cy="39.166857142857125" r="4.5" style="fill:var(--color-ink-line)"></circle><circle cx="122.79999999999998" cy="233.60335972461274" r="7" style="fill:var(--color-paper);stroke:var(--color-accent)" stroke-width="3"></circle><circle cx="122.79999999999998" cy="232.81920000000002" r="7" style="fill:var(--color-paper);stroke:var(--color-ink-line)" stroke-width="3"></circle></svg></div>
+      <div class="legend" id="legend"></div>
+      <div class="chart-inner"><svg id="chart" class="chart" viewBox="0 0 640 300" width="100%" role="img" aria-label="5등급 평균에 따른 상위 누적비 그래프"></svg></div>
     </div>
-    <div class="tables" id="tables"><div class="tcol"><h3>경기진협 1학년 1년 누적</h3><p class="small parts"><span>경기진학지도협의회</span><span>발표 2026.4.29</span><span>63개교 16,110명</span><span>12과목</span></p><div class="tbl"><table><thead><tr><th>5등급 평균</th><th>상위 누적비</th><th>9등급 환산</th></tr></thead><tbody><tr><td>1.000</td><td>1.20%</td><td>1.39</td></tr><tr><td>1.083</td><td>1.95%</td><td class="no">없음</td></tr><tr><td>1.167</td><td>3.09%</td><td>1.73</td></tr><tr><td>1.333</td><td>5.15%</td><td>2.03</td></tr><tr><td>1.500</td><td class="no">없음</td><td>2.31</td></tr></tbody></table></div></div><div class="tcol"><h3>부산 1학년 1년 누적</h3><p class="small parts"><span>부산시교육청학력개발원</span><span>발표 2026.2.18</span><span>88개교 14,331명</span><span>1학년 1·2학기</span></p><div class="tbl"><table><thead><tr><th>5등급 평균</th><th>상위 누적비</th><th>9등급 환산</th></tr></thead><tbody><tr><td>1.000</td><td>1.30%</td><td>1.45</td></tr><tr><td>1.500</td><td>7.08%</td><td>2.45</td></tr><tr><td>2.000</td><td>17.42%</td><td>3.35</td></tr><tr><td>2.500</td><td>31.39%</td><td>4.20</td></tr></tbody></table></div></div></div>
+    <div class="tables" id="tables"></div>
     <div class="sec-head" style="margin-top:var(--space-2xl)">
       <h3>계산에는 안 넣은 참고 자료</h3>
       <p>구간별 누적 %가 1.00 하나뿐이라 계산에는 못 쓰고 비교용으로만 둠</p>
     </div>
-    <div class="tables" id="refs"><div class="tcol"><h3>광주 1학년 1년 누적</h3><p class="small parts"><span>광주시교육청 진로진학지원센터</span><span>발표 2026.4.13</span><span>일반고 51개교 10,800명</span></p><div class="tbl"><table><thead><tr><th>5등급 평균</th><th>상위 누적비</th><th>9등급 환산</th></tr></thead><tbody><tr><td>1.00</td><td>2.00%</td><td>1.51</td></tr><tr><td>2.50</td><td class="no">공개 안 됨</td><td>4.18</td></tr><tr><td>4.00</td><td class="no">공개 안 됨</td><td>6.59</td></tr></tbody></table></div></div><div class="tcol"><h3>부산 2학년 1학기까지 누적</h3><p class="small parts"><span>부산시교육청학력개발원</span><span>발표 2026.9.4</span><span>98개교 15,978명</span></p><div class="tbl"><table><thead><tr><th>5등급 평균</th><th>상위 누적비</th><th>9등급 환산</th></tr></thead><tbody><tr><td>1.00</td><td>0.68%</td><td class="no">공개 안 됨</td></tr><tr><td>2.0 이하</td><td>16.6%</td><td class="no">공개 안 됨</td></tr></tbody></table></div></div><div class="tcol"><h3>서울 1학년 1학기</h3><p class="small parts"><span>서울시교육청 제출 자료 (국회의원실)</span><span>보도 2025.12</span></p><div class="tbl"><table><thead><tr><th>5등급 평균</th><th>상위 누적비</th><th>9등급 환산</th></tr></thead><tbody><tr><td>1.00 일반고</td><td>2.09%</td><td class="no">공개 안 됨</td></tr><tr><td>1.00 자사고</td><td>1.38%</td><td class="no">공개 안 됨</td></tr></tbody></table></div></div></div>
+    <div class="tables" id="refs"></div>
   </div>
 </section>
 
@@ -391,14 +372,16 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     </div>
     <ul class="notes">
       <li>목표를 잡는 데 쓰는 도구야<br>실제 지원은 학교 선생님 상담이랑 어디가 입결로 꼭 다시 확인해</li>
-      <li>결과 칸의 라인은 2026학년도 어디가 입결(교과와 학종 50%컷)을 모집단위별로 모아 중간값을 내고 5등급으로 바꾼 값이야<br>50%컷이라 그보다 낮은 평균으로 붙은 학생도 절반은 있다는 뜻</li>
+      <li>결과 칸은 대입정보포털 어디가의 2026학년도 수시 입결을 대학마다 학과별로 모아서 계산해<br>학과마다 교과와 학종 중 50%컷이 더 넉넉한 쪽을 5등급으로 바꿔 썼어</li>
+      <li>50%컷은 그 학과 합격자 가운데 학생의 내신이야<br>그보다 낮은 평균으로 붙은 학생도 절반은 있다는 뜻</li>
+      <li>기회균형 지역인재 농어촌처럼 지원 자격이 따로 있는 전형은 계산에서 뺐어</li>
       <li>학종은 세특과 활동을 같이 보니까 같은 평균이라도 교과보다 범위가 넓어</li>
       <li>상위 %는 부산과 경기진협 협력교의 1학년 누적 결과라 전국 전체 표본은 아니야</li>
       <li>2학년부터는 선택과목이 갈려서 1학년 기준 표와 위치가 달라질 수 있어</li>
       <li>대학마다 반영 교과와 학년 비율이 달라서 대학이 계산하는 내 등급은 또 달라</li>
-      <li>의대는 입결 표가 없어서 정원으로 줄 세웠을 때 위치를 5등급으로 바꿔 맨 앞에 넣었어</li>
-      <li>서울대는 수시를 전부 학종으로 뽑아서 SKY 교과 합격선은 연고대 기준이야</li>
-      <li>과기원 거점국립대 교대는 입결 표가 없어서 정원 표에만 넣었어<br>과기원에는 KAIST POSTECH UNIST GIST DGIST가 들어 있어</li>
+      <li>의대는 전국 의대 의예과 합격선을 한 줄로 모았어</li>
+      <li>서울대처럼 수시를 학종으로만 뽑는 대학은 학종 합격선만 들어가</li>
+      <li>과기원과 교대는 입결 기준이 달라서 정원 표에만 넣었어<br>과기원에는 KAIST POSTECH UNIST GIST DGIST가 들어 있어</li>
     </ul>
   </div>
 </section>
@@ -409,557 +392,631 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
 
 <script id="data" type="application/json">
 {
- "updated": "2026.11.06",
- "cohort": {
-  "n": 423257,
-  "label": "2025년 고1 (2028 대입 대상) 전국 17개 시도 학생 수"
- },
- "groups": [
-  {
-   "name": "의대",
-   "univs": [
-    {
-     "u": "전국 의대 39곳",
-     "n": 3616,
-     "s": "2028 정원 내 · 지방 의대 포함 · 정부 발표 총정원은 3,671"
-    }
-   ]
+  "updated": "2026.11.06",
+  "cohort": {
+    "n": 423257,
+    "label": "2025년 고1 (2028 대입 대상) 전국 17개 시도 학생 수"
   },
-  {
-   "name": "SKY",
-   "univs": [
+  "groups": [
     {
-     "u": "서울대",
-     "n": 3468,
-     "s": "정원 내 3,603 · 의학과 135 빼고 계산"
+      "name": "의대",
+      "univs": [
+        {
+          "u": "전국 의대 39곳",
+          "n": 3616,
+          "s": "2026 수시 의예과 자리 1,410명을 2028 정원 증가 비율로 늘린 추정 · 의대 36곳 집계",
+          "w": true,
+          "q": 1667
+        }
+      ]
     },
     {
-     "u": "연세대",
-     "n": 3494,
-     "s": "서울캠퍼스 3,604 · 의예과 110 빼고 계산"
+      "name": "SKY",
+      "univs": [
+        {
+          "u": "서울대",
+          "n": 3468,
+          "s": "2028 수시 학생부 확정 · 정원 내 3,603 · 의학과 135 빼고 계산",
+          "q": 2224
+        },
+        {
+          "u": "연세대",
+          "n": 3494,
+          "s": "2028 수시 학생부 확정 · 서울캠퍼스 3,604 · 의예과 110 빼고 계산",
+          "q": 1835
+        },
+        {
+          "u": "고려대",
+          "n": 4547,
+          "s": "2028 수시 학생부 확정 · 서울캠퍼스 입학정원 4,653 · 의학과 106 빼고 계산",
+          "q": 1990
+        }
+      ]
     },
     {
-     "u": "고려대",
-     "n": 4547,
-     "s": "서울캠퍼스 입학정원 4,653 · 의학과 106 빼고 계산"
+      "name": "과기원",
+      "univs": [
+        {
+          "u": "KAIST",
+          "n": 690,
+          "s": "2027 전형별 인원 합 · 2028 계획 미공개",
+          "w": true
+        },
+        {
+          "u": "POSTECH",
+          "n": 320,
+          "s": "2028 수시 정원 내"
+        },
+        {
+          "u": "UNIST",
+          "n": 410,
+          "s": "2027 전형별 인원 합 · 2028 계획 미공개",
+          "w": true
+        },
+        {
+          "u": "GIST",
+          "n": 330,
+          "s": "2027 약 330명 · 2028 계획 미공개",
+          "w": true
+        },
+        {
+          "u": "DGIST",
+          "n": 330,
+          "s": "2027 수시 322 + 정시 약 8 · 2028 계획 미공개",
+          "w": true
+        }
+      ]
+    },
+    {
+      "name": "서성한",
+      "univs": [
+        {
+          "u": "서강대",
+          "n": 1664,
+          "s": "2028 수시 학생부 확정 · 정원 내",
+          "q": 751
+        },
+        {
+          "u": "성균관대",
+          "n": 3489,
+          "s": "2028 수시 학생부 확정 · 정원 내 3,533 · 의예과 44 빼고 계산",
+          "q": 1694
+        },
+        {
+          "u": "한양대",
+          "n": 2899,
+          "s": "2028 수시 학생부 확정 · 서울캠퍼스 3,009 · 의예과 110 빼고 계산",
+          "q": 1515
+        }
+      ]
+    },
+    {
+      "name": "중경외시이",
+      "univs": [
+        {
+          "u": "중앙대",
+          "n": 4363,
+          "s": "2028 수시 학생부 확정 · 서울 + 다빈치캠퍼스 4,449 · 의예과 86 빼고 계산",
+          "w": true,
+          "q": 1496
+        },
+        {
+          "u": "경희대",
+          "n": 5506,
+          "s": "2028 수시 학생부 확정 · 서울 + 국제캠퍼스 · 정원 외 포함 (대교협 수치) · 의대 정원 미확인",
+          "w": true,
+          "q": 1639
+        },
+        {
+          "u": "한국외대",
+          "n": 3479,
+          "s": "2028 수시 학생부 확정 · 서울 + 글로벌캠퍼스 합산",
+          "w": true,
+          "q": 1474
+        },
+        {
+          "u": "서울시립대",
+          "n": 1802,
+          "s": "2028 수시 학생부 확정 · 정원 내",
+          "w": true,
+          "q": 770
+        },
+        {
+          "u": "이화여대",
+          "n": 3528,
+          "s": "2028 수시 학생부 확정 · 정원 외 포함 (대교협 수치) · 의대 정원 미확인",
+          "w": true,
+          "q": 1471
+        }
+      ]
+    },
+    {
+      "name": "건동홍숙",
+      "univs": [
+        {
+          "u": "건국대",
+          "n": 3000,
+          "s": "2028 수시 학생부 확정 · 서울캠퍼스 정원 내",
+          "q": 1258
+        },
+        {
+          "u": "동국대",
+          "n": 3298,
+          "s": "2028 수시 학생부 확정 · 서울캠퍼스 · 정원 외 포함 (대교협 수치)",
+          "w": true,
+          "q": 1364
+        },
+        {
+          "u": "홍익대",
+          "n": 2375,
+          "s": "2028 수시 학생부 확정 · 서울캠퍼스",
+          "w": true,
+          "q": 877
+        },
+        {
+          "u": "숙명여대",
+          "n": 2152,
+          "s": "2028 수시 학생부 확정 · 정원 내",
+          "w": true,
+          "q": 710
+        }
+      ]
+    },
+    {
+      "name": "국숭세단과",
+      "univs": [
+        {
+          "u": "국민대",
+          "n": 2971,
+          "s": "2028 수시 학생부 확정 · 정원 내",
+          "w": true,
+          "q": 1382
+        },
+        {
+          "u": "숭실대",
+          "n": 3011,
+          "s": "2028 수시 학생부 확정 · 정원 내",
+          "w": true,
+          "q": 1183
+        },
+        {
+          "u": "세종대",
+          "n": 2579,
+          "s": "2028 수시 학생부 확정 · 정원 내",
+          "q": 1025
+        },
+        {
+          "u": "단국대",
+          "n": 2293,
+          "s": "2028 수시 학생부 확정 · 죽전캠퍼스 정원 내",
+          "w": true,
+          "q": 734
+        },
+        {
+          "u": "서울과기대",
+          "n": 2273,
+          "s": "2028 수시 학생부 확정 · 정원 내",
+          "q": 1098
+        }
+      ]
+    },
+    {
+      "name": "광명상가 인아성",
+      "univs": [
+        {
+          "u": "광운대",
+          "n": 1684,
+          "s": "2028 수시 학생부 확정 · 정원 내",
+          "w": true,
+          "q": 721
+        },
+        {
+          "u": "명지대",
+          "n": 2908,
+          "s": "2028 수시 학생부 확정 · 인문 + 자연(용인)캠퍼스 합산",
+          "w": true,
+          "q": 1301
+        },
+        {
+          "u": "상명대",
+          "n": 1582,
+          "s": "2028 수시 학생부 확정 · 서울캠퍼스 · 정원 외 포함 (대교협 수치)",
+          "w": true,
+          "q": 504
+        },
+        {
+          "u": "가톨릭대",
+          "n": 1750,
+          "s": "2028 수시 학생부 확정 · 정원 내 1,843 · 의예과 93 빼고 계산",
+          "w": true,
+          "q": 839
+        },
+        {
+          "u": "인하대",
+          "n": 3904,
+          "s": "2028 수시 학생부 확정 · 3,960 · 의예과 입학정원 56 빼고 계산 · 정원 내외 표기 없음",
+          "w": true,
+          "q": 1654
+        },
+        {
+          "u": "아주대",
+          "n": 2170,
+          "s": "2028 수시 학생부 확정 · 2,217 · 의예과 47 빼고 계산",
+          "q": 1030
+        },
+        {
+          "u": "성신여대",
+          "n": 2064,
+          "s": "2028 수시 학생부 확정 · 정원 내",
+          "w": true,
+          "q": 847
+        }
+      ]
+    },
+    {
+      "name": "거점국립대",
+      "note": "부산대 경북대 등 9곳 · 학과마다 여러 라인에 걸쳐 있어서 따로 묶음 · 순서가 수준을 뜻하지 않음",
+      "univs": [
+        {
+          "u": "부산대",
+          "n": 4934,
+          "s": "2028 수시 학생부 확정 · 본교 5,097 정원 외 포함 · 의예과 163 빼고 계산",
+          "w": true,
+          "q": 2951
+        },
+        {
+          "u": "경북대",
+          "n": 5466,
+          "s": "2028 수시 학생부 확정 · 5,586 상주 포함 · 의예과 수시 120만 빼고 계산",
+          "w": true,
+          "q": 3260
+        },
+        {
+          "u": "전남대",
+          "n": 4503,
+          "s": "2028 수시 학생부 확정 · 정원 내 여수 포함 · 의예과 미분리",
+          "w": true,
+          "q": 3273
+        },
+        {
+          "u": "충남대",
+          "n": 4024,
+          "s": "2028 수시 학생부 확정 · 4,170 · 의예과 146 빼고 계산",
+          "w": true,
+          "q": 2635
+        },
+        {
+          "u": "전북대",
+          "n": 3959,
+          "s": "2028 수시 학생부 확정 · 입학정원 4,128 · 의예과 169 빼고 계산",
+          "w": true,
+          "q": 2932
+        },
+        {
+          "u": "충북대",
+          "n": 3291,
+          "s": "2028 수시 학생부 확정 · 의예과 미분리",
+          "w": true,
+          "q": 2318
+        },
+        {
+          "u": "강원대",
+          "n": 3363,
+          "s": "2028 수시 학생부 확정 · 춘천 본교 · 정원 외 포함 (대교협 수치) · 의예과 미분리",
+          "w": true,
+          "q": 2147
+        },
+        {
+          "u": "경상국립대",
+          "n": 4228,
+          "s": "2028 수시 학생부 확정 · 정원 내 4,359 · 의예과 131 빼고 계산",
+          "w": true,
+          "q": 3190
+        },
+        {
+          "u": "제주대",
+          "n": 2415,
+          "s": "2028 수시 학생부 확정 · 2,490 · 의예과 75 빼고 계산",
+          "w": true,
+          "q": 1307
+        }
+      ]
+    },
+    {
+      "name": "교대",
+      "note": "학교마다 여러 라인에 걸쳐 있어서 따로 묶음 · 순서가 수준을 뜻하지 않음",
+      "univs": [
+        {
+          "u": "교대 10곳",
+          "n": 3583,
+          "s": "서울 경인 공주 광주 대구 부산 전주 진주 청주 춘천 · 정원 외 포함 (대교협 수치)",
+          "w": true
+        },
+        {
+          "u": "한국교원대 초등교육과",
+          "n": 110,
+          "s": "정원 내"
+        }
+      ]
     }
-   ],
-   "gyo9": 1.32,
-   "jong9": 1.77,
-   "nGyo": 109,
-   "nJong": 290
-  },
-  {
-   "name": "과기원",
-   "univs": [
-    {
-     "u": "KAIST",
-     "n": 690,
-     "s": "2027 전형별 인원 합 · 2028 계획 미공개",
-     "w": true
-    },
-    {
-     "u": "POSTECH",
-     "n": 320,
-     "s": "2028 수시 정원 내"
-    },
-    {
-     "u": "UNIST",
-     "n": 410,
-     "s": "2027 전형별 인원 합 · 2028 계획 미공개",
-     "w": true
-    },
-    {
-     "u": "GIST",
-     "n": 330,
-     "s": "2027 약 330명 · 2028 계획 미공개",
-     "w": true
-    },
-    {
-     "u": "DGIST",
-     "n": 330,
-     "s": "2027 수시 322 + 정시 약 8 · 2028 계획 미공개",
-     "w": true
-    }
-   ]
-  },
-  {
-   "name": "서성한",
-   "univs": [
-    {
-     "u": "서강대",
-     "n": 1664,
-     "s": "정원 내"
-    },
-    {
-     "u": "성균관대",
-     "n": 3489,
-     "s": "정원 내 3,533 · 의예과 44 빼고 계산"
-    },
-    {
-     "u": "한양대",
-     "n": 2899,
-     "s": "서울캠퍼스 3,009 · 의예과 110 빼고 계산"
-    }
-   ],
-   "gyo9": 1.54,
-   "jong9": 2.73,
-   "nGyo": 105,
-   "nJong": 165
-  },
-  {
-   "name": "중경외시이",
-   "univs": [
-    {
-     "u": "중앙대",
-     "n": 4363,
-     "s": "서울 + 다빈치캠퍼스 4,449 · 의예과 86 빼고 계산",
-     "w": true
-    },
-    {
-     "u": "경희대",
-     "n": 5506,
-     "s": "서울 + 국제캠퍼스 · 정원 외 포함 (대교협 수치) · 의대 정원 미확인",
-     "w": true
-    },
-    {
-     "u": "한국외대",
-     "n": 3479,
-     "s": "서울 + 글로벌캠퍼스 합산",
-     "w": true
-    },
-    {
-     "u": "서울시립대",
-     "n": 1802,
-     "s": "정원 내"
-    },
-    {
-     "u": "이화여대",
-     "n": 3528,
-     "s": "정원 외 포함 (대교협 수치) · 의대 정원 미확인",
-     "w": true
-    }
-   ],
-   "gyo9": 1.68,
-   "jong9": 2.31,
-   "nGyo": 131,
-   "nJong": 379
-  },
-  {
-   "name": "건동홍숙",
-   "univs": [
-    {
-     "u": "건국대",
-     "n": 3000,
-     "s": "서울캠퍼스 정원 내"
-    },
-    {
-     "u": "동국대",
-     "n": 3298,
-     "s": "서울캠퍼스 · 정원 외 포함 (대교협 수치)",
-     "w": true
-    },
-    {
-     "u": "홍익대",
-     "n": 2375,
-     "s": "서울캠퍼스"
-    },
-    {
-     "u": "숙명여대",
-     "n": 2152,
-     "s": "정원 내"
-    }
-   ],
-   "gyo9": 1.77,
-   "jong9": 2.34,
-   "nGyo": 125,
-   "nJong": 150
-  },
-  {
-   "name": "국숭세단과",
-   "univs": [
-    {
-     "u": "국민대",
-     "n": 2971,
-     "s": "정원 내"
-    },
-    {
-     "u": "숭실대",
-     "n": 3011,
-     "s": "정원 내"
-    },
-    {
-     "u": "세종대",
-     "n": 2579,
-     "s": "정원 내"
-    },
-    {
-     "u": "단국대",
-     "n": 2293,
-     "s": "죽전캠퍼스 정원 내"
-    },
-    {
-     "u": "서울과기대",
-     "n": 2273,
-     "s": "정원 내"
-    }
-   ],
-   "gyo9": 2.11,
-   "jong9": 2.64,
-   "nGyo": 137,
-   "nJong": 181
-  },
-  {
-   "name": "광명상가 인아성",
-   "univs": [
-    {
-     "u": "광운대",
-     "n": 1684,
-     "s": "정원 내"
-    },
-    {
-     "u": "명지대",
-     "n": 2908,
-     "s": "인문 + 자연(용인)캠퍼스 합산",
-     "w": true
-    },
-    {
-     "u": "상명대",
-     "n": 1582,
-     "s": "서울캠퍼스 · 정원 외 포함 (대교협 수치)",
-     "w": true
-    },
-    {
-     "u": "가톨릭대",
-     "n": 1750,
-     "s": "정원 내 1,843 · 의예과 93 빼고 계산"
-    },
-    {
-     "u": "인하대",
-     "n": 3904,
-     "s": "3,960 · 의예과 입학정원 56 빼고 계산 · 정원 내외 표기 없음",
-     "w": true
-    },
-    {
-     "u": "아주대",
-     "n": 2170,
-     "s": "2,217 · 의예과 47 빼고 계산"
-    },
-    {
-     "u": "성신여대",
-     "n": 2064,
-     "s": "정원 내"
-    }
-   ],
-   "gyo9": 2.37,
-   "jong9": 2.98,
-   "nGyo": 104,
-   "nJong": 159
-  },
-  {
-   "name": "거점국립대",
-   "note": "부산대 경북대 등 9곳 · 학과마다 여러 라인에 걸쳐 있어서 따로 묶음 · 순서가 수준을 뜻하지 않음",
-   "univs": [
-    {
-     "u": "부산대",
-     "n": 4934,
-     "s": "본교 5,097 정원 외 포함 · 의예과 163 빼고 계산",
-     "w": true
-    },
-    {
-     "u": "경북대",
-     "n": 5466,
-     "s": "5,586 상주 포함 · 의예과 수시 120만 빼고 계산",
-     "w": true
-    },
-    {
-     "u": "전남대",
-     "n": 4503,
-     "s": "정원 내 여수 포함 · 의예과 미분리",
-     "w": true
-    },
-    {
-     "u": "충남대",
-     "n": 4024,
-     "s": "4,170 · 의예과 146 빼고 계산"
-    },
-    {
-     "u": "전북대",
-     "n": 3959,
-     "s": "입학정원 4,128 · 의예과 169 빼고 계산"
-    },
-    {
-     "u": "충북대",
-     "n": 3291,
-     "s": "의예과 미분리",
-     "w": true
-    },
-    {
-     "u": "강원대",
-     "n": 3363,
-     "s": "춘천 본교 · 정원 외 포함 (대교협 수치) · 의예과 미분리",
-     "w": true
-    },
-    {
-     "u": "경상국립대",
-     "n": 4228,
-     "s": "정원 내 4,359 · 의예과 131 빼고 계산"
-    },
-    {
-     "u": "제주대",
-     "n": 2415,
-     "s": "2,490 · 의예과 75 빼고 계산"
-    }
-   ]
-  },
-  {
-   "name": "교대",
-   "note": "학교마다 여러 라인에 걸쳐 있어서 따로 묶음 · 순서가 수준을 뜻하지 않음",
-   "univs": [
-    {
-     "u": "교대 10곳",
-     "n": 3583,
-     "s": "서울 경인 공주 광주 대구 부산 전주 진주 청주 춘천 · 정원 외 포함 (대교협 수치)",
-     "w": true
-    },
-    {
-     "u": "한국교원대 초등교육과",
-     "n": 110,
-     "s": "정원 내"
-    }
-   ]
-  }
- ],
- "datasets": [
-  {
-   "id": "gg1",
-   "name": "경기진협 1학년 1년 누적",
-   "short": "경기진협 기준",
-   "color": "accent",
-   "meta": "경기진학지도협의회 · 발표 2026.4.29 · 63개교 16,110명 · 12과목",
-   "points": [
-    {
-     "avg": 1.0,
-     "cum": 1.2,
-     "g9": 1.39
-    },
-    {
-     "avg": 1.083,
-     "cum": 1.95,
-     "g9": null
-    },
-    {
-     "avg": 1.167,
-     "cum": 3.09,
-     "g9": 1.73
-    },
-    {
-     "avg": 1.333,
-     "cum": 5.15,
-     "g9": 2.03
-    },
-    {
-     "avg": 1.5,
-     "cum": null,
-     "g9": 2.31
-    }
-   ]
-  },
-  {
-   "id": "busan1",
-   "name": "부산 1학년 1년 누적",
-   "short": "부산 기준",
-   "color": "ink-line",
-   "meta": "부산시교육청학력개발원 · 발표 2026.2.18 · 88개교 14,331명 · 1학년 1·2학기",
-   "points": [
-    {
-     "avg": 1.0,
-     "cum": 1.3,
-     "g9": 1.45
-    },
-    {
-     "avg": 1.5,
-     "cum": 7.08,
-     "g9": 2.45
-    },
-    {
-     "avg": 2.0,
-     "cum": 17.42,
-     "g9": 3.35
-    },
-    {
-     "avg": 2.5,
-     "cum": 31.39,
-     "g9": 4.2
-    }
-   ]
-  }
- ],
- "busan2": {
-  "meta": "부산시교육청학력개발원 · 발표 2026.9.4 · 98개교 15,978명",
-  "trend": [
-   {
-    "t": "고1 1학기",
-    "v": "2.07%"
-   },
-   {
-    "t": "고1 1년 누적",
-    "v": "1.30%"
-   },
-   {
-    "t": "고2 1학기까지 누적 · 109명",
-    "v": "0.68%"
-   },
-   {
-    "t": "고3 1학기까지 기관 전망",
-    "v": "0.2~0.4%",
-    "fore": true
-   }
   ],
-  "bands": [
-   {
-    "label": "1.00",
-    "pct": 0.68
-   },
-   {
-    "label": "1.00 초과 ~ 2.0",
-    "pct": 15.92
-   },
-   {
-    "label": "2.0 초과 ~ 4.0",
-    "pct": 69.0
-   },
-   {
-    "label": "4.0 초과",
-    "pct": 14.5
-   }
+  "datasets": [
+    {
+      "id": "gg1",
+      "name": "경기진협 1학년 1년 누적",
+      "short": "경기진협 기준",
+      "color": "accent",
+      "meta": "경기진학지도협의회 · 발표 2026.4.29 · 63개교 16,110명 · 12과목",
+      "points": [
+        {
+          "avg": 1.0,
+          "cum": 1.2,
+          "g9": 1.39
+        },
+        {
+          "avg": 1.083,
+          "cum": 1.95,
+          "g9": null
+        },
+        {
+          "avg": 1.167,
+          "cum": 3.09,
+          "g9": 1.73
+        },
+        {
+          "avg": 1.333,
+          "cum": 5.15,
+          "g9": 2.03
+        },
+        {
+          "avg": 1.5,
+          "cum": null,
+          "g9": 2.31
+        }
+      ]
+    },
+    {
+      "id": "busan1",
+      "name": "부산 1학년 1년 누적",
+      "short": "부산 기준",
+      "color": "ink-line",
+      "meta": "부산시교육청학력개발원 · 발표 2026.2.18 · 88개교 14,331명 · 1학년 1·2학기",
+      "points": [
+        {
+          "avg": 1.0,
+          "cum": 1.3,
+          "g9": 1.45
+        },
+        {
+          "avg": 1.5,
+          "cum": 7.08,
+          "g9": 2.45
+        },
+        {
+          "avg": 2.0,
+          "cum": 17.42,
+          "g9": 3.35
+        },
+        {
+          "avg": 2.5,
+          "cum": 31.39,
+          "g9": 4.2
+        }
+      ]
+    }
+  ],
+  "busan2": {
+    "meta": "부산시교육청학력개발원 · 발표 2026.9.4 · 98개교 15,978명",
+    "trend": [
+      {
+        "t": "고1 1학기",
+        "v": "2.07%"
+      },
+      {
+        "t": "고1 1년 누적",
+        "v": "1.30%"
+      },
+      {
+        "t": "고2 1학기까지 누적 · 109명",
+        "v": "0.68%"
+      },
+      {
+        "t": "고3 1학기까지 기관 전망",
+        "v": "0.2~0.4%",
+        "fore": true
+      }
+    ],
+    "bands": [
+      {
+        "label": "1.00",
+        "pct": 0.68
+      },
+      {
+        "label": "1.00 초과 ~ 2.0",
+        "pct": 15.92
+      },
+      {
+        "label": "2.0 초과 ~ 4.0",
+        "pct": 69.0
+      },
+      {
+        "label": "4.0 초과",
+        "pct": 14.5
+      }
+    ]
+  },
+  "sources": [
+    {
+      "t": "대교협 2028학년도 대학입학전형시행계획 주요사항 2026.4.29",
+      "u": "https://www.kcue.or.kr/_upload/news/2026/04/30/application_ea0382f8ef4d92cda46a7e015aec3fef.pdf"
+    },
+    {
+      "t": "연세대 2028학년도 입학전형 시행계획",
+      "u": "https://www2.yonsei.ac.kr/entrance/plan/2028_plan.pdf"
+    },
+    {
+      "t": "건국대 2028학년도 대학입학전형계획 (대학별 계획 PDF 모음)",
+      "u": "https://cdn013.negagea.net/dgsmidc/omr/seoul/web/univ_info2026/%EA%B1%B4%EA%B5%AD%EB%8C%80%ED%95%99%EA%B5%90/%EA%B1%B4%EA%B5%AD%EB%8C%80%ED%95%99%EA%B5%90_2028%ED%95%99%EB%85%84%EB%8F%84_%EB%8C%80%ED%95%99%EC%9E%85%ED%95%99%EC%A0%84%ED%98%95%EA%B3%84%ED%9A%8D.pdf"
+    },
+    {
+      "t": "에듀플러스 홍익대 2028 대입 포인트",
+      "u": "https://www.eduplusnews.com/news/articleView.html?idxno=20344"
+    },
+    {
+      "t": "베리타스알파 2025 고1 423,257명 (김용태 의원실 자료)",
+      "u": "https://www.veritas-a.com/news/articleView.html?idxno=611498"
+    },
+    {
+      "t": "아시아경제 부산 고2 누적 2026.9.4",
+      "u": "https://view.asiae.co.kr/article/2026090409185981785"
+    },
+    {
+      "t": "서플 부산 고2 누적 구간 분포",
+      "u": "https://supple.kr/news/cmtm93guz00fw12e7dcnphkbi"
+    },
+    {
+      "t": "부산일보 부산 고1 누적 2026.2.12",
+      "u": "https://www.busan.com/view/busan/view.php?code=2026021215330890385"
+    },
+    {
+      "t": "교육을 비추다 부산 1년 누적 2026.2.23",
+      "u": "https://www.kyobit.com/news/articleView.html?idxno=4241"
+    },
+    {
+      "t": "교육을 비추다 경기진협 1년 누적",
+      "u": "https://www.kyobit.com/news/articleView.html?idxno=5184"
+    },
+    {
+      "t": "포항공대 2028학년도 대학입학전형 시행계획",
+      "u": "https://adm-u.postech.ac.kr/wp-content/uploads/2026/03/2028학년도_POSTECH_대학입학전형_시행계획_통합.pdf"
+    },
+    {
+      "t": "전자신문 2027 과기원 모집인원 2026.5.26",
+      "u": "https://www.etnews.com/20260526000207"
+    },
+    {
+      "t": "생글생글 2028 전국 의대 정원 내 3,616명 2026.6.1",
+      "u": "https://sgsg.hankyung.com/article/2026052962091"
+    },
+    {
+      "t": "헤럴드경제 2027~2031 의대 정원 2026.2.10",
+      "u": "https://biz.heraldcorp.com/article/10673915"
+    },
+    {
+      "t": "대입정보포털 어디가 2026학년도 학과별 수시 입시결과 (모집인원 · 환산등급 50%컷)",
+      "u": "https://www.adiga.kr"
+    },
+    {
+      "t": "호남교육신문 광주 5등급제 성적 분석 2026.4.13",
+      "u": "https://www.ihopenews.com/news/articleView.html?idxno=252857"
+    },
+    {
+      "t": "에듀진 5등급제 첫 성적표 (서울 자료) 2025.12.26",
+      "u": "https://www.edujin.co.kr/news/articleView.html?idxno=51923"
+    },
+    {
+      "t": "대교협 2028학년도 대학입학전형시행계획 주요사항 2026.4.30 (수시 281,895명 80.8%)",
+      "u": "https://www.kcue.or.kr/_upload/news/2026/04/30/application_3eb96f4ffbc6cf20a16a3396bd07fe8b.pdf"
+    },
+    {
+      "t": "베리타스알파 서울대 2025 N수생 비율 정시 57.3% 수시 3.7% (김문수 의원실)",
+      "u": "https://www.veritas-a.com/news/articleView.html?idxno=566631"
+    }
+  ],
+  "refs": [
+    {
+      "name": "광주 1학년 1년 누적",
+      "meta": "광주시교육청 진로진학지원센터 · 발표 2026.4.13 · 일반고 51개교 10,800명",
+      "rows": [
+        [
+          "1.00",
+          "2.00%",
+          "1.51"
+        ],
+        [
+          "2.50",
+          "공개 안 됨",
+          "4.18"
+        ],
+        [
+          "4.00",
+          "공개 안 됨",
+          "6.59"
+        ]
+      ]
+    },
+    {
+      "name": "부산 2학년 1학기까지 누적",
+      "meta": "부산시교육청학력개발원 · 발표 2026.9.4 · 98개교 15,978명",
+      "rows": [
+        [
+          "1.00",
+          "0.68%",
+          "공개 안 됨"
+        ],
+        [
+          "2.0 이하",
+          "16.6%",
+          "공개 안 됨"
+        ]
+      ]
+    },
+    {
+      "name": "서울 1학년 1학기",
+      "meta": "서울시교육청 제출 자료 (국회의원실) · 보도 2025.12",
+      "rows": [
+        [
+          "1.00 일반고",
+          "2.09%",
+          "공개 안 됨"
+        ],
+        [
+          "1.00 자사고",
+          "1.38%",
+          "공개 안 됨"
+        ]
+      ]
+    }
+  ],
+  "univ": [
+    {"name":"의대","group":"의대","d":[["경희대",1.0,"교"],["고려대",1.0,"교"],["아주대",1.0,"교"],["연세대",1.0,"교"],["인하대",1.0,"교"],["가톨릭대",1.0,"교"],["순천향대",1.0,"교"],["제주대",1.02,"교"],["서울대",1.03,"종"],["이화여대",1.03,"종"],["울산대",1.03,"종"],["충남대",1.05,"교"],["을지대",1.05,"교"],["부산대",1.07,"교"],["충북대",1.08,"교"],["인제대",1.08,"교"],["조선대",1.08,"교"],["중앙대",1.12,"종"],["연세대(미래)",1.12,"교"],["전남대",1.13,"종"],["경상국립대",1.14,"교"],["대구가톨릭대",1.14,"교"],["원광대",1.15,"종"],["계명대",1.17,"교"],["동국대(WISE)",1.17,"교"],["한양대",1.19,"종"],["단국대",1.2,"종"],["전북대",1.21,"교"],["고신대",1.23,"교"],["영남대",1.25,"교"],["강원대",1.49,"종"],["건국대(글로컬)",1.54,"종"],["성균관대",1.55,"종"],["가천대",1.71,"종"]]},
+    {"name":"강원대","group":"거점국립대","d":[["약학과",1.1,"교"],["수의학과",1.21,"교"],["산림자원학과",2.22,"종"],["일반사회교육과",2.48,"종"],["간호학과",2.51,"교"],["생태조경디자인학과",2.58,"종"],["심리학과",2.63,"교"],["국어교육과",2.64,"교"],["산림환경보호학과",2.64,"종"],["역사교육과",2.68,"종"],["윤리교육과",2.72,"종"],["건축학과(5)",2.76,"교"],["생명건강공학과",2.77,"종"],["자유전공학부(인문계열)",2.79,"종"],["컴퓨터공학과",2.88,"종"],["미디어커뮤니케이션학과",2.89,"종"],["식품생명공학과",2.9,"교"],["행정학과",2.99,"교"],["영어영문학과",3.02,"교"],["의생명시스템과학과",3.04,"종"],["영어교육과",3.05,"교"],["자유전공학부(자연계열)",3.05,"교"],["지리교육과",3.09,"교"],["경영·회계학부",3.09,"교"],["화공・생물공학부",3.1,"교"],["사회학과",3.11,"교"],["정치외교학과",3.15,"교"],["과학교육학부",3.16,"교"],["전기전자공학과",3.16,"교"],["경영대학 자유전공학과",3.17,"교"],["의생명공학과",3.18,"교"],["생명・환경융합학부",3.19,"종"],["생명과학과",3.21,"종"],["영상문화학과",3.21,"교"],["환경공학과",3.23,"교"],["생물자원과학부",3.23,"교"],["화학ㆍ생화학부",3.24,"교"],["철학과",3.27,"교"],["관광경영학과",3.27,"교"],["국제무역학과",3.28,"교"],["사학과",3.3,"종"],["국어국문학과",3.31,"교"],["지역건설공학과",3.36,"교"],["건축공학과",3.37,"교"],["농업생명과학대학 자유전공학과",3.37,"교"],["AI융합학과",3.38,"교"],["동물응용과학과",3.39,"교"],["동물산업융합학과",3.39,"교"],["부동산학과",3.4,"교"],["기계융합공학부",3.4,"교"],["경제·정보통계학부",3.4,"교"],["수학과",3.41,"교"],["동물자원과학과",3.42,"교"],["전자공학과",3.42,"교"],["배터리융합공학과",3.42,"교"],["산림환경과학대학 자유전공학과",3.42,"교"],["사회과학대학 자유전공학과",3.44,"교"],["산림바이오소재공학과",3.45,"종"],["산림경영학과",3.45,"교"],["수학교육과",3.45,"종"],["토목공학과",3.5,"교"],["문화인류학과",3.5,"교"],["한문교육과",3.5,"종"],["가정교육과",3.5,"교"],["지질·지구물리학부",3.51,"교"],["생물의소재공학과",3.52,"교"],["의생명과학대학 자유전공학과",3.52,"교"],["불어불문학과",3.53,"종"],["에너지자원공학과",3.53,"교"],["독어독문학과",3.57,"교"],["일본학과",3.57,"교"],["반도체물리학과",3.58,"교"],["식품자원경제학과",3.62,"교"],["중어중문학과",3.64,"교"],["분자생명과학과",3.64,"교"],["디지털밀리터리학과",3.69,"교"],["스마트산업공학과",3.69,"교"],["원예학과",3.74,"교"],["펄프제지공학과",3.74,"교"],["인문대학 자유전공학과",3.74,"교"],["문화예술・공과대학 자유전공학과",3.75,"교"],["교육학과",3.83,"종"],["자연과학대학 자유전공학과",3.86,"교"],["동물생명과학대학 자유전공학과",4.01,"교"]]},
+    {"name":"경북대","group":"거점국립대","d":[["약학과",1.22,"교"],["수의예과",1.28,"교"],["치의예과",1.3,"교"],["간호학과",1.85,"교"],["전자공학부 모바일AI공학전공",1.89,"종"],["생명공학부",1.95,"교"],["미디어커뮤니케이션학과",2.09,"교"],["응용화학공학부",2.09,"교"],["전자공학부",2.12,"교"],["심리학과",2.13,"교"],["통계학과",2.15,"교"],["수학과",2.2,"교"],["생물교육과",2.2,"교"],["윤리교육과",2.21,"교"],["공과대학 자율학부",2.21,"교"],["신소재공학과",2.26,"교"],["사회과학대학 자율학부",2.27,"교"],["역사교육과",2.28,"교"],["자연과학대학 자율학부",2.28,"교"],["기계공학부",2.29,"교"],["정치외교학과",2.29,"교"],["건축학부(건축학전공)",2.29,"교"],["화학과",2.33,"교"],["수학교육과",2.35,"교"],["첨단기술융합대학 자율학부2",2.35,"교"],["전기공학과",2.37,"교"],["지구과학교육과",2.37,"교"],["생물학과",2.4,"교"],["일반사회교육과",2.42,"교"],["고분자공학과",2.45,"교"],["경영학부",2.46,"교"],["식품공학부",2.49,"교"],["인공지능시스템학과",2.5,"교"],["에너지공학부",2.52,"교"],["국어교육과",2.53,"교"],["응용생명과학부(식물생명과학전공, 환경생명화학전공)",2.53,"교"],["IT 첨단자율학부",2.53,"교"],["환경공학과",2.54,"교"],["국어국문학과",2.57,"교"],["지리교육과",2.57,"교"],["금속재료공학과",2.57,"교"],["화학교육과",2.59,"교"],["영어교육과",2.6,"교"],["사회학과",2.6,"교"],["자율전공학부",2.6,"교"],["식품자원경제학과",2.62,"교"],["공학 첨단자율학부",2.62,"교"],["가정교육과",2.65,"교"],["컴퓨터학부(심화컴퓨팅전공)",2.65,"교"],["행정학부",2.66,"교"],["치위생학과",2.66,"교"],["토목공학과",2.68,"교"],["경제통상학부",2.71,"교"],["지리학과",2.71,"교"],["경상대학 자율학부",2.72,"교"],["건축학부(건축공학전공)",2.74,"교"],["물리학과",2.78,"교"],["철학과",2.79,"교"],["지구시스템과학부(지질학전공, 천문대기과학전공, 해양학전공)",2.79,"교"],["농업생명과학대학 자율학부",2.81,"교"],["식품영양학과",2.82,"교"],["영어영문학과",2.83,"교"],["사회복지학부(사회복지미시전공, 사회복지거시전공)",2.84,"교"],["정보・컴퓨터교육과",2.84,"교"],["사학과",2.85,"교"],["인문대학 자율학부",2.85,"교"],["섬유시스템공학과",2.87,"교"],["일어일문학과",2.9,"교"],["고고인류학과",2.96,"교"],["바이오섬유소재학과",2.99,"교"],["의류학과",3.0,"교"],["소프트웨어학과",3.0,"교"],["스마트생물산업기계공학과",3.0,"교"],["첨단기술융합대학 자율학부1",3.0,"교"],["산림과학.조경학부(임학전공, 산림소재공학전공, 조경학전공)",3.0,"교"],["문헌정보학과",3.01,"교"],["농업토목공학과",3.08,"교"],["한문학과",3.1,"교"],["말",3.11,"교"],["물리교육과",3.12,"종"],["아동학부",3.14,"교"],["식물의학과",3.15,"교"],["독어독문학과",3.25,"교"],["원예과학과",3.26,"교"],["교육학과",3.32,"종"],["전자공학부(인공지능전공)",3.34,"교"],["동물생명공학과",3.46,"교"],["축산학과",3.64,"교"],["불어불문학과",3.71,"교"],["체육교육과",3.74,"종"],["중어중문학과",3.76,"교"],["관광학과",3.78,"교"],["곤충생명과학과",4.0,"교"],["체육학부 체육학전공",4.07,"교"],["식물자원학과",4.21,"교"],["자동차공학과",4.23,"교"],["에너지화학공학과",4.39,"교"],["자율미래인재학부",4.4,"교"],["산림생태보호학과",4.41,"교"],["섬유패션디자인학부 섬유공학전공",4.44,"교"],["정밀기계공학과",4.51,"교"],["식품외식산업학과",4.64,"교"],["환경안전공학과",4.76,"교"],["건설방재공학과",4.8,"교"],["나노신소재공학과",4.8,"교"],["체육학부 건강운동관리전공",4.86,"교"],["위치정보시스템학과",4.91,"교"],["노어노문학과",5.13,"종"],["스마트플랜트공학과",5.14,"교"]]},
+    {"name":"경상국립대","group":"거점국립대","d":[["약학과(6년제)",1.27,"교"],["수의예과",1.31,"교"],["교육학과",2.13,"교"],["수학교육과",2.26,"종"],["역사교육과",2.68,"교"],["간호학과",2.76,"교"],["해양토목공학과",2.83,"교"],["영어교육과",2.86,"교"],["일반사회교육과",2.88,"교"],["국어교육과",2.91,"교"],["지리교육과",3.03,"교"],["항공우주공학부",3.13,"종"],["체육교육과",3.34,"교"],["경영학부",3.45,"교"],["제약공학과",3.51,"교"],["심리학과",3.52,"종"],["행정학과",3.57,"교"],["생물교육과",3.57,"교"],["유아교육과",3.57,"교"],["건축학과",3.61,"교"],["일어교육과",3.66,"교"],["축산과학부",3.66,"종"],["전기공학과",3.67,"교"],["미디어커뮤니케이션학과",3.68,"교"],["환경생명화학과",3.69,"종"],["화학공학과",3.74,"교"],["기계공학부",3.76,"교"],["자율전공학부",3.78,"교"],["철학과",3.82,"교"],["토목공학과",3.84,"교"],["전자공학부",3.84,"교"],["사학과",3.85,"교"],["회계세무학부",3.85,"교"],["사회학과",3.87,"교"],["국어국문학과",3.89,"교"],["생명과학부",3.92,"교"],["식품영양학과",3.96,"교"],["식품공학부",3.96,"교"],["디자인비즈니스학과",3.96,"교"],["법학부",3.96,"교"],["국제통상학과",3.98,"교"],["사회복지학부",3.99,"교"],["의류학과",4.01,"교"],["경제학부",4.01,"교"],["화학과",4.02,"교"],["경영정보학과",4.03,"교"],["도시공학과",4.04,"교"],["해양생명과학과",4.05,"종"],["환경공학과",4.05,"교"],["신소재공학부 고분자공학전공",4.09,"교"],["중어중문학과",4.11,"교"],["농학과",4.14,"교"],["에너지시스템공학과",4.14,"교"],["물리교육과",4.15,"종"],["식물의학과",4.18,"종"],["정보통계학과",4.2,"교"],["반도체공학과",4.22,"종"],["식품자원경제학과",4.26,"교"],["건축공학부",4.26,"교"],["정치외교학과",4.31,"교"],["스마트유통물류학과",4.32,"교"],["동물생명융합학부",4.32,"교"],["메카트로닉스공학부",4.35,"교"],["아동가족학과",4.41,"교"],["산업시스템공학부",4.42,"교"],["불어불문학과",4.45,"교"],["지질과학과",4.47,"교"],["미래자동차공학과",4.48,"교"],["독어독문학과",4.51,"교"],["환경산림과학부",4.52,"교"],["조경학과",4.54,"교"],["기계융합공학과",4.54,"교"],["신소재공학부 세라믹공학전공",4.54,"교"],["제어로봇공학과",4.58,"교"],["수학물리학부",4.59,"교"],["신소재공학부 금속재료공학전공",4.6,"교"],["해양경찰시스템학과",4.61,"교"],["항노화신소재과학과",4.61,"교"],["원예과학부",4.62,"교"],["환경재료과학과",4.65,"교"],["스마트농산업학과",4.7,"교"],["건설시스템공학과",4.74,"교"],["한문학과",4.79,"교"],["인테리어재료공학과",4.79,"교"],["스포츠헬스케어학과",4.83,"교"],["러시아학과",4.85,"교"],["지역시스템공학과",4.91,"종"],["생물산업기계공학과",4.94,"교"],["기계시스템공학과",5.31,"교"],["해양수산경영학과",5.8,"종"],["해양환경공학과",5.82,"교"],["조선해양공학과",5.84,"종"],["스마트에너지기계공학과",6.01,"교"],["민속예술무용학과",7.43,"종"]]},
+    {"name":"부산대","group":"거점국립대","d":[["화학과",1.71,"종"],["화공생명공학과",1.77,"종"],["전기전자공학부 전자공학전공",1.86,"종"],["생명과학과",1.99,"종"],["수학교육과",2.1,"교"],["생물교육과",2.12,"종"],["전기전자공학부 전기공학전공",2.13,"교"],["행정학과",2.17,"종"],["전기전자공학부 반도체공학전공",2.17,"교"],["경영학과",2.2,"종"],["영어교육과",2.24,"교"],["화학교육과",2.28,"종"],["기계공학부",2.29,"교"],["재료공학부",2.3,"교"],["간호학과",2.31,"교"],["공공정책학부",2.33,"종"],["자유전공학부",2.33,"종"],["교육학과",2.35,"종"],["국어교육과",2.35,"종"],["무역학부",2.36,"종"],["산업공학부",2.37,"교"],["미디어커뮤니케이션학과",2.39,"교"],["항공우주공학과",2.4,"종"],["분자생물학과",2.4,"종"],["일반사회교육과",2.41,"교"],["AI컴퓨터공학부(컴퓨터공학전공)",2.41,"교"],["미생물학과",2.46,"종"],["AI컴퓨터공학부(인공지능전공)",2.46,"교"],["역사교육과",2.47,"종"],["식품영양학과",2.47,"종"],["경제학부",2.51,"종"],["수학과",2.51,"종"],["대기환경과학과",2.54,"종"],["윤리교육과",2.55,"교"],["아동가족학과",2.58,"종"],["고분자공학과",2.59,"종"],["통계학과",2.59,"교"],["건축학과",2.61,"종"],["예술문화영상학과",2.61,"종"],["정치외교학과",2.62,"교"],["사회학과",2.63,"교"],["특수교육과",2.63,"교"],["국제학부",2.67,"교"],["AI컴퓨터공학부(인터랙티브컴퓨팅전공)",2.67,"교"],["문헌정보학과",2.68,"교"],["도시공학과",2.7,"교"],["환경공학과",2.7,"교"],["유기소재시스템공학과",2.76,"교"],["건축공학과",2.79,"종"],["물리학과",2.8,"종"],["영어영문학과",2.82,"종"],["해양학과",2.83,"종"],["언어정보학과",2.84,"종"],["첨단융합학부",2.84,"종"],["조선·해양공학과",2.86,"종"],["사학과",2.88,"종"],["철학과",2.89,"종"],["관광컨벤션학과",2.89,"종"],["지질환경과학과",2.91,"종"],["심리학과",2.94,"교"],["국어국문학과",2.95,"종"],["지구과학교육과",3.01,"교"],["일어일문학과",3.03,"교"],["사회복지학과",3.06,"교"],["첨단소재자율전공",3.06,"교"],["사회기반시스템공학과",3.07,"종"],["응용생명융합학부",3.16,"종"],["불어불문학과",3.17,"교"],["중어중문학과",3.18,"종"],["미래도시건축환경융합전공",3.24,"교"],["실내환경디자인학과(인문",3.27,"교"],["AX융합학부(스마트시티전공)",3.27,"교"],["의류학과(인문",3.28,"교"],["고고학과",3.32,"교"],["식품자원경제학과",3.36,"종"],["유아교육과",3.42,"종"],["노어노문학과",3.42,"교"],["지리교육과",3.44,"교"],["한문학과",3.55,"교"],["IT응용공학과",3.56,"종"],["바이오환경에너지학과",3.7,"종"],["스포츠과학과",3.73,"교"],["식품공학과",3.74,"교"],["바이오소재과학과",3.79,"종"],["바이오산업기계공학과",3.81,"교"],["독어독문학과",3.84,"교"],["조경학과",3.99,"교"],["원예생명과학과",4.07,"종"]]},
+    {"name":"서울대","group":"SKY","d":[["경제학부",1.0,"종"],["컴퓨터공학부",1.05,"종"],["수학교육과",1.05,"종"],["전기・정보공학부",1.08,"종"],["사회학과",1.08,"종"],["정치외교학부",1.09,"종"],["약학계열(6년제)",1.09,"종"],["항공우주공학과",1.1,"종"],["화학생물공학부",1.11,"종"],["수의예과",1.11,"종"],["국어교육과",1.12,"종"],["물리·천문학부(물리학전공)",1.14,"종"],["경영대학",1.15,"종"],["수리과학부",1.15,"종"],["재료공학부",1.16,"종"],["첨단융합학부",1.16,"종"],["생명과학부",1.17,"종"],["기계공학부",1.17,"종"],["자유전공학부",1.17,"종"],["식품・동물생명공학부",1.2,"종"],["산업공학과",1.21,"종"],["통계학과",1.21,"종"],["화학부",1.21,"종"],["치의학대학원 치의학과",1.21,"종"],["소비자아동학부(소비자학전공)",1.22,"종"],["건축학과",1.24,"종"],["원자핵공학과",1.24,"종"],["화학교육과",1.25,"종"],["식품영양학과",1.25,"종"],["영어교육과",1.26,"종"],["심리학과",1.28,"종"],["사회복지학과",1.28,"종"],["바이오시스템・소재학부",1.29,"종"],["사회교육과",1.32,"종"],["산림과학부",1.32,"종"],["에너지자원공학과",1.33,"종"],["농경제사회학부",1.33,"종"],["인문계열",1.33,"종"],["조경・지역시스템공학부",1.34,"종"],["간호대학",1.35,"종"],["소비자아동학부(아동가족학전공)",1.36,"종"],["역사학부",1.37,"종"],["지리학과",1.38,"종"],["의류학과",1.39,"종"],["조선해양공학과",1.4,"종"],["스마트시스템과학과",1.4,"종"],["역사교육과",1.41,"종"],["지구환경과학부",1.42,"종"],["건설환경도시공학부",1.43,"종"],["언론정보학과",1.5,"종"],["불어교육과",1.56,"종"],["노어노문학과",1.57,"종"],["언어학과",1.57,"종"],["독어교육과",1.58,"종"],["아시아언어문명학부",1.58,"종"],["지리교육과",1.59,"종"],["디자인과",1.64,"종"],["물리교육과",1.65,"종"],["윤리교육과",1.69,"종"],["생물교육과",1.76,"종"],["서어서문학과",1.77,"종"],["인류학과",1.82,"종"],["철학과",1.85,"종"],["교육학과",1.88,"종"],["영어영문학과",1.9,"종"],["고고미술사학과",1.98,"종"],["지구과학교육과",2.01,"종"],["미학과",2.05,"종"],["국어국문학과",2.1,"종"],["중어중문학과",2.12,"종"],["식물생산과학부",2.13,"종"],["독어독문학과",2.19,"종"],["불어불문학과",2.29,"종"],["응용생물화학부",2.29,"종"],["종교학과",2.37,"종"],["국악과",3.2,"종"]]},
+    {"name":"전남대","group":"거점국립대","d":[["치의학과",1.15,"교"],["약학부",1.2,"교"],["수의예과",1.27,"교"],["전기공학과",1.58,"교"],["간호학과",1.68,"교"],["동물자원학부",1.98,"교"],["식품영양과학부",1.98,"교"],["수학교육과",2.17,"교"],["국어교육과",2.24,"교"],["생물교육과",2.27,"교"],["생물공학과",2.42,"교"],["사회학과",2.43,"교"],["영어교육과",2.54,"종"],["조경학과",2.59,"교"],["식품공학과",2.6,"교"],["화학공학부",2.65,"교"],["자율전공학부(1년)",2.65,"교"],["행정학과",2.66,"교"],["역사교육과",2.67,"종"],["윤리교육과",2.71,"종"],["전자컴퓨터공학부",2.72,"교"],["문헌정보학과",2.73,"교"],["응용식물학과",2.77,"교"],["의류학과",2.78,"교"],["신소재공학부",2.79,"교"],["문화인류고고학과",2.79,"교"],["미디어커뮤니케이션학과",2.83,"교"],["건축학부",2.87,"종"],["정치외교학과",2.87,"교"],["에너지자원공학과",2.9,"교"],["사학과",2.91,"교"],["지구과학교육과",2.91,"종"],["화학교육과",2.92,"교"],["분자생명공학과",2.94,"교"],["화학과",2.95,"교"],["기계공학부",2.97,"교"],["통계학과",2.98,"교"],["생명과학기술학부",2.99,"교"],["경영학부(경영학전공, 회계학전공, AI비즈니스전공)",2.99,"종"],["특수교육학부",3.0,"교"],["지리교육과",3.02,"교"],["영어영문학과",3.02,"교"],["국어국문학과",3.05,"교"],["미술학과(이론전공)",3.06,"교"],["생물학과",3.07,"교"],["인공지능학부",3.08,"교"],["산업공학과",3.09,"교"],["심리학과",3.1,"종"],["환경에너지공학과",3.11,"교"],["고분자융합소재공학부",3.17,"교"],["응용생물학과",3.17,"교"],["생활복지학과",3.17,"교"],["철학과",3.22,"교"],["바이오에너지공학과",3.22,"교"],["독일언어문학과",3.23,"교"],["농생명화학과",3.23,"교"],["건축학부(건축ㆍ도시설계전공)",3.23,"교"],["토목공학과",3.26,"교"],["수학과",3.3,"교"],["융합바이오시스템기계공학과",3.3,"교"],["산림자원학과",3.31,"교"],["중어중문학과",3.34,"교"],["지리학과",3.34,"교"],["미래모빌리티학과",3.35,"교"],["자율전공학부(4년)",3.4,"교"],["원예생명공학과",3.41,"종"],["건축학부(건축공학전공)",3.41,"교"],["가정교육과",3.55,"종"],["임산공학과",3.56,"교"],["지구환경과학부",3.56,"교"],["경제학부",3.6,"교"],["농업경제학과",3.6,"종"],["불어불문학과",3.61,"교"],["물리교육과",3.63,"교"],["빅데이터융합학과",3.65,"교"],["물리학과",3.71,"교"],["일어일문학과",3.75,"교"],["지역 ・ 바이오시스템공학과",4.0,"종"]]},
+    {"name":"전북대","group":"거점국립대","d":[["약학과",1.04,"교"],["수의예과",1.16,"교"],["간호학과",2.12,"교"],["사회과교육계열",2.64,"교"],["국어교육과",2.72,"교"],["수학교육과",2.72,"교"],["영어교육과",2.8,"교"],["과학교육학부",3.04,"교"],["교육학과",3.11,"교"],["문헌정보학과",3.15,"교"],["첨단방위산업학과",3.15,"교"],["사회과학계열",3.23,"교"],["경상계열",3.26,"교"],["영어영문학과",3.3,"교"],["공학계열 1",3.37,"교"],["일본학과",3.43,"교"],["융합자율전공학부 1",3.44,"교"],["국어국문학과",3.48,"교"],["사학과",3.5,"교"],["스마트팜학과",3.5,"교"],["생활과학계열",3.52,"교"],["철학과",3.53,"교"],["고고문화인류학과",3.53,"교"],["자연과학계열 1",3.53,"교"],["공학계열 2",3.57,"교"],["중어중문학과",3.6,"교"],["스페인・중남미학과",3.64,"교"],["농업생명과학계열",3.66,"교"],["독일학과",3.69,"교"],["프랑스·아프리카학과",3.7,"교"],["자연과학계열 2",3.88,"교"],["융합자율전공학부 2",4.0,"교"],["이차전지공학과",4.04,"교"],["국제학부",4.07,"종"],["환경생명자원계열",4.42,"교"],["국제이공학부",4.89,"종"]]},
+    {"name":"제주대","group":"거점국립대","d":[["약학과",1.11,"교"],["수의예과",1.27,"교"],["경영학과",2.97,"교"],["간호학과",3.16,"교"],["초등교육학부",3.17,"교"],["컴퓨터공학과",3.96,"교"],["영어영문학과",4.01,"교"],["수산생명의학과",4.04,"교"],["패션의류학과",4.05,"교"],["언론홍보학과",4.07,"교"],["관광경영학과",4.12,"교"],["해양산업경찰학과",4.19,"교"],["식품영양학과",4.26,"교"],["해양생명과학과",4.27,"교"],["원예과학전공",4.29,"교"],["식품생명공학과",4.31,"교"],["사회학과",4.33,"교"],["전자공학과",4.39,"교"],["행정학과",4.4,"교"],["식물자원환경전공",4.6,"교"],["회계학과",4.6,"교"],["사학과",4.62,"교"],["중어중문학과",4.62,"교"],["일어일문학과",4.62,"교"],["국어국문학과",4.67,"교"],["경제학과",4.67,"교"],["생명공학부",4.7,"교"],["정치외교학과",4.76,"교"],["무역학과",4.8,"교"],["경영정보학과",4.8,"교"],["전기공학과",4.85,"교"],["관광개발학과",4.89,"교"],["철학과",5.03,"교"],["해양시스템공학과",5.1,"교"],["원자력공학과",5.11,"교"],["기계시스템공학과",5.22,"교"],["건축공학과",5.24,"교"],["토목공학과",5.28,"교"],["인공지능학과",5.28,"교"],["지구해양과학과",5.35,"교"],["독일학과",5.39,"교"],["화공그린에너지학과",5.42,"교"],["환경공학과",5.45,"교"],["바이오메디컬정보학과",5.46,"교"],["화학·코스메틱스학과",5.53,"교"],["데이터사이언스학과",5.59,"교"],["행정학과 (야)",5.6,"교"],["생물학과",5.68,"교"],["산업응용경제학과",5.79,"교"],["통신공학과",5.99,"교"],["물리학과",6.11,"교"],["수학과",6.63,"교"]]},
+    {"name":"충남대","group":"거점국립대","d":[["수의예과",1.21,"교"],["약학과",1.23,"교"],["간호학과",1.89,"교"],["전자공학과",1.93,"교"],["국어교육과",2.13,"교"],["응용화학공학과",2.14,"교"],["전기공학과",2.19,"교"],["생물과학과",2.22,"교"],["생명정보융합학과",2.24,"교"],["수학교육과",2.25,"교"],["생화학과",2.33,"교"],["신소재공학과",2.39,"교"],["환경공학과",2.4,"교"],["미생물・분자생명과학과",2.4,"교"],["천문우주과학과",2.44,"교"],["기계공학부",2.45,"교"],["항공우주공학과",2.46,"교"],["화학과",2.47,"교"],["행정학부",2.49,"교"],["반도체융합학과",2.5,"교"],["자율전공융합학부",2.51,"교"],["정보통계학과",2.53,"종"],["컴퓨터인공지능학부",2.58,"교"],["정치외교학과",2.61,"교"],["영어교육과",2.62,"교"],["기술교육과",2.64,"교"],["에너지공학과",2.66,"교"],["유기재료공학과",2.69,"교"],["사회학과",2.7,"교"],["식품영양학과",2.7,"교"],["메카트로닉스공학과",2.72,"교"],["교육학과",2.72,"교"],["토목공학과",2.76,"교"],["경제학과",2.77,"교"],["국사학과",2.78,"교"],["정보통신융합학부",2.78,"교"],["사회복지학과",2.8,"교"],["건축학과(5)",2.82,"종"],["경영학부",2.82,"교"],["언론정보학과",2.83,"종"],["영어영문학과",2.83,"교"],["도시・자치융합학과",2.83,"교"],["소비자학과",2.84,"교"],["공공안전융합전공",2.86,"교"],["철학과",2.87,"교"],["무역학과",2.88,"교"],["자율운항시스템공학과",2.9,"교"],["사학과",2.93,"종"],["언어학과",2.94,"교"],["수학과",2.94,"교"],["물리학과",2.94,"교"],["문헌정보학과",2.97,"종"],["지질환경과학과",2.98,"교"],["고고학과",2.99,"교"],["스마트시티건축공학과",3.0,"교"],["전기・전자・통신공학교육과",3.01,"교"],["국어국문학과",3.02,"교"],["해양환경과학과",3.03,"교"],["한문학과",3.04,"교"],["화학공학교육과",3.05,"교"],["독어독문학과",3.07,"교"],["문화와사회융합전공",3.08,"교"],["중어중문학과",3.09,"교"],["심리학과",3.1,"종"],["국제학부",3.1,"교"],["의류학과",3.12,"교"],["불어불문학과",3.13,"교"],["건설공학교육과",3.26,"교"],["기계공학교육과",3.31,"교"],["리더십과조직과학전공",3.32,"교"],["농업경제학과",3.51,"종"],["일어일문학과",3.58,"교"],["스포츠과학과",3.62,"종"],["원예학과",3.74,"종"],["국토안보학전공",3.75,"교"],["생물환경화학과",3.91,"종"],["해양안보학전공",4.29,"종"]]},
+    {"name":"충북대","group":"거점국립대","d":[["심리학과",1.06,"교"],["수의예과",1.08,"교"],["식품영양학과",1.45,"교"],["국어교육과",2.14,"교"],["역사교육과",2.16,"종"],["화학공학과",2.24,"종"],["수학교육과",2.25,"교"],["윤리교육과",2.27,"종"],["전자공학과",2.35,"교"],["간호학과",2.36,"종"],["생물학과",2.51,"교"],["식품생명공학과",2.53,"교"],["환경생명화학과",2.55,"종"],["전기공학부",2.56,"교"],["환경공학과",2.56,"종"],["바이오시스템공학과",2.59,"교"],["사회교육과",2.61,"종"],["화학과",2.61,"교"],["건축학과",2.62,"종"],["생물교육과",2.65,"종"],["기계공학부",2.66,"교"],["생화학과",2.66,"종"],["반도체공학부",2.66,"교"],["영어교육과",2.73,"종"],["소비자학과",2.76,"교"],["신소재공학과",2.77,"교"],["지리교육과",2.77,"종"],["국어국문학과",2.78,"종"],["공학자율전공학부",2.79,"교"],["컴퓨터공학과",2.8,"교"],["교육학과",2.8,"종"],["경영정보학과",2.81,"교"],["인공지능학부",2.84,"교"],["국제경영학과",2.86,"교"],["자율전공학부(인문사회자율전공계열)",2.86,"교"],["경영학자율전공학부",2.86,"교"],["축산학과",2.89,"교"],["전자정보자율전공학부",2.89,"교"],["미생물학과",2.9,"교"],["식물의학과",2.91,"교"],["자율전공학부(자연과학자율전공계열)",2.91,"교"],["건축공학과",2.92,"종"],["중어중문학과",2.95,"교"],["정치외교학과",2.95,"종"],["사회학과",2.96,"교"],["지능로봇공학과",2.96,"종"],["주거환경학과",2.97,"교"],["특용식물학과",2.97,"종"],["농업경제학과",2.98,"교"],["공업화학과",3.0,"종"],["행정학과",3.02,"종"],["경영학부",3.03,"종"],["식물자원학과",3.03,"종"],["바이오헬스학부",3.03,"교"],["안전공학과",3.05,"교"],["원예과학과",3.07,"교"],["농업생명환경자율전공학부",3.07,"교"],["자연과학자율전공학부",3.12,"교"],["아동복지학과",3.14,"종"],["정보통신공학부",3.15,"종"],["지구과학교육과",3.15,"종"],["독일언어문화학과",3.15,"교"],["지역건설공학과",3.17,"교"],["고고미술사학과",3.2,"종"],["정보통계학과",3.2,"교"],["천문우주학과",3.22,"교"],["인문학자율전공학부",3.22,"교"],["도시공학과",3.24,"교"],["수학과",3.24,"교"],["화학교육과",3.25,"종"],["의류학과",3.25,"종"],["물리학과",3.27,"교"],["토목공학부",3.28,"교"],["영어영문학과",3.29,"종"],["경제학과",3.32,"종"],["사학과",3.35,"종"],["산림학과",3.35,"교"],["지구환경과학과",3.36,"교"],["목재・종이과학과",3.4,"교"],["철학과",3.5,"종"],["프랑스언어문화학과",3.66,"종"],["러시아언어문화학과",3.79,"종"],["물리교육과",3.88,"종"]]},
+    {"name":"서울과기대","group":"국숭세단과","d":[["헬스피트니스학과",1.0,"종"],["MSDE학과",1.62,"교"],["바이오메디컬학과",1.67,"교"],["신소재공학과",1.78,"교"],["전자공학과",1.78,"교"],["식품생명공학과",1.85,"교"],["화공생명공학과",1.86,"교"],["산업공학부(ITM전공)_자연",1.86,"교"],["정밀화학과",1.89,"교"],["지능형반도체공학과",1.95,"교"],["자유전공학부(창의융합대학)",1.95,"교"],["기계공학과",1.95,"교"],["환경공학과",1.96,"교"],["전기정보공학과",1.96,"교"],["컴퓨터공학과",2.0,"교"],["인공지능응용학과",2.0,"교"],["ICT융합공학과",2.0,"교"],["산업공학부(산업정보시스템전공)_자연",2.0,"교"],["건축학부건축학전공",2.04,"교"],["기계시스템공학부 지능형로봇전공",2.11,"교"],["안전공학과",2.13,"교"],["미래에너지학과",2.13,"교"],["경영학과(경영학전공)",2.15,"교"],["건축학부건축공학전공",2.17,"교"],["건설시스템공학과",2.17,"교"],["안경광학과",2.21,"교"],["기계시스템공학부 미래자동차전공",2.21,"교"],["경영학과(글로벌테크노경영전공)_인문",2.22,"교"],["행정학과",2.29,"교"],["영어영문학과",2.31,"교"],["스포츠과학과",2.75,"종"],["문예창작학과",3.37,"종"]]},
+    {"name":"서울시립대","group":"중경외시이","d":[["건축학부 건축학전공(5년제)",1.56,"교"],["생명과학과",1.57,"교"],["전자전기컴퓨터공학부",1.58,"교"],["화학공학과",1.59,"교"],["자유전공학부(자연)",1.61,"교"],["신소재공학과",1.68,"교"],["기계정보공학과",1.69,"교"],["컴퓨터과학부",1.69,"교"],["환경공학부",1.69,"교"],["환경원예학과",1.75,"교"],["행정학과",1.76,"교"],["인공지능학과",1.76,"교"],["첨단융합학부 지능형반도체전공",1.77,"교"],["경제학부",1.8,"교"],["토목공학과",1.81,"교"],["도시행정학과",1.83,"교"],["공간정보공학과",1.86,"교"],["자유전공학부(인문)",1.86,"교"],["세무학과",1.89,"교"],["교통공학과",1.9,"교"],["도시사회학과",1.9,"교"],["수학과",1.9,"교"],["건축학부 건축공학전공",1.91,"교"],["사회복지학과",1.93,"교"],["영어영문학과",1.94,"교"],["국제관계학과",1.97,"교"],["통계학과",1.97,"교"],["물리학과",2.04,"종"],["경영학부",2.13,"종"],["융합응용화학과",2.16,"종"],["도시공학과",2.17,"종"],["국어국문학과",2.28,"종"],["스포츠과학과",2.31,"종"],["조경학과",2.46,"종"],["철학과",2.79,"종"],["국사학과",2.89,"종"],["중국어문화학과",3.44,"종"]]},
+    {"name":"가톨릭대","group":"광명상가 인아성","d":[["약학과",1.06,"교"],["바이오메디컬화학공학과",2.05,"교"],["심리학과",2.06,"교"],["생명공학과",2.19,"교"],["화학과",2.25,"교"],["법학과",2.27,"교"],["경영학과",2.34,"교"],["일어일본문화학과",2.34,"교"],["사회학과",2.36,"교"],["에너지환경공학과",2.37,"교"],["철학과",2.38,"교"],["정보통신전자공학부",2.4,"교"],["식품영양학과",2.41,"교"],["수학과",2.41,"교"],["바이오로직스공학부",2.41,"교"],["데이터사이언스학과",2.46,"교"],["국제학부",2.47,"교"],["사회복지학과",2.47,"교"],["자연공학계열",2.47,"교"],["자유전공학부",2.5,"교"],["의류학과",2.51,"교"],["바이오메디컬소프트웨어학과",2.51,"교"],["인공지능학과",2.52,"교"],["의생명과학과",2.53,"종"],["인문사회계열",2.53,"교"],["국어국문학과",2.54,"교"],["회계학과",2.56,"교"],["물리학과",2.57,"교"],["경제학과",2.59,"교"],["공간디자인・소비자학과",2.6,"교"],["아동학과",2.61,"교"],["특수교육과",2.66,"교"],["미디어기술콘텐츠학과",2.66,"교"],["프랑스어문화학과",2.68,"교"],["행정학과",2.72,"교"],["컴퓨터정보공학부",2.73,"교"],["AI의공학과",2.73,"종"],["영어영문학부",2.74,"교"],["국사학과",2.75,"교"],["중국언어문화학과",2.82,"교"]]},
+    {"name":"건국대","group":"건동홍숙","d":[["수의예과",1.04,"교"],["전기전자공학부",1.36,"교"],["화공・생명・에너지공학부",1.42,"교"],["수학교육과",1.62,"교"],["재료공학과",1.63,"교"],["컴퓨터공학과",1.68,"교"],["응용통계학과",1.74,"교"],["기계・로봇・자동차공학부",1.77,"교"],["물리학과",1.8,"교"],["경제학과",1.83,"교"],["공과대학자유전공학부",1.83,"교"],["경영학과",1.85,"교"],["건축학부",1.91,"교"],["수학과",1.92,"교"],["사회환경공학부",1.92,"교"],["부동산학과",1.92,"교"],["미디어커뮤니케이션학과",1.93,"교"],["행정학과",1.93,"교"],["문화콘텐츠학과",1.96,"교"],["영어영문학과",1.96,"교"],["생물공학과",1.96,"종"],["화학과",2.0,"종"],["생명과학과",2.04,"종"],["영어교육과",2.07,"교"],["문과대학자유전공학부",2.07,"교"],["첨단바이오공학부",2.17,"종"],["국제무역학과",2.19,"교"],["정치외교학과",2.2,"종"],["환경생태과학부",2.26,"종"],["산업공학과",2.29,"종"],["식량자원과학과",2.31,"종"],["교육공학과",2.36,"종"],["사학과",2.37,"종"],["국어국문학과",2.44,"종"],["지리학과",2.67,"종"],["KU자유전공학부",2.7,"종"],["항공우주・모빌리티공학과",2.72,"종"],["철학과",2.82,"종"],["일어교육과",3.63,"종"],["기술경영학과",3.95,"종"],["중어중문학과",4.4,"종"]]},
+    {"name":"경희대","group":"중경외시이","d":[["약학과(6년제)",1.04,"교"],["한의예과(자연계열)",1.12,"교"],["치의예과(자연계열)",1.16,"교"],["한의예과(인문계열)",1.18,"종"],["한약학과",1.2,"교"],["체육학과",1.3,"교"],["약과학과",1.48,"교"],["도예학과",1.5,"교"],["환경조경디자인학과",1.5,"교"],["화학과",1.5,"교"],["신소재공학과",1.5,"교"],["전자공학부 전자공학과",1.52,"교"],["유전생명공학과",1.57,"교"],["생물학과",1.59,"교"],["미래정보디스플레이학부",1.62,"교"],["자율전공학부",1.65,"교"],["식품생명공학과",1.66,"교"],["융합바이오・신소재공학과",1.68,"교"],["빅데이터응용학과",1.69,"종"],["조리&amp;푸드디자인학과",1.69,"종"],["자유전공학부",1.69,"교"],["의류디자인학과",1.7,"교"],["응용화학과",1.71,"교"],["사회학과",1.72,"교"],["스마트팜과학과",1.72,"교"],["지리학과(인문계열)",1.72,"교"],["화학공학과",1.73,"종"],["간호학과",1.74,"교"],["정치외교학과",1.75,"교"],["전자공학부 반도체공학과",1.78,"종"],["산업경영공학과",1.8,"교"],["인공지능학과",1.8,"종"],["컴퓨터공학과",1.81,"종"],["미디어학과",1.81,"교"],["기계공학부",1.82,"종"],["경영회계계열",1.84,"교"],["건축공학과",1.85,"교"],["무역학과",1.85,"교"],["사회기반시스템공학과",1.86,"교"],["경제학과",1.87,"교"],["철학과",1.87,"종"],["응용물리학과",1.87,"종"],["행정학과",1.88,"교"],["물리학과",1.89,"종"],["환경학및환경공학과",1.89,"종"],["국제학과",1.9,"교"],["아동가족학과",1.9,"교"],["주거환경학과(인문)",1.9,"교"],["국어국문학과",1.92,"교"],["식품영양학과",1.92,"종"],["사학과",1.93,"교"],["Hospitality경영학과",1.93,"교"],["건축학과",1.94,"종"],["수학과",1.94,"종"],["우주과학과",1.95,"종"],["응용수학과",2.0,"종"],["의상학과",2.0,"교"],["소프트웨어융합학과",2.04,"종"],["원자력공학과",2.1,"종"],["영어영문학과",2.14,"종"],["관광・엔터테인먼트학부",2.19,"교"],["지리학과(자연계열)",2.19,"종"],["시각디자인학과",2.31,"종"],["글로벌Hospitality・관광학과",2.68,"종"],["스포츠의학과",3.0,"종"],["연극영화학과",3.24,"종"],["태권도학과",3.31,"종"],["프랑스어학과",3.69,"종"],["응용영어통번역학과",3.87,"종"],["스페인어학과",3.88,"종"],["러시아어학과",4.08,"종"],["글로벌커뮤니케이션학부",4.15,"종"],["한국어학과",4.28,"종"],["중국어학과",4.42,"종"],["일본어학과",4.53,"종"]]},
+    {"name":"고려대","group":"SKY","d":[["바이오시스템의과학부",1.13,"교"],["화공생명공학과",1.18,"교"],["정치외교학과",1.18,"교"],["전기전자공학부",1.18,"교"],["자유전공학부",1.23,"교"],["생명공학부",1.24,"교"],["바이오의공학부",1.24,"교"],["생명과학부",1.26,"교"],["신소재공학부",1.27,"교"],["미디어학부",1.27,"교"],["수학교육과",1.27,"교"],["기계공학부",1.28,"교"],["산업경영공학부",1.28,"교"],["보건환경융합과학부",1.28,"교"],["환경생태공학부",1.29,"교"],["식품공학과",1.29,"교"],["행정학과",1.3,"교"],["데이터과학과",1.31,"교"],["물리학과",1.32,"교"],["스마트보안학부",1.32,"교"],["수학과",1.33,"교"],["인공지능학과",1.33,"교"],["사회학과",1.34,"교"],["경영대학",1.34,"교"],["경제학과",1.35,"교"],["영어교육과",1.35,"교"],["국어국문학과",1.36,"교"],["융합에너지공학과",1.37,"교"],["간호대학",1.37,"교"],["반도체공학과",1.38,"종"],["보건정책관리학부",1.39,"교"],["국제학부",1.4,"교"],["가정교육과",1.4,"교"],["건축사회환경공학부",1.4,"교"],["심리학부",1.4,"교"],["국어교육과",1.41,"교"],["영어영문학과",1.41,"교"],["건축학과",1.43,"교"],["식품자원경제학과",1.43,"교"],["역사교육과",1.44,"교"],["통계학과",1.44,"교"],["서어서문학과",1.46,"교"],["불어불문학과",1.46,"교"],["지리교육과",1.47,"교"],["철학과",1.47,"교"],["일어일문학과",1.48,"교"],["중어중문학과",1.49,"교"],["컴퓨터학과",1.49,"교"],["사학과",1.51,"교"],["언어학과",1.51,"교"],["노어노문학과",1.53,"교"],["독어독문학과",1.53,"교"],["교육학과",1.55,"교"],["한국사학과",1.63,"교"],["공과대학",1.71,"종"],["학부대학",1.74,"종"],["화학과",1.76,"종"],["지구환경과학과",1.86,"종"],["스마트모빌리티학부",2.05,"종"],["차세대통신학과",2.13,"종"],["한문학과",2.18,"종"],["글로벌한국융합학부",2.82,"종"]]},
+    {"name":"광운대","group":"광명상가 인아성","d":[["화학공학과",1.68,"교"],["건축공학과",1.7,"교"],["반도체시스템공학부",1.77,"교"],["화학과",1.86,"교"],["전자융합공학과",1.91,"교"],["전자재료공학과",1.93,"교"],["AI로봇전공",1.95,"교"],["건축학과",1.96,"교"],["전자공학과",1.99,"교"],["컴퓨터정보공학부",2.01,"교"],["경영학부 빅데이터경영전공",2.01,"교"],["전기공학과",2.03,"교"],["전자바이오물리학과",2.05,"교"],["정보융합학부",2.06,"교"],["산업심리학과",2.1,"교"],["경영학부 경영학전공",2.1,"교"],["전자통신공학과",2.16,"교"],["미디어커뮤니케이션학부",2.18,"교"],["국제학부",2.2,"교"],["법학부",2.2,"교"],["수학과",2.22,"교"],["국제통상학부",2.25,"교"],["행정학과",2.28,"교"],["동북아문화산업학부",2.29,"교"],["소프트웨어학부",2.3,"교"],["환경공학과",2.31,"교"],["국어국문학과",2.33,"교"]]},
+    {"name":"국민대","group":"국숭세단과","d":[["광고홍보학전공",1.92,"교"],["융합바이오공학과",1.92,"교"],["지능형반도체융합전자전공",1.94,"교"],["인공지능학부",1.94,"교"],["에너지반도체화학공학과",1.94,"교"],["정치외교학과",1.95,"교"],["바이오의과학과",1.96,"교"],["자유전공(A)",1.97,"교"],["법학부",2.0,"교"],["자동차모빌리티대학",2.0,"교"],["전자화학재료전공",2.05,"교"],["경제학과",2.06,"교"],["행정학과",2.07,"교"],["소프트웨어학부",2.07,"교"],["정보보안암호수학과",2.08,"교"],["미래융합전공(A)",2.08,"교"],["건축학부",2.09,"교"],["기계공학부",2.09,"교"],["국제통상금융학과",2.09,"교"],["바이오소재융합공학과",2.09,"교"],["양자융합공학과",2.09,"교"],["AI빅데이터융합경영학과",2.1,"교"],["미디어전공",2.11,"교"],["미래융합전공(B)",2.12,"교"],["경영학전공",2.13,"교"],["사회학과",2.13,"교"],["미래모빌리티학과",2.13,"교"],["국어국문학전공",2.16,"교"],["에너지・모빌리티재료전공",2.19,"교"],["중어중문학과",2.23,"교"],["교육학과",2.24,"교"],["동아시아국제학부",2.24,"교"],["자유전공(B)",2.25,"교"],["지능형ICT융합전공",2.26,"교"],["러시아・유라시아학과",2.31,"교"],["한국역사학과",2.43,"교"],["영어영문학부",2.44,"교"],["시각디자인학과",2.47,"종"],["경영정보학부(자연)",2.63,"종"],["산림기후환경학과",2.63,"종"],["모빌리티전력전자융합전공",2.64,"종"],["식품영양학과",2.67,"종"],["AI디자인학과",2.69,"종"],["AI빅데이터융합경영학과(자연)",2.7,"종"],["경영정보학부",2.8,"종"],["건설시스템공학부",3.05,"종"],["스포츠건강재활학과",3.12,"종"],["글로벌경영전공",5.02,"종"]]},
+    {"name":"단국대","group":"국숭세단과","d":[["과학교육과",2.06,"교"],["화학공학과",2.07,"교"],["특수교육과",2.11,"종"],["컴퓨터공학과",2.16,"교"],["수학교육과",2.18,"교"],["고분자시스템공학부 고분자공학전공",2.19,"교"],["융합반도체공학과",2.2,"교"],["고분자시스템공학부 융합소재공학전공",2.23,"교"],["기계공학과",2.24,"교"],["건축학부 건축공학전공",2.28,"교"],["미디어커뮤니케이션학부",2.28,"종"],["전자전기공학과",2.29,"교"],["소프트웨어학과",2.3,"교"],["퇴계혁신칼리지(사회계열광역)",2.32,"교"],["국어국문학과",2.33,"교"],["인프라건설공학과",2.35,"교"],["국제경영학과",2.38,"교"],["건축학부 건축학전공(5년제)",2.38,"교"],["사학과",2.39,"교"],["인공지능학과",2.44,"교"],["사이버보안학과",2.47,"교"],["통계데이터사이언스학과",2.47,"교"],["한문교육과",2.54,"교"],["법학과",2.55,"종"],["영미인문학과",2.55,"교"],["도시계획・부동산학부",2.6,"종"],["경제학과",2.63,"종"],["경영학부",2.66,"종"],["행정학과",2.68,"종"],["정치외교학과",2.74,"종"],["무역학과",2.77,"종"],["철학과",2.85,"종"],["상담학과",2.9,"종"],["퇴계혁신칼리지(SW융합계열광역)",3.03,"종"],["모바일시스템공학과",3.07,"종"],["퇴계혁신칼리지(인문계열광역)",3.12,"종"],["체육교육과",3.26,"교"]]},
+    {"name":"동국대","group":"건동홍숙","d":[["전자전기공학부",1.0,"교"],["화공생물공학과",1.0,"교"],["약학과",1.0,"교"],["광고홍보학과",1.0,"교"],["법학과",1.0,"교"],["국어교육과",1.0,"교"],["영어영문학부",1.0,"교"],["생명과학과",1.0,"교"],["국어국문문예창작학부",1.0,"교"],["의생명공학과",1.0,"교"],["사회언론정보학부 미디어커뮤니케이션학전공",1.0,"교"],["경찰행정학부",1.0,"교"],["에너지신소재공학과",1.0,"교"],["컴퓨터・AI학부",1.0,"교"],["의료인공지능공학과",1.0,"교"],["열린전공학부(인문)",1.0,"교"],["교육학과",1.1,"교"],["화학과",1.1,"교"],["사회언론정보학부 사회학전공",1.1,"교"],["국제통상학과",1.1,"교"],["시스템반도체학부",1.1,"교"],["열린전공학부(자연)",1.1,"교"],["통계학과",1.2,"교"],["수학교육과",1.2,"교"],["정치행정학부 정치외교학 전공",1.2,"교"],["정보통신공학과",1.2,"교"],["융합환경과학과",1.2,"교"],["건축공학부",1.3,"교"],["지리교육과",1.3,"교"],["수학과",1.3,"교"],["정치행정학부 행정학전공",1.3,"교"],["중어중문학과",1.4,"교"],["경제학과",1.4,"교"],["지능형네트워크융합학과",1.4,"교"],["경영대학(광역화 모집단위)",1.4,"교"],["물리학과",1.4,"교"],["기계로봇에너지공학과",1.5,"교"],["건설환경공학과",1.5,"교"],["산업시스템공학과",1.5,"교"],["역사교육과",1.5,"교"],["사학과",1.5,"교"],["식품바이오융합공학과",1.5,"교"],["가정교육과",1.7,"교"],["철학과",2.15,"종"],["식품산업관리학과",2.62,"종"],["정치행정학부 북한학 전공",2.72,"종"],["영화영상학과",2.77,"종"],["사회복지학과",2.81,"종"],["연극학부",3.14,"종"],["일본학과",4.07,"종"],["불교학부",5.03,"종"]]},
+    {"name":"명지대","group":"광명상가 인아성","d":[["시스템생명과학전공",2.0,"교"],["디지털콘텐츠디자인학과",2.0,"교"],["경제학전공",2.07,"교"],["디지털미디어학부",2.07,"교"],["화학공학전공",2.13,"교"],["전자공학전공",2.16,"교"],["전기정보공학전공",2.16,"교"],["자율전공학부(자연)",2.21,"교"],["국어국문학전공",2.23,"교"],["경영학전공",2.24,"교"],["영어영문학전공",2.27,"교"],["AI경영정보학과",2.27,"교"],["식품영양학전공",2.28,"교"],["법학과",2.31,"교"],["반도체공학부",2.32,"교"],["문헌정보학전공",2.32,"교"],["자율전공학부(인문)",2.33,"교"],["신소재공학전공",2.34,"교"],["국제통상학전공",2.34,"교"],["응용소프트웨어전공",2.36,"교"],["일어일문학전공",2.37,"교"],["중어중문학전공",2.39,"교"],["건설환경공학전공",2.4,"교"],["환경시스템공학전공",2.4,"교"],["융합에너지학전공",2.4,"교"],["정치외교학전공",2.4,"교"],["데이터사이언스전공",2.4,"교"],["건축학부 전통건축전공(5년제)",2.42,"교"],["화학나노학전공",2.42,"교"],["건축학부 건축학전공(5년제)",2.45,"교"],["기계시스템공학부",2.46,"교"],["AI컴퓨터공학전공",2.48,"교"],["미술사・역사학전공",2.48,"교"],["AI응용시스템전공",2.5,"교"],["아동학전공",2.5,"교"],["청소년지도학전공",2.5,"교"],["스마트모빌리티공학전공",2.58,"교"],["산업경영공학과",2.59,"교"],["아랍지역학전공",2.62,"교"],["인공지능전공",2.64,"교"],["공간디자인학과",2.67,"교"],["행정학전공",2.68,"교"],["응용통계학전공",2.72,"교"],["사회과학대학",3.16,"종"],["미디어・휴먼라이프대학",3.22,"종"],["건축대학",3.3,"종"],["스마트시스템공과대학",3.43,"종"],["경영대학",3.44,"종"],["화학・생명과학대학",3.45,"종"],["문예창작학과",3.65,"종"],["인공지능・소프트웨어융합대학",3.74,"종"],["반도체・ICT대학",3.75,"종"],["인문대학",3.84,"종"]]},
+    {"name":"상명대","group":"광명상가 인아성","d":[["생명화학공학부 식품영양학전공",1.29,"종"],["SW융합학부 애니메이션전공",1.66,"종"],["생명화학공학부 생명공학전공",2.08,"교"],["수학교육과",2.25,"교"],["영어교육과",2.44,"교"],["SW융합학부 전기공학전공",2.47,"교"],["공간환경학부",2.52,"교"],["의류학과",2.53,"종"],["자유전공(이공계열)",2.55,"교"],["국어교육과",2.58,"교"],["경영학부",2.59,"교"],["SW융합학부 게임전공",2.6,"교"],["글로벌경영학과",2.64,"교"],["생명화학공학부 화공신소재전공",2.65,"종"],["인문콘텐츠학부 한일문화콘텐츠전공",2.66,"교"],["SW융합학부 컴퓨터과학전공",2.67,"교"],["가족복지학과",2.68,"교"],["인문콘텐츠학부 역사콘텐츠전공",2.7,"교"],["자유전공(인문계열)",2.7,"교"],["자유전공(예체능계열)",2.71,"교"],["교육학과",2.72,"종"],["지능・데이터융합학부 휴먼AI공학전공",2.72,"교"],["행정학부",2.75,"교"],["인문콘텐츠학부 문헌정보학전공",2.76,"교"],["경제금융학부",2.78,"교"],["지능・데이터융합학부 데이터과학전공",2.82,"교"],["생명화학공학부 화학에너지공학전공",2.92,"교"],["인문콘텐츠학부 지적재산권전공",3.06,"교"],["미술학부 조형예술전공",3.33,"종"],["스포츠무용학부 스포츠건강관리전공",3.6,"종"],["국가안보학과",3.83,"교"]]},
+    {"name":"서강대","group":"서성한","d":[["생명과학과",1.23,"교"],["화공생명공학과",1.27,"교"],["전자공학과",1.31,"교"],["기계공학과",1.38,"교"],["사회과학부",1.39,"교"],["경영학부(경영학전공)",1.46,"교"],["경제학과",1.5,"교"],["물리학과",1.5,"교"],["화학과",1.53,"교"],["수학과",1.56,"교"],["인문학부",1.57,"교"],["영문학부",1.57,"교"],["지식융합미디어학부",1.61,"교"],["유럽문화학과",1.64,"교"],["중국문화학과",1.64,"교"],["정치외교학과",1.75,"종"],["컴퓨터공학과",1.76,"종"],["SCIENCE기반자유전공학부",1.85,"종"],["인공지능학과",1.87,"종"],["미디어&amp;엔터테인먼트학과",1.9,"종"],["심리학과",1.9,"종"],["사회학과",1.97,"종"],["국어국문학과",2.04,"종"],["인문학기반자유전공학부",2.04,"종"],["아트&amp;테크놀로지학과",2.07,"종"],["반도체공학과",2.58,"종"],["신문방송학과",2.63,"종"],["철학과",2.97,"종"],["AI기반자유전공학부",2.98,"종"],["사학과",3.02,"종"],["시스템반도체공학과",3.02,"종"],["종교학과",3.14,"종"],["게페르트국제학부",3.33,"종"],["글로벌한국학부",3.47,"종"]]},
+    {"name":"성균관대","group":"서성한","d":[["자연과학계열",1.38,"교"],["생명과학과",1.41,"교"],["화학과",1.45,"교"],["공학계열",1.47,"교"],["글로벌바이오메디컬공학과",1.47,"교"],["바이오신약・규제과학과",1.48,"교"],["반도체융합공학과",1.49,"교"],["자유전공계열",1.5,"교"],["경영학과",1.54,"교"],["글로벌경영학과",1.54,"교"],["사회과학계열",1.54,"교"],["통계학과",1.56,"교"],["에너지학과",1.58,"교"],["심리학과",1.59,"교"],["글로벌경제학과",1.6,"교"],["글로벌리더학부",1.6,"교"],["컴퓨터교육과",1.61,"교"],["인문과학계열",1.62,"교"],["수학과",1.62,"교"],["건설환경공학부",1.63,"교"],["물리학과",1.65,"교"],["사회학과",1.67,"교"],["수학교육과",1.67,"교"],["국어국문학과",1.69,"교"],["사회복지학과",1.7,"교"],["건축학과",1.71,"교"],["영상학과",1.71,"교"],["한문교육과",1.71,"교"],["유학・동양학과",1.73,"교"],["교육학과",1.73,"교"],["아동・청소년학과",1.73,"교"],["철학과",1.74,"교"],["의상학과",1.74,"교"],["한문학과",1.77,"교"],["약학과",1.79,"종"],["사학과",1.85,"교"],["배터리학과",2.06,"종"],["스포츠과학과",2.26,"종"],["지능형소프트웨어학과",2.53,"종"],["러시아어문학과",2.78,"종"],["양자정보공학과",3.18,"종"],["반도체시스템공학과",3.24,"종"],["독어독문학과",3.26,"종"],["프랑스어문학과",3.32,"종"]]},
+    {"name":"성신여대","group":"광명상가 인아성","d":[["간호학과",1.6,"교"],["윤리교육과",2.0,"교"],["교육학과",2.06,"교"],["창의융합학부(자유전공)",2.12,"교"],["창의융합학부(첨단분야전공)",2.26,"교"],["사회교육과",2.32,"교"],["한문교육과",2.35,"교"],["유아교육과",2.37,"교"],["바이오신약의과학부",2.65,"종"],["정치외교학과",2.66,"종"],["미디어커뮤니케이션학과",2.73,"종"],["바이오식품공학과",2.73,"종"],["지리학과",2.81,"종"],["국어국문학과",2.85,"종"],["심리학과",2.86,"종"],["경영학과",2.93,"종"],["의류산업학과",2.93,"종"],["경제학과",2.97,"종"],["바이오헬스융합학부",2.97,"종"],["문화예술경영학과",2.98,"종"],["사학과",2.98,"종"],["법학부",2.98,"종"],["청정신소재공학과",2.99,"종"],["화학・에너지융합학부",3.01,"종"],["소비자산업학과",3.04,"종"],["사회복지학과",3.14,"종"],["수리통계데이터사이언스학부(수학,핀테크)",3.16,"종"],["컴퓨터공학과",3.2,"종"],["뷰티산업학과",3.21,"종"],["영어영문학과",3.28,"종"],["서비스디자인공학과",3.29,"종"],["수리통계데이터사이언스학부(통계학,빅데이터사이언스)",3.38,"종"],["프랑스어문·문화학과",3.41,"종"],["융합보안공학과",3.47,"종"],["일본어문·문화학과",3.52,"종"],["중국어문·문화학과",4.33,"종"],["독일어문·문화학과",4.58,"종"]]},
+    {"name":"세종대","group":"국숭세단과","d":[["물리천문학과",1.78,"교"],["스마트생명산업융합학과",1.9,"교"],["건축학과",1.91,"교"],["생명시스템학부",1.92,"교"],["AI융합전자공학과",1.92,"교"],["나노신소재공학과",1.95,"교"],["환경융합공학과",1.96,"교"],["우주항공시스템공학부(우주항공공학전공)",1.97,"교"],["수학통계학과",1.98,"교"],["기계공학과",1.98,"교"],["컴퓨터공학과",2.0,"교"],["미디어커뮤니케이션학과",2.01,"교"],["행정학과",2.06,"종"],["반도체시스템공학과",2.09,"교"],["국제학부",2.1,"교"],["경제학과",2.1,"교"],["호텔관광외식경영학부",2.11,"교"],["경영학부",2.12,"교"],["AI로봇학과",2.12,"교"],["화학과",2.13,"교"],["자유전공학부",2.13,"교"],["교육학과",2.14,"교"],["지능정보융합학과",2.14,"교"],["정보보호학과",2.15,"교"],["에너지자원공학과",2.18,"교"],["건축공학과",2.18,"교"],["건설환경공학과",2.22,"교"],["국어국문학과",2.24,"교"],["법학과",2.25,"교"],["양자지능정보학과",2.28,"교"],["우주항공시스템공학부(지능형드론융합전공)",2.36,"교"],["인공지능데이터사이언스학과",2.44,"교"],["콘텐츠소프트웨어학과",2.58,"교"],["역사학과",2.6,"종"],["양자원자력공학과",2.6,"종"],["창의소프트학부(만화애니메이션텍전공)",2.65,"종"],["창의소프트학부(디자인이노베이션전공)",2.9,"종"]]},
+    {"name":"숙명여대","group":"건동홍숙","d":[["약학부",1.08,"교"],["생명시스템학부",1.58,"교"],["화학과",1.62,"교"],["통계학과",1.63,"교"],["미디어학부",1.66,"교"],["식품영양학과",1.67,"교"],["화공생명공학부",1.67,"교"],["소프트웨어융합전공",1.67,"교"],["지능형전자시스템학부",1.77,"교"],["홍보광고학과",1.8,"교"],["의류학과",1.8,"교"],["IT공학전공",1.8,"교"],["수학과",1.83,"교"],["기계시스템학부",1.83,"교"],["경제학부",1.85,"교"],["교육학부",1.85,"교"],["컴퓨터과학전공",1.85,"교"],["경영학부",1.86,"교"],["법학부",1.86,"교"],["행정학과",1.88,"교"],["신소재물리학부",1.88,"교"],["영어영문학전공",1.89,"교"],["중어중문학부",1.91,"교"],["정치외교학과",1.94,"교"],["일본학과",2.0,"교"],["한국어문학부",2.03,"교"],["역사문화학과",2.03,"교"],["아동복지학부",2.03,"교"],["문화관광학전공",2.03,"교"],["르꼬르동블루외식경영전공",2.06,"교"],["문헌정보학과",2.07,"종"],["사회심리학과",2.17,"종"],["가족자원경영학과",2.56,"종"],["소비자경제학과",2.62,"종"],["글로벌협력전공",3.23,"종"],["앙트러프러너십전공",3.35,"종"],["독일언어・문화학과",3.94,"종"],["테슬(TESL)전공",3.97,"종"],["프랑스언어・문화학과",4.41,"종"]]},
+    {"name":"숭실대","group":"국숭세단과","d":[["의생명시스템학부",1.8,"교"],["자유전공학부(인문)",1.86,"교"],["자유전공학부(자연)",1.91,"교"],["물리학과",1.92,"교"],["AI소프트웨어학부",1.94,"교"],["화학공학과",1.95,"교"],["화학과",1.95,"교"],["컴퓨터학부",1.98,"교"],["언론홍보학과",2.03,"교"],["법학과",2.05,"교"],["회계학과",2.05,"교"],["신소재공학과",2.05,"교"],["경영학부",2.07,"교"],["산업정보시스템공학과",2.11,"교"],["행정학부",2.12,"교"],["경제학과",2.12,"교"],["수학과",2.12,"교"],["전기공학부",2.13,"교"],["국제법무학과",2.15,"교"],["기계공학부",2.16,"교"],["정보통계・보험수리학과",2.17,"교"],["글로벌통상학과",2.19,"교"],["영어영문학과",2.2,"교"],["철학과",2.21,"교"],["중어중문학과",2.22,"교"],["정치외교학과",2.22,"교"],["글로벌미디어학부",2.25,"교"],["정보사회학과",2.28,"교"],["사회복지학부",2.28,"교"],["금융학부",2.29,"교"],["독어독문학과",2.3,"교"],["국어국문학과",2.3,"교"],["건축학부 건축학·건축공학전공",2.3,"교"],["평생교육학과",2.32,"교"],["일어일문학과",2.34,"교"],["벤처중소기업학과",2.36,"교"],["불어불문학과",2.39,"교"],["건축학부 실내건축전공",2.43,"교"],["사학과",2.45,"교"],["정보보호학과",2.51,"종"],["기독교학과",4.13,"종"]]},
+    {"name":"아주대","group":"광명상가 인아성","d":[["약학과",1.34,"종"],["간호학과",1.69,"교"],["심리학과",1.75,"교"],["지능형반도체공학과",1.81,"교"],["첨단바이오융합대학",1.81,"교"],["화학공학과",1.83,"교"],["전자공학과",1.86,"교"],["기계공학과",1.95,"교"],["자유전공학부(자연)",2.0,"교"],["수학과",2.02,"교"],["첨단신소재공학과",2.07,"교"],["사이버보안학과",2.09,"교"],["자유전공학부(인문)",2.1,"교"],["미래모빌리티공학과",2.1,"교"],["첨단스마트산업공학과",2.11,"교"],["프런티어과학학부",2.12,"교"],["건설시스템공학과",2.16,"교"],["교통시스템공학과",2.23,"교"],["AI컴퓨터공학부",2.23,"교"],["건축학과",2.26,"교"],["경제정치사회융합학부",2.26,"교"],["금융공학과",2.27,"교"],["문화콘텐츠학과",2.32,"교"],["디지털미디어학과",2.34,"교"],["경영인텔리전스학과",2.34,"교"],["경영학과",2.35,"교"],["행정학과",2.44,"교"],["영어영문학과",2.45,"교"],["불어불문학과",2.48,"교"],["국어국문학과",2.54,"교"],["사학과",2.88,"교"]]},
+    {"name":"연세대","group":"SKY","d":[["치의예과",1.05,"교"],["시스템반도체공학과",1.09,"교"],["천문우주학과",1.11,"교"],["화공생명공학부",1.12,"교"],["물리학과",1.12,"교"],["생화학과",1.14,"교"],["진리 자유학부(자연)",1.14,"교"],["정치외교학과",1.15,"교"],["생명공학과",1.15,"교"],["의류환경학과",1.18,"교"],["디스플레이융합공학과",1.18,"교"],["전기전자공학부",1.19,"교"],["신소재공학부",1.2,"교"],["사회학과",1.21,"교"],["경제학부",1.24,"교"],["시스템생물학과",1.24,"교"],["경영학과",1.24,"교"],["통합디자인학과",1.24,"교"],["수학과",1.25,"교"],["산업공학과",1.25,"교"],["기계공학부",1.27,"교"],["문화인류학과",1.27,"교"],["국어국문학과",1.27,"교"],["진리 자유학부(인문)",1.27,"교"],["응용통계학과",1.28,"교"],["화학과",1.29,"교"],["식품영양학과",1.29,"교"],["대기과학과",1.29,"교"],["건축공학과",1.3,"교"],["IT융합공학전공",1.3,"교"],["지능형반도체전공",1.31,"교"],["영어영문학과",1.32,"교"],["지구시스템과학과",1.32,"교"],["도시공학과",1.33,"교"],["문헌정보학과",1.33,"교"],["심리학과",1.35,"교"],["간호학과",1.37,"교"],["약학과",1.37,"종"],["사회환경시스템공학부",1.38,"교"],["언론홍보영상학부",1.38,"교"],["행정학과",1.38,"교"],["철학과",1.38,"교"],["사학과",1.38,"교"],["모빌리티시스템전공",1.4,"교"],["아동・가족학과",1.45,"교"],["불어불문학과",1.46,"교"],["독어독문학과",1.47,"교"],["실내건축학과",1.47,"교"],["중어중문학과",1.48,"교"],["생명과학부",1.5,"종"],["노어노문학과",1.52,"교"],["사회복지학과",1.55,"교"],["신학과",1.57,"교"],["융합과학공학부",1.6,"종"],["교육학부",1.61,"교"],["융합인문사회과학부",1.67,"종"],["아시아학전공",2.32,"종"]]},
+    {"name":"이화여대","group":"중경외시이","d":[["약학전공",1.11,"종"],["화공신소재공학과",1.29,"교"],["식품생명공학과",1.37,"교"],["화학・나노과학과",1.37,"교"],["수학교육과",1.38,"교"],["간호학부(자연)",1.4,"교"],["인공지능데이터사이언스학부(자연)",1.4,"교"],["지능형반도체공학전공",1.45,"교"],["초등교육과",1.46,"교"],["환경공학과",1.46,"교"],["전자전기공학전공",1.47,"교"],["통계학과",1.48,"교"],["휴먼기계바이오공학과",1.48,"교"],["경영학부",1.5,"교"],["사이버보안학과",1.5,"교"],["국어교육과",1.52,"교"],["영어영문학부",1.53,"교"],["기후에너지시스템공학과",1.53,"교"],["과학교육과",1.54,"교"],["컴퓨터공학과",1.55,"교"],["수학과",1.57,"교"],["경제학과",1.58,"교"],["식품영양학과",1.59,"교"],["뇌인지과학부(자연)",1.59,"종"],["행정학과",1.61,"교"],["영어교육과",1.62,"교"],["커뮤니케이션·미디어학부",1.62,"교"],["건축도시시스템공학과",1.62,"교"],["의류산업학과",1.64,"교"],["중어중문학과",1.65,"교"],["사회학과",1.65,"교"],["심리학과",1.66,"교"],["교육학과",1.67,"교"],["국어국문학과",1.68,"교"],["건축학과(5년)",1.68,"교"],["국제사무학과",1.7,"교"],["역사교육전공",1.71,"교"],["특수교육과",1.76,"교"],["정치외교학과",1.76,"교"],["생명과학과",1.77,"교"],["지리교육전공",1.79,"교"],["융합보건학과",1.8,"종"],["유아교육과",1.81,"교"],["스크랜튼학부",1.88,"종"],["문헌정보학과",2.02,"종"],["교육공학과",2.03,"교"],["사회교육전공",2.07,"종"],["소비자학과",2.08,"종"],["사회복지학과",2.14,"종"],["물리학과",2.15,"종"],["철학과",2.17,"종"],["사학과",2.18,"종"],["기독교학과",2.44,"종"],["국제학부",3.03,"종"],["융합콘텐츠학과(인문)",3.45,"종"],["불어불문학과",3.68,"종"],["독어독문학과",3.71,"종"]]},
+    {"name":"인하대","group":"광명상가 인아성","d":[["생명공학과",1.72,"교"],["생명과학과",1.82,"교"],["화공에너지공학부(화학공학전공)",1.84,"교"],["전기전자공학부",1.86,"교"],["간호학과",1.88,"교"],["항공우주공학과",1.9,"교"],["신소재공학과",1.94,"교"],["수학교육과",1.95,"교"],["자유전공융합학부(인문)",1.96,"교"],["화학과",2.01,"교"],["반도체시스템공학과",2.02,"교"],["아태물류학부",2.03,"교"],["기계공학과",2.07,"교"],["해양과학과",2.08,"교"],["디자인테크놀로지학과",2.08,"종"],["인공지능공학과",2.08,"교"],["고분자공학과",2.09,"교"],["환경공학과",2.13,"교"],["국제통상학과",2.14,"교"],["미디어커뮤니케이션학과",2.14,"교"],["화공에너지공학부(이차전지공학전공)",2.14,"교"],["산업경영공학과",2.17,"교"],["사회교육과",2.19,"교"],["공간정보공학과",2.19,"교"],["컴퓨터공학과",2.19,"교"],["경제학과",2.21,"교"],["첨단바이오의약학과",2.21,"종"],["수학과",2.22,"교"],["문화콘텐츠문화경영학과",2.22,"교"],["영어교육과",2.23,"교"],["정치외교학과",2.23,"교"],["철학과",2.24,"교"],["통계학과",2.24,"교"],["경영학과",2.25,"교"],["사회인프라공학과",2.25,"교"],["소비자학과",2.25,"교"],["교육학과",2.26,"교"],["조선해양공학과",2.26,"교"],["행정학과",2.27,"교"],["국어교육과",2.28,"교"],["식품영양학과",2.3,"교"],["건축학부",2.31,"교"],["물리학과",2.32,"교"],["데이터사이언스학과",2.32,"교"],["파이낸스경영학과",2.34,"교"],["스마트모빌리티공학과",2.35,"교"],["사회복지학과",2.36,"교"],["영미유럽인문융합학부",2.37,"교"],["아동심리학과",2.38,"교"],["사학과",2.39,"교"],["체육교육과",2.4,"종"],["한국어문학과",2.4,"교"],["의류디자인학과(일반)",2.42,"교"],["일본언어문화학과",2.43,"교"],["중국학과",2.5,"교"],["바이오식품공학과",2.5,"종"],["에너지자원공학과",2.75,"종"],["스포츠과학과",3.04,"종"]]},
+    {"name":"중앙대","group":"중경외시이","d":[["약학부",1.06,"교"],["화학공학과",1.41,"교"],["전자전기공학부",1.49,"교"],["기계공학부",1.54,"교"],["융합공학부",1.54,"교"],["공과대학",1.56,"교"],["AI학과",1.56,"교"],["자연과학대학",1.57,"교"],["소프트웨어학부",1.6,"교"],["경영학부(글로벌금융전공)",1.61,"교"],["미디어커뮤니케이션학부",1.63,"교"],["에너지시스템공학부",1.64,"종"],["간호학과",1.65,"교"],["경영경제대학",1.69,"교"],["사회과학대학",1.73,"교"],["경영학부(경영학전공)",1.74,"교"],["영어교육과",1.75,"교"],["공공인재학부",1.75,"교"],["건축학부",1.76,"종"],["심리학과",1.76,"종"],["인문대학",1.76,"교"],["국어국문학부(국어국문학전공)",1.79,"종"],["사회학과",1.81,"종"],["사회기반시스템공학부(건설환경플랜트공학전공)",1.81,"종"],["광고홍보학부(광고홍보학전공)",1.81,"종"],["산업보안학과(자연)",1.82,"종"],["교육학과",1.83,"교"],["경제학부",1.85,"종"],["응용통계학과",1.88,"종"],["유아교육과",1.89,"교"],["역사학과",1.94,"종"],["화학과",1.95,"종"],["지능형반도체공학과",1.95,"종"],["공연영상창작학부(공간연출전공)",2.02,"종"],["사회기반시스템공학부(도시시스템공학전공)",2.04,"종"],["영어영문학과",2.07,"종"],["문헌정보학과",2.08,"종"],["사회복지학부",2.09,"종"],["체육교육과",2.1,"종"],["도시계획부동산학과",2.11,"종"],["물리학과",2.18,"종"],["철학과",2.54,"종"],["수학과",3.11,"종"],["정치국제학과",3.26,"종"],["아시아문화학부(일본어문학전공)",3.51,"종"],["생명과학과",3.57,"종"],["국제물류학과",3.59,"종"],["아시아문화학부(중국어문학전공)",3.6,"종"],["산업보안학과(인문)",3.67,"종"],["유럽문화학부(프랑스어문학전공)",3.8,"종"],["유럽문화학부(러시아어문학전공)",4.12,"종"],["유럽문화학부(독일어문학전공)",4.15,"종"]]},
+    {"name":"한국외대","group":"중경외시이","d":[["행정학과",1.94,"종"],["미디어커뮤니케이션학부",1.94,"종"],["영어교육과",2.01,"종"],["경제학부",2.03,"종"],["Language &amp; AI융합학부",2.03,"종"],["국제통상학과",2.11,"종"],["경영학부",2.12,"종"],["ELLT학과",2.15,"종"],["국제학부",2.17,"종"],["정치외교학과",2.18,"종"],["자유전공학부(서울)",2.21,"종"],["영미문학.문화학과",2.29,"종"],["일본언어문화학부",2.35,"종"],["영어통번역학과",2.37,"종"],["Social Science &amp; AI융합학부",2.37,"종"],["중국언어문화학부",2.39,"종"],["페르시아어・이란학과",2.42,"종"],["스칸디나비아어과",2.43,"종"],["노어과",2.48,"종"],["튀르키예・아제르바이잔학과",2.49,"종"],["Language &amp; Diplomacy학부",2.55,"종"],["아랍어과",2.64,"종"],["글로벌스포츠산업학부",2.64,"종"],["태국학과",2.65,"종"],["포르투갈어과",2.84,"종"],["생명공학과",2.87,"종"],["화학과",2.96,"종"],["몽골학과",2.96,"종"],["네덜란드어과",3.04,"종"],["환경학과",3.08,"종"],["사학과",3.09,"종"],["철학과",3.15,"종"],["기후변화융합학부",3.17,"종"],["바이오메디컬공학부",3.22,"종"],["독일어과",3.26,"종"],["수학과",3.27,"종"],["중국외교통상학부",3.27,"종"],["자유전공학부(글로벌)",3.27,"종"],["디지털콘텐츠학부",3.31,"종"],["반도체전자공학부(반도체공학전공)",3.34,"종"],["반도체전자공학부(전자공학전공)",3.35,"종"],["투어리즘 &amp; 웰니스학부",3.4,"종"],["산업경영공학과",3.41,"종"],["전자물리학과",3.41,"종"],["통계학과",3.42,"종"],["컴퓨터공학부",3.44,"종"],["언어인지과학과",3.5,"종"],["국제금융학과",3.55,"종"],["Global Business &amp; Technology학부",3.56,"종"],["베트남학과",3.57,"종"],["한국학과",3.6,"종"],["AI데이터융합학부",3.6,"종"],["스페인어과",3.62,"종"],["프랑스어학부",3.62,"종"],["말레이・인도네시아학과",3.83,"종"],["AI로봇공학과",3.85,"종"],["융합인재학부",3.86,"종"],["융합일본지역학부",3.96,"종"],["Finance &amp; AI융합학부",4.02,"종"],["이탈리아어과",4.18,"종"],["헝가리학과",4.28,"종"],["인도・남아시아학과",4.29,"종"],["그리스・불가리아학과",4.57,"종"],["폴란드학과",4.68,"종"],["아프리카학부",4.75,"종"],["세르비아・크로아티아학과",4.77,"종"],["루마니아학과",4.91,"종"],["체코・슬로바키아학과",5.08,"종"],["중앙아시아학과",5.13,"종"]]},
+    {"name":"한양대","group":"서성한","d":[["반도체공학과",1.13,"교"],["생명공학과",1.16,"교"],["신소재공학부",1.29,"교"],["컴퓨터소프트웨어학부",1.29,"종"],["융합전자공학부",1.36,"교"],["자원환경공학과",1.38,"교"],["산업공학과",1.39,"교"],["수학교육과",1.39,"교"],["유기나노공학과",1.4,"교"],["기계공학부",1.4,"교"],["한양인터칼리지학부",1.4,"교"],["원자력공학과",1.43,"교"],["화학공학과",1.43,"교"],["생명과학과",1.44,"교"],["정보시스템학과",1.45,"교"],["화학과",1.45,"교"],["미래자동차공학과",1.46,"교"],["전기공학전공",1.48,"교"],["도시공학과",1.48,"교"],["데이터사이언스학부",1.48,"교"],["미디어커뮤니케이션학과",1.49,"교"],["건설환경공학과",1.5,"교"],["건축공학부",1.5,"교"],["식품영양학과",1.5,"교"],["건축학부",1.51,"교"],["에너지공학과",1.51,"교"],["경제금융학부",1.51,"교"],["수학과",1.51,"교"],["물리학과",1.53,"교"],["간호학과",1.53,"교"],["경영학부",1.54,"교"],["영어영문학과",1.56,"교"],["파이낸스경영학과",1.57,"교"],["정책학과",1.57,"교"],["바이오메디컬공학전공",1.57,"종"],["사학과",1.6,"교"],["관광학부",1.6,"교"],["행정학과",1.61,"교"],["실내건축디자인학과",1.62,"교"],["교육학과",1.63,"교"],["교육공학과",1.63,"교"],["영어교육과",1.64,"종"],["국어교육과",1.66,"교"],["중어중문학과",1.66,"교"],["사회학과",1.66,"교"],["철학과",1.71,"교"],["의류학과",1.71,"교"],["정치외교학과",1.71,"교"],["스포츠사이언스전공",1.74,"종"],["독어독문학과",1.75,"교"],["국어국문학과",1.79,"교"],["연극영화학과(영화전공)",1.81,"종"],["한양인터칼리지학부(자연)",1.91,"종"],["스포츠매니지먼트전공",1.92,"종"],["국제학부",3.11,"종"],["한양인터칼리지학부(인문)",3.2,"종"]]},
+    {"name":"홍익대","group":"건동홍숙","d":[["신소재・화공시스템공학부",1.6,"교"],["전자·전기공학부",1.7,"교"],["기계ㆍ시스템디자인공학과",1.8,"교"],["건설환경공학과",1.8,"교"],["컴퓨터공학과",1.8,"교"],["서울캠퍼스자율전공(자연·예능)",1.8,"교"],["서울캠퍼스자율전공(인문·예능)",1.8,"교"],["경영학부",1.9,"교"],["경제학부",1.9,"교"],["영어교육과",1.9,"교"],["교육학과",1.9,"교"],["수학교육과",1.9,"교"],["건축학부 실내건축학전공",1.9,"교"],["법학부",1.9,"교"],["산업・데이터공학과",1.9,"교"],["불어불문학과",2.0,"교"],["영어영문학과",2.0,"교"],["국어교육과",2.0,"교"],["예술학과",2.1,"교"],["역사교육과",2.1,"교"],["국어국문학과",2.1,"교"],["도시공학과",2.1,"교"],["독어독문학과",2.2,"교"],["건축학부 건축학전공(5년제)",2.2,"종"]]}
   ]
- },
- "sources": [
-  {
-   "t": "대교협 2028학년도 대학입학전형시행계획 주요사항 2026.4.29",
-   "u": "https://www.kcue.or.kr/_upload/news/2026/04/30/application_ea0382f8ef4d92cda46a7e015aec3fef.pdf"
-  },
-  {
-   "t": "연세대 2028학년도 입학전형 시행계획",
-   "u": "https://www2.yonsei.ac.kr/entrance/plan/2028_plan.pdf"
-  },
-  {
-   "t": "건국대 2028학년도 대학입학전형계획 (대학별 계획 PDF 모음)",
-   "u": "https://cdn013.negagea.net/dgsmidc/omr/seoul/web/univ_info2026/%EA%B1%B4%EA%B5%AD%EB%8C%80%ED%95%99%EA%B5%90/%EA%B1%B4%EA%B5%AD%EB%8C%80%ED%95%99%EA%B5%90_2028%ED%95%99%EB%85%84%EB%8F%84_%EB%8C%80%ED%95%99%EC%9E%85%ED%95%99%EC%A0%84%ED%98%95%EA%B3%84%ED%9A%8D.pdf"
-  },
-  {
-   "t": "에듀플러스 홍익대 2028 대입 포인트",
-   "u": "https://www.eduplusnews.com/news/articleView.html?idxno=20344"
-  },
-  {
-   "t": "베리타스알파 2025 고1 423,257명 (김용태 의원실 자료)",
-   "u": "https://www.veritas-a.com/news/articleView.html?idxno=611498"
-  },
-  {
-   "t": "아시아경제 부산 고2 누적 2026.9.4",
-   "u": "https://view.asiae.co.kr/article/2026090409185981785"
-  },
-  {
-   "t": "서플 부산 고2 누적 구간 분포",
-   "u": "https://supple.kr/news/cmtm93guz00fw12e7dcnphkbi"
-  },
-  {
-   "t": "부산일보 부산 고1 누적 2026.2.12",
-   "u": "https://www.busan.com/view/busan/view.php?code=2026021215330890385"
-  },
-  {
-   "t": "교육을 비추다 부산 1년 누적 2026.2.23",
-   "u": "https://www.kyobit.com/news/articleView.html?idxno=4241"
-  },
-  {
-   "t": "교육을 비추다 경기진협 1년 누적",
-   "u": "https://www.kyobit.com/news/articleView.html?idxno=5184"
-  },
-  {
-   "t": "포항공대 2028학년도 대학입학전형 시행계획",
-   "u": "https://adm-u.postech.ac.kr/wp-content/uploads/2026/03/2028학년도_POSTECH_대학입학전형_시행계획_통합.pdf"
-  },
-  {
-   "t": "전자신문 2027 과기원 모집인원 2026.5.26",
-   "u": "https://www.etnews.com/20260526000207"
-  },
-  {
-   "t": "생글생글 2028 전국 의대 정원 내 3,616명 2026.6.1",
-   "u": "https://sgsg.hankyung.com/article/2026052962091"
-  },
-  {
-   "t": "헤럴드경제 2027~2031 의대 정원 2026.2.10",
-   "u": "https://biz.heraldcorp.com/article/10673915"
-  },
-  {
-   "t": "대입정보포털 어디가 2026학년도 입시결과 (교과 학종 50%컷)",
-   "u": "https://www.adiga.kr"
-  },
-  {
-   "t": "호남교육신문 광주 5등급제 성적 분석 2026.4.13",
-   "u": "https://www.ihopenews.com/news/articleView.html?idxno=252857"
-  },
-  {
-   "t": "에듀진 5등급제 첫 성적표 (서울 자료) 2025.12.26",
-   "u": "https://www.edujin.co.kr/news/articleView.html?idxno=51923"
-  }
- ],
- "refs": [
-  {
-   "name": "광주 1학년 1년 누적",
-   "meta": "광주시교육청 진로진학지원센터 · 발표 2026.4.13 · 일반고 51개교 10,800명",
-   "rows": [
-    [
-     "1.00",
-     "2.00%",
-     "1.51"
-    ],
-    [
-     "2.50",
-     "공개 안 됨",
-     "4.18"
-    ],
-    [
-     "4.00",
-     "공개 안 됨",
-     "6.59"
-    ]
-   ]
-  },
-  {
-   "name": "부산 2학년 1학기까지 누적",
-   "meta": "부산시교육청학력개발원 · 발표 2026.9.4 · 98개교 15,978명",
-   "rows": [
-    [
-     "1.00",
-     "0.68%",
-     "공개 안 됨"
-    ],
-    [
-     "2.0 이하",
-     "16.6%",
-     "공개 안 됨"
-    ]
-   ]
-  },
-  {
-   "name": "서울 1학년 1학기",
-   "meta": "서울시교육청 제출 자료 (국회의원실) · 보도 2025.12",
-   "rows": [
-    [
-     "1.00 일반고",
-     "2.09%",
-     "공개 안 됨"
-    ],
-    [
-     "1.00 자사고",
-     "1.38%",
-     "공개 안 됨"
-    ]
-   ]
-  }
- ]
 }
 </script>
 
@@ -976,7 +1033,8 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
 
   var acc = 0;
   var LINES = D.groups.map(function (g) {
-    var n = g.univs.reduce(function (a, u) { return a + u.n; }, 0);
+    // q = 수시 학생부교과 학생부종합 인원 (지원 자격이 따로 있는 전형 제외) · 없으면 정원 n
+    var n = g.univs.reduce(function (a, u) { return a + (u.q != null ? u.q : u.n); }, 0);
     var from = acc; acc += n;
     return { name: g.name, n: n, to: acc, p0: from / N * 100, p1: acc / N * 100, warn: g.univs.some(function (u) { return u.w; }), note: g.note };
   });
@@ -1019,48 +1077,38 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     if (out.length) return out.reduce(function (a, b) { return a + b; }, 0) / out.length;
     return g9 < minG ? 1 : null;
   }
-  // 입결 라인: 교과 합격선(5등급 환산)이 쉬워지는 순서
-  var IL = D.groups.filter(function (g) { return g.gyo9; }).map(function (g) { return { name: g.name, gyo: to5(g.gyo9), jong: g.jong9 ? to5(g.jong9) : null, gyo9: g.gyo9, jong9: g.jong9 }; });
-  // 상위 %를 5등급 평균으로 바꾸기 (두 자료의 누적비 점을 거꾸로 읽음)
-  function avgOfPct(pct) {
-    var out = [];
-    D.datasets.forEach(function (ds) {
-      var p = ds.points.filter(function (q) { return q.cum != null; });
-      if (!p.length) return;
-      if (pct <= p[0].cum) { out.push(p[0].avg); return; }
-      for (var i = 0; i < p.length - 1; i++) if (pct >= p[i].cum && pct <= p[i + 1].cum) { out.push(p[i].avg + (pct - p[i].cum) / (p[i + 1].cum - p[i].cum) * (p[i + 1].avg - p[i].avg)); return; }
-    });
-    return out.length ? out.reduce(function (a, b) { return a + b; }, 0) / out.length : null;
+  // 줄세우기 그림: 라인마다 상위 몇 %부터 몇 %까지인지 막대로 · 결과 문장과 같은 LINES에서 나옴
+  var AX = Math.ceil(LINES[LINES.length - 1].p1 / 5) * 5;
+  var px = function (v) { return Math.max(0, Math.min(AX, v)) / AX * 100; };
+  var ticks = []; for (var t = 0; t <= AX; t += 5) ticks.push(t);
+  $('uc-axis').innerHTML = '<span></span><span class="tr">' + ticks.map(function (v) { return '<span style="left:' + px(v) + '%">' + v + '%</span>'; }).join('') + '<span class="me" id="uc-me">나</span></span><span></span>';
+  var showAll = false;
+  $('uc-more').addEventListener('click', function () { showAll = !showAll; this.textContent = showAll ? '가까운 라인만 보기' : '전체 라인 보기'; render(); });
+  // 검산용 입결: 그 라인 대학들의 학과 합격선(2026 수시 50%컷)을 5등급으로 바꿔 모음
+  var CUTS = {};
+  (D.univ || []).forEach(function (u) {
+    (CUTS[u.group] = CUTS[u.group] || []).push.apply(CUTS[u.group], u.d.map(function (r) { var v = to5(r[1]); return v == null ? 9 : v; }));
+  });
+  function reach(name, x) { var c = CUTS[name]; if (!c || !c.length) return null; var k = 0; c.forEach(function (v) { if (v >= x - 1e-9) k++; }); return k / c.length; }
+  function drawQueue(p, li, x) {
+    var at = li < 0 ? LINES.length : li;
+    var from = showAll ? 0 : Math.max(0, at - 2), to = showAll ? LINES.length : Math.min(LINES.length, at + 3);
+    $('uc-rows').innerHTML = LINES.slice(from, to).map(function (l, k) {
+      var i = from + k, st = i === li ? 'in' : i < at ? 'out' : 'part';
+      return '<div class="uc-row ' + st + '"><span class="nm">' + l.name + '</span>'
+        + '<span class="tr"><i class="rng" style="left:' + px(l.p0) + '%;width:' + Math.max(1, px(l.p1) - px(l.p0)) + '%"></i>' + (p != null ? '<i class="pin" style="left:' + px(p) + '%"></i>' : '') + '</span>'
+        + '<span class="sh">' + l.p1.toFixed(1) + '%까지</span></div>';
+    }).join('');
+    if (p != null) { $('uc-me').style.left = px(p) + '%'; $('uc-me').textContent = p > AX ? '나 ' + p.toFixed(1) + '%' : '나'; }
+    $('uc-me').hidden = p == null;
   }
-  // 의대는 입결 표가 없어서 정원 줄 세우기 위치(상위 %)를 5등급으로 바꿔 맨 앞에 둠
-  var MED = D.groups[0] && D.groups[0].name === '의대' ? avgOfPct(D.groups[0].univs.reduce(function (a, u) { return a + u.n; }, 0) / N * 100) : null;
-  if (MED != null) IL.unshift({ name: '의대', gyo: MED, jong: MED, med: true });
-  var LAST5 = 2.0;
-  var NIL = IL.length + 1;
-  function gyoLine(x) { for (var i = 0; i < IL.length; i++) if (x <= IL[i].gyo + 1e-9) return i; return -1; }
-  function jongLine(x) { for (var i = 0; i < IL.length; i++) if (IL[i].jong && x <= IL[i].jong + 1e-9) return i; return -1; }
-  var X = function (x) {
-    var prev = 1;
-    for (var i = 0; i < IL.length; i++) {
-      var t = IL[i].gyo;
-      if (x <= t + 1e-9) return (i + (t > prev ? (x - prev) / (t - prev) : 1)) / NIL * 100;
-      prev = t;
-    }
-    return (IL.length + Math.min(1, (x - prev) / (LAST5 - prev))) / NIL * 100;
-  };
-  var segText = ['accent-ink', 'accent-ink', 'accent-ink', 'ink', 'ink', 'ink', 'ink', 'ink'];
-  $('lad-bar').innerHTML = IL.concat([{ name: '그 밖의 대학' }]).map(function (l, i) {
-    var left = i / NIL * 100, w = 100 / NIL;
-    return '<div class="lad-seg' + (i ? '' : ' first') + (i === NIL - 1 ? ' last' : '') + '" style="left:' + left.toFixed(2) + '%;width:' + w.toFixed(2) + '%;background:' + tok('l-' + Math.min(i + 1, 9)) + ';color:' + tok(segText[Math.min(i, 7)]) + '" title="' + l.name + '">' + l.name + '</div>';
-  }).join('') + '<div class="lad-track" id="lad-track"><span class="lad-pin"></span><span class="lad-tag" id="lad-tag">나</span></div>';
-  $('lad-axis').innerHTML = '<span style="left:0%">1.00</span>' + IL.map(function (l, i) { return '<span style="left:' + ((i + 1) / NIL * 100).toFixed(2) + '%">' + l.gyo.toFixed(2) + '</span>'; }).join('');
 
   // 정원 줄 세우기 (넉넉하게 잡은 최대 범위)
   function renderLines(p) {
     var me = p == null ? -2 : lineOf(p);
     var rows = LINES.map(function (l, i) {
       return '<div class="lrow' + (i === me ? ' me' : '') + '"><div class="nm"><b>' + l.name + '</b><span class="small parts">' + parts(fmtN(l.n) + '명 · 누적 ' + fmtN(l.to) + '명' + (l.note ? ' · ' + l.note : '') + (l.warn ? ' · 범위가 다른 수치 섞임' : '')) + '</span></div>'
-        + '<div class="cum">' + l.p1.toFixed(2) + '%<small>까지</small></div><div class="st">' + (i === me ? '<span class="tag">정원상 위치</span>' : '') + '</div></div>';
+        + '<div class="cum">' + l.p1.toFixed(2) + '%<small>까지</small></div><div class="st">' + (i === me ? '<span class="tag">내 위치</span>' : '') + '</div></div>';
     }).join('');
     $('lines').innerHTML = rows;
   }
@@ -1099,7 +1147,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
       card.querySelector('.tag').hidden = !((!c.exact) || (g && !g.exact));
     });
 
-    var pctEl = $('a-pct'), track = $('lad-track');
+    var pctEl = $('a-pct'), track = $('uchart');
     var red = function (s) { return '<span class="k">' + s + '</span>'; };
     if (!ok) {
       pctEl.textContent = '-'; pctEl.dataset.v = '';
@@ -1117,25 +1165,22 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
       $('a-rank').textContent = '100명 중 ' + (p < 1 ? '1등 안쪽' : '약 ' + Math.max(1, Math.round(p)) + '등') + '이고 전국으로 치면 약 ' + fmtN(p / 100 * N) + '등' + (vals.length > 1 && hi - lo >= 0.1 ? '  (자료에 따라 ' + lo.toFixed(1) + '~' + hi.toFixed(1) + '%)' : '');
     }
 
-    // 수시 전체: 교과와 학종 중 더 높은 라인까지 닿는 쪽으로 보여줌
-    var gi = gyoLine(x), ji = jongLine(x), sub = [];
-    var bi = gi < 0 ? ji : (ji >= 0 ? Math.min(gi, ji) : gi);
-    var nm = function (i) { return i >= 0 ? IL[i].name : '그 밖의 대학'; };
-    var txt = bi >= 0 ? '수시로 보면 ' + red(IL[bi].name) + ' 라인까지' : '수시로 보면 ' + red('이 표의 인서울 대학 다음') + ' 라인';
-    if (gi !== ji) sub.push('교과는 ' + nm(gi) + ' · 학종은 ' + nm(ji));
-    if (bi >= 0 && IL[bi].name === 'SKY') sub.push(bi === ji && bi !== gi ? '학종 기준이라 서울대도 포함이야' : '서울대는 수시가 전부 학종이라 교과는 연고대 기준이야');
-    if (bi >= 0 && IL[bi].med) sub.push('의대는 입결 대신 정원 기준 위치로 잡은 값이야');
-    if (bi < 0) sub.push('수도권 대학과 거점국립대 입결은 어디가에서 같이 찾아봐');
+    // 결과: 내 등수가 수시 학생부 자리를 위에서부터 채운 줄의 어디에 떨어지는지 (그림도 같은 LINES)
+    var has = vals.length > 0, li = has ? lineOf(p) : -1, sub = [], txt;
+    if (!has) txt = '줄 세우기는 ' + red('2.50까지') + ' 공개 자료로만 할 수 있어';
+    else if (li >= 0) txt = '줄 세우면 ' + red(LINES[li].name) + ' 라인';
+    else txt = '줄 세우면 ' + red('표에 넣은 대학 다음') + ' 라인';
+    if (li >= 0) {
+      var L0 = LINES[li];
+      sub.push('이 라인 자리는 전국 상위 ' + L0.p0.toFixed(1) + '%부터 ' + L0.p1.toFixed(1) + '%까지야');
+      var r = reach(L0.name, x);
+      if (r != null) sub.push('작년 합격선으로 검산하면 이 라인 학과 중 ' + Math.round(r * 100) + '%가 닿아');
+      if (L0.name === '거점국립대' || L0.name === '교대') sub.push('학과마다 수준이 넓게 퍼져 있어서 따로 묶은 라인이야');
+    }
     if (sub.length) txt += '<span class="ans-sub">' + sub.join('<br>') + '</span>';
     $('a-line').innerHTML = txt;
-
+    drawQueue(has ? p : null, li, x);
     track.hidden = false;
-    Array.prototype.forEach.call(document.querySelectorAll('.lad-seg'), function (el, n) { el.classList.toggle('on', n === (gi === -1 ? NIL - 1 : gi)); });
-    track.style.transform = 'translateX(' + X(x).toFixed(2) + '%)';
-    $('lad-tag').textContent = x > LAST5 ? '나 2.00 넘음' : '나';
-    var sc = $('lad-scroll'), px = $('lad-inner').offsetWidth * X(x) / 100;
-    if (sc.scrollWidth > sc.clientWidth) sc.scrollTo({ left: Math.max(0, px - sc.clientWidth / 2), behavior: (reduce || !sc.dataset.ready) ? 'auto' : 'smooth' });
-    sc.dataset.ready = '1';
     renderLines(vals.length ? p : null);
     drawChart(x);
   }
@@ -1176,9 +1221,8 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
   [1, 2, 3, 4, 5].forEach(function (g) { $('c' + g).addEventListener('input', counts); });
 
   $('groups').innerHTML = D.groups.map(function (g, i) {
-    var line = g.gyo9 ? '<p class="small parts gl">' + parts('교과 50%컷 9등급 ' + g.gyo9.toFixed(2) + ' → 5등급 약 ' + to5(g.gyo9).toFixed(2) + ' · 학종 50%컷 9등급 ' + g.jong9.toFixed(2) + ' → 5등급 약 ' + to5(g.jong9).toFixed(2)) + '</p>' : '';
-    return '<div class="gcol"><div class="gh"><h3>' + g.name + '</h3><b>' + fmtN(LINES[i].n) + '명</b></div>' + line
-      + g.univs.map(function (u) { return '<div class="urow"><span class="u">' + u.u + '</span><span class="c">' + fmtN(u.n) + '</span><span class="small parts' + (u.w ? ' warn' : '') + '">' + parts(u.s) + '</span></div>'; }).join('') + '</div>';
+    return '<div class="gcol"><div class="gh"><h3>' + g.name + '</h3><b>' + fmtN(LINES[i].n) + '명</b></div>'
+      + g.univs.map(function (u) { return '<div class="urow"><span class="u">' + u.u + '</span><span class="c">' + fmtN(u.q != null ? u.q : u.n) + '</span><span class="small parts' + (u.w ? ' warn' : '') + '">' + parts((u.q != null ? '정원 ' + fmtN(u.n) + ' 중 수시 학생부 자리' : '수시 인원 자료가 없어서 정원 그대로') + (u.s ? ' · ' + u.s : '')) + '</span></div>'; }).join('') + '</div>';
   }).join('');
 
   var B2 = D.busan2;
