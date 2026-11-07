@@ -25,5 +25,5 @@ global.window = global;
 eval(code);
 const strip = (s) => String(s).replace(/<br>/g, ' / ').replace(/<[^>]+>/g, '');
 console.log('pct', els['a-pct'].textContent, '|', strip(els['a-line'].innerHTML));
-console.log('rows', strip(els['uc-rows'].innerHTML).slice(0, 200));
+console.log('pin', els['lad-track'] ? els['lad-track'].style.transform : '-', els['lad-tag'] ? els['lad-tag'].textContent : '');
 console.log('lines', strip(els['lines'].innerHTML).slice(0, 160));
