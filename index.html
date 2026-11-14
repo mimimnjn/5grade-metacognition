@@ -367,8 +367,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     <ul class="notes">
       <li>목표를 잡는 데 쓰는 도구야<br>실제 지원은 학교 선생님 상담이랑 어디가 입결로 꼭 다시 확인해</li>
       <li>결과 칸은 내 상위 %로 전국 등수를 내고 각 대학 2028 전형계획의 수시 학생부교과 학생부종합 자리를 위에서부터 채워서 라인을 정해<br>정시 논술 실기 자리는 내신 줄이 아니라서 뺐어</li>
-      <li>검산 줄은 내 상위 %를 같은 상위 %의 9등급제 선배 평균으로 바꿔서 어디가 2026 수시 입결의 학과별 50%컷과 비교한 비율이야</li>
-      <li>50%컷은 그 학과 합격자 가운데 학생의 내신이야<br>그보다 낮은 평균으로 붙은 학생도 절반은 있다는 뜻</li>
+      <li>상위 %는 발표된 숫자에 맞춘 추정이야<br>1.00과 2.0 이하는 고2 누적 발표값에 맞췄고 그 사이는 1학년 누적 분포 모양을 따라 채웠어</li>
       <li>기회균형 농어촌 특성화고처럼 지원 자격이 따로 있는 전형은 뺐고 지역인재 자리는 같은 학년 상위권이 채우니까 넣었어</li>
       <li>학종은 세특과 활동을 같이 보니까 같은 평균이라도 교과보다 범위가 넓어</li>
       <li>상위 %는 부산과 경기진협 협력교 자료로 만든 추정이라 전국 전체 표본은 아니야</li>
@@ -1181,7 +1180,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
       var p = main, g9 = g9of(p);
       tween(pctEl, p, 1);
       var r1 = ref.length ? ref.reduce(function (a, b) { return a + b; }, 0) / ref.length : null;
-      $('a-rank').textContent = '전국으로 치면 약 ' + fmtN(p / 100 * N) + '등' + (g9 != null ? ' · 9등급으로 치면 약 ' + g9.toFixed(2) : '') + (r1 != null && Math.abs(r1 - p) >= 0.1 ? '  (1학년 자료만 쓰면 ' + r1.toFixed(1) + '%)' : '');
+      $('a-rank').textContent = '전국으로 치면 약 ' + fmtN(p / 100 * N) + '등' + (r1 != null && Math.abs(r1 - p) >= 0.1 ? '  (1학년 자료만 쓰면 ' + r1.toFixed(1) + '%)' : '');
     }
 
     // 결과: 내 등수가 수시 학생부 자리를 위에서부터 채운 줄의 어디에 떨어지는지 (그림도 같은 LINES)
@@ -1191,13 +1190,11 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     else txt = '줄 세우면 ' + red('표에 넣은 대학 다음') + ' 라인';
     if (li >= 0) {
       var L0 = LINES[li];
+      // 내 등수가 이 라인 자리 중 몇 번째인지 (앞 라인 자리를 다 채운 다음부터 셈)
+      var rank = p / 100 * N, from = L0.to - L0.n, k = Math.max(1, Math.round(rank - from));
+      sub.push(L0.name + ' 자리 ' + fmtN(L0.n) + '개 중 약 ' + fmtN(k) + '번째');
       sub.push('이 라인 자리는 전국 상위 ' + L0.p0.toFixed(1) + '%부터 ' + L0.p1.toFixed(1) + '%까지야');
-      var r = reach(L0.name, g9);
-      if (r != null) sub.push('작년 합격선으로 검산하면 이 라인 학과 중 ' + Math.round(r * 100) + '%가 닿아');
-      else sub.push('이 라인은 학과별 입결 자료가 아직 없어서 검산은 못 해');
-      // 작년 합격선 기준: 학과 절반 넘게 닿는 가장 위 라인
-      for (var bi = 0; bi < LINES.length; bi++) { var rb = reach(LINES[bi].name, g9); if (rb != null && rb >= 0.5) break; }
-      if (bi < LINES.length && bi !== li) sub.push('작년 합격선 기준으로 학과 절반 넘게 닿는 건 ' + red(LINES[bi].name) + ' 라인부터야');
+      if (L0.warn) sub.push('이 라인 자리 수에는 확정 안 된 추정치가 섞여 있어');
       if (L0.name === '거점국립대') sub.push('학과마다 수준이 넓게 퍼져 있어서 따로 묶은 라인이야');
     }
     if (sub.length) txt += '<span class="ans-sub">' + sub.join('<br>') + '</span>';
