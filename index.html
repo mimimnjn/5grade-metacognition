@@ -293,7 +293,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
         </div>
       </div>
       <div class="sub-res" id="sub-res"></div>
-      <p class="small">상위 %는 교육청이 공개한 점 사이를 직선으로 이은 추정이고<br>라인은 2028 수시 자리 수로 줄 세운 값이라 합격을 보장하진 않아</p>
+      <p class="small">상위 %는 1학년 누적 분포를 고2 1학기까지 누적 발표에 맞춘 추정이고<br>라인은 2028 수시 자리 수로 줄 세운 값이라 합격을 보장하진 않아</p>
     </div>
   </div>
 </section>
@@ -325,7 +325,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
       <p class="parts" id="b2meta"><span>부산시교육청학력개발원</span><span>발표 2026.9.4</span><span>98개교 15,978명</span></p>
     </div>
     <div class="trend" id="trend"></div>
-    <p class="note">학기가 쌓일수록 전 과목 1등급을 지키는 학생이 줄어들어<br>경기진협 고2 누적에서도 1.20%에서 0.59%로 거의 반 토막 났어<br>그래서 고2까지 누적하면 같은 평균이라도 위 계산보다 조금 더 앞일 가능성이 커<br>다만 1.00과 2.0 사이 구간별 수치는 아직 공개되지 않아서 계산에는 못 넣었어</p>
+    <p class="note">학기가 쌓일수록 전 과목 1등급을 지키는 학생이 줄어들어<br>경기진협 고2 누적에서도 1.20%에서 0.59%로 거의 반 토막 났어<br>그래서 위 계산은 이 고2 누적 결과에 맞춘 추정으로 바꿨어<br>1.00과 2.0 사이 구간별 수치는 아직 공개 안 돼서 그 사이는 모델로 채웠어</p>
   </div>
 </section>
 
@@ -344,7 +344,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
   <div class="wrap">
     <div class="sec-head">
       <h2 id="h-raw">상위 %는 이 자료로 계산했어</h2>
-      <p>그래프의 점이 교육청과 경기진협이 공개한 값이고 점 사이는 직선으로 이었어</p>
+      <p>굵은 선이 계산에 쓰는 고2 누적 추정이야<br>1학년 누적 분포를 그대로 흉내 내는 모델을 만들고 고2 누적 발표값 세 개에 맞췄어<br>꽉 찬 점은 1학년 누적 발표값이고 속 빈 점은 고2 누적 발표값이야</p>
     </div>
     <div class="chart-box">
       <div class="legend" id="legend"></div>
@@ -353,7 +353,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     <div class="tables" id="tables"></div>
     <div class="sec-head" style="margin-top:var(--space-2xl)">
       <h3>계산에는 안 넣은 참고 자료</h3>
-      <p>구간별 누적 %가 1.00 하나뿐이라 계산에는 못 쓰고 비교용으로만 둠</p>
+      <p>부산과 경기진협 고2 누적은 추정선을 맞추는 데 썼고 나머지는 비교용이야</p>
     </div>
     <div class="tables" id="refs"></div>
   </div>
@@ -367,12 +367,12 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     <ul class="notes">
       <li>목표를 잡는 데 쓰는 도구야<br>실제 지원은 학교 선생님 상담이랑 어디가 입결로 꼭 다시 확인해</li>
       <li>결과 칸은 내 상위 %로 전국 등수를 내고 각 대학 2028 전형계획의 수시 학생부교과 학생부종합 자리를 위에서부터 채워서 라인을 정해<br>정시 논술 실기 자리는 내신 줄이 아니라서 뺐어</li>
-      <li>검산 줄은 어디가 2026 수시 입결의 학과별 50%컷을 5등급으로 바꿔 내 평균으로 닿는 학과 비율을 보여줘</li>
+      <li>검산 줄은 내 상위 %를 같은 상위 %의 9등급제 선배 평균으로 바꿔서 어디가 2026 수시 입결의 학과별 50%컷과 비교한 비율이야</li>
       <li>50%컷은 그 학과 합격자 가운데 학생의 내신이야<br>그보다 낮은 평균으로 붙은 학생도 절반은 있다는 뜻</li>
       <li>기회균형 농어촌 특성화고처럼 지원 자격이 따로 있는 전형은 뺐고 지역인재 자리는 같은 학년 상위권이 채우니까 넣었어</li>
       <li>학종은 세특과 활동을 같이 보니까 같은 평균이라도 교과보다 범위가 넓어</li>
-      <li>상위 %는 부산과 경기진협 협력교의 1학년 누적 결과라 전국 전체 표본은 아니야</li>
-      <li>2학년부터는 선택과목이 갈려서 1학년 기준 표와 위치가 달라질 수 있어</li>
+      <li>상위 %는 부산과 경기진협 협력교 자료로 만든 추정이라 전국 전체 표본은 아니야</li>
+      <li>고2 누적은 1.00과 2.0 이하 비율만 공개돼서 그 사이는 모델 추정이야<br>3학년 1학기까지 쌓이면 최상위 비율은 더 줄어들 수 있어</li>
       <li>대학마다 반영 교과와 학년 비율이 달라서 대학이 계산하는 내 등급은 또 달라</li>
       <li>의대 자리는 2026 수시 의예과 자리에 2028 정원 증가 비율을 곱한 추정이야</li>
             <li>과기원과 교대는 수시 학생부 자리를 따로 못 나눠서 정원을 그대로 넣었어<br>과기원에는 KAIST POSTECH UNIST GIST DGIST가 들어 있어</li>
@@ -386,7 +386,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
 
 <script id="data" type="application/json">
 {
-  "updated": "2026.11.13",
+  "updated": "2026.11.14",
   "cohort": {
     "n": 423257,
     "label": "2025년 고1 (2028 대입 대상) 전국 17개 시도 학생 수"
@@ -718,7 +718,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     },
     {
       "name": "교대",
-      "note": "학교마다 여러 라인에 걸쳐 있어서 따로 묶음 · 순서가 수준을 뜻하지 않음",
+      "note": "입결 자료가 아직 없어서 위치를 못 정함 · 맨 뒤인 건 수준이 아니라 자료가 없어서야",
       "univs": [
         {
           "u": "교대 10곳",
@@ -735,11 +735,12 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     }
   ],
   "datasets": [
+    {"id": "est3", "name": "고2 1학기까지 누적 추정", "short": "고2 누적", "color": "accent", "model": true, "meta": "경기진협 · 부산 1학년 누적 분포에 맞춘 모델을 고2 1학기까지 누적 발표(1.00 0.59~0.68% · 2.0 이하 16.6%)에 다시 맞춘 추정", "points": [{"avg": 1.0, "cum": 0.63, "g9": null}, {"avg": 1.05, "cum": 0.92, "g9": null}, {"avg": 1.1, "cum": 1.3, "g9": null}, {"avg": 1.15, "cum": 1.86, "g9": null}, {"avg": 1.2, "cum": 2.39, "g9": null}, {"avg": 1.25, "cum": 2.98, "g9": null}, {"avg": 1.3, "cum": 3.52, "g9": null}, {"avg": 1.35, "cum": 4.13, "g9": null}, {"avg": 1.4, "cum": 4.81, "g9": null}, {"avg": 1.45, "cum": 5.47, "g9": null}, {"avg": 1.5, "cum": 6.3, "g9": null}, {"avg": 1.55, "cum": 7.01, "g9": null}, {"avg": 1.6, "cum": 7.83, "g9": null}, {"avg": 1.65, "cum": 8.69, "g9": null}, {"avg": 1.7, "cum": 9.61, "g9": null}, {"avg": 1.75, "cum": 10.6, "g9": null}, {"avg": 1.8, "cum": 11.62, "g9": null}, {"avg": 1.85, "cum": 12.68, "g9": null}, {"avg": 1.9, "cum": 13.8, "g9": null}, {"avg": 1.95, "cum": 15.05, "g9": null}, {"avg": 2.0, "cum": 16.5, "g9": null}, {"avg": 2.05, "cum": 17.28, "g9": null}, {"avg": 2.1, "cum": 18.79, "g9": null}, {"avg": 2.15, "cum": 20.16, "g9": null}, {"avg": 2.2, "cum": 21.71, "g9": null}, {"avg": 2.25, "cum": 23.25, "g9": null}, {"avg": 2.3, "cum": 24.69, "g9": null}, {"avg": 2.35, "cum": 26.22, "g9": null}, {"avg": 2.4, "cum": 27.99, "g9": null}, {"avg": 2.45, "cum": 29.64, "g9": null}, {"avg": 2.5, "cum": 31.57, "g9": null}]},
     {
       "id": "gg1",
       "name": "경기진협 1학년 1년 누적",
-      "short": "경기진협 기준",
-      "color": "accent",
+      "short": "경기진협 1학년 누적",
+      "color": "seg-2",
       "meta": "경기진학지도협의회 · 발표 2026.4.29 · 63개교 16,110명 · 12과목",
       "points": [
         {
@@ -772,7 +773,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     {
       "id": "busan1",
       "name": "부산 1학년 1년 누적",
-      "short": "부산 기준",
+      "short": "부산 1학년 누적",
       "color": "ink-line",
       "meta": "부산시교육청학력개발원 · 발표 2026.2.18 · 88개교 14,331명 · 1학년 1·2학기",
       "points": [
@@ -799,6 +800,12 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
       ]
     }
   ],
+  "anchors3": [
+    {"avg": 1.0, "cum": 0.59, "t": "경기진협 1.00"},
+    {"avg": 1.0, "cum": 0.68, "t": "부산 1.00"},
+    {"avg": 2.0, "cum": 16.6, "t": "부산 2.0 이하"}
+  ],
+  "g9map": {"meta": "상위 %를 9등급 평균으로 바꾸는 표 · 부산 1년 누적(전년도 고3 5학기 평균과 대조)과 경기진협 1년 누적 · 고2 누적 환산값을 평균함", "points": [[0, 1.0], [0.59, 1.24], [1.2, 1.39], [1.3, 1.43], [1.5, 1.46], [2, 1.55], [2.5, 1.64], [3, 1.73], [3.5, 1.81], [4, 1.89], [5, 2.05], [6, 2.26], [7.08, 2.45], [8, 2.53], [10, 2.7], [12.5, 2.92], [15, 3.14], [17.42, 3.35], [20, 3.51], [25, 3.81], [31.39, 4.2]]},
   "busan2": {
     "meta": "부산시교육청학력개발원 · 발표 2026.9.4 · 98개교 15,978명",
     "trend": [
@@ -1074,18 +1081,6 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     setTimeout(function () { el.textContent = to.toFixed(dec); }, 500);
   }
 
-  // 9등급 입결을 5등급 평균으로 바꾸기 (두 자료의 9등급 환산 점을 거꾸로 읽음)
-  function to5(g9) {
-    var out = [], minG = 99;
-    D.datasets.forEach(function (ds) {
-      var p = ds.points.filter(function (q) { return q.g9 != null; });
-      if (!p.length) return;
-      minG = Math.min(minG, p[0].g9);
-      for (var i = 0; i < p.length - 1; i++) if (g9 >= p[i].g9 && g9 <= p[i + 1].g9) { out.push(p[i].avg + (g9 - p[i].g9) / (p[i + 1].g9 - p[i].g9) * (p[i + 1].avg - p[i].avg)); break; }
-    });
-    if (out.length) return out.reduce(function (a, b) { return a + b; }, 0) / out.length;
-    return g9 < minG ? 1 : null;
-  }
   // 줄세우기 막대: 라인마다 같은 폭의 칸 · 칸 안에서는 그 라인의 상위 % 구간에 비례해서 나를 놓음
   var NIL = LINES.length + 1, LASTP = LINES[LINES.length - 1].p1;
   var X = function (p) {
@@ -1109,12 +1104,20 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     if (sc.scrollWidth > sc.clientWidth) sc.scrollTo({ left: Math.max(0, x - sc.clientWidth / 2), behavior: (reduce || !sc.dataset.ready) ? 'auto' : 'smooth' });
     sc.dataset.ready = '1';
   }
-  // 검산용 입결: 그 라인 대학들의 학과 합격선(2026 수시 50%컷)을 5등급으로 바꿔 모음
+  // 상위 %를 9등급 평균으로 (같은 상위 %의 9등급제 학생 평균)
+  function g9of(p) {
+    var m = D.g9map.points;
+    if (p <= m[0][0]) return m[0][1];
+    for (var i = 0; i < m.length - 1; i++) if (p <= m[i + 1][0]) return m[i][1] + (p - m[i][0]) / (m[i + 1][0] - m[i][0]) * (m[i + 1][1] - m[i][1]);
+    return null;
+  }
+  // 검산용 입결: 그 라인 대학들의 학과 합격선(2026 수시 50%컷 · 9등급) 그대로 모음
   var CUTS = {};
   (D.univ || []).forEach(function (u) {
-    (CUTS[u.group] = CUTS[u.group] || []).push.apply(CUTS[u.group], u.d.map(function (r) { var v = to5(r[1]); return v == null ? 9 : v; }));
+    (CUTS[u.group] = CUTS[u.group] || []).push.apply(CUTS[u.group], u.d.map(function (r) { return r[1]; }));
   });
-  function reach(name, x) { var c = CUTS[name]; if (!c || !c.length) return null; var k = 0; c.forEach(function (v) { if (v >= x - 1e-9) k++; }); return k / c.length; }
+  // 내 9등급 환산이 50%컷과 같거나 더 좋은 학과 비율
+  function reach(name, g9) { var c = CUTS[name]; if (!c || !c.length || g9 == null) return null; var k = 0; c.forEach(function (v) { if (v >= g9 - 1e-9) k++; }); return k / c.length; }
 
 
   // 정원 줄 세우기 (넉넉하게 잡은 최대 범위)
@@ -1147,19 +1150,21 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     if (ok) { rg.value = Math.min(2.5, x); rg.style.setProperty('--p', ((Math.min(2.5, x) - 1) / 1.5 * 100) + '%'); }
     Array.prototype.forEach.call(document.querySelectorAll('.chip'), function (c) { c.setAttribute('aria-pressed', String(ok && Math.abs(parseFloat(c.dataset.v) - x) < 1e-9)); });
 
-    var vals = [];
+    // 상위 %는 고2 누적 추정선(model) 하나로 정하고 1학년 누적 자료는 비교로만 보여줌
+    var main = null, ref = [];
     D.datasets.forEach(function (ds) {
       var card = $('s-' + ds.id);
       var c = ok ? interp(ds.points, 'cum', x) : null;
-      var g = ok ? interp(ds.points, 'g9', x) : null;
+      var g = c ? (ds.model ? { v: g9of(c.v), exact: false } : interp(ds.points, 'g9', x)) : null;
       card.hidden = !c;
       if (!c) return;
-      vals.push(c.v);
+      if (ds.model) main = c.v; else ref.push(c.v);
       tween(card.querySelector('.sv'), c.v, 2);
-      card.querySelector('.g').hidden = !g;
-      if (g) card.querySelector('.sg').textContent = (g.exact ? '' : '약 ') + g.v.toFixed(2) + '등급';
-      card.querySelector('.tag').hidden = !((!c.exact) || (g && !g.exact));
+      card.querySelector('.g').hidden = !(g && g.v != null);
+      if (g && g.v != null) card.querySelector('.sg').textContent = (g.exact ? '' : '약 ') + g.v.toFixed(2) + '등급';
+      card.querySelector('.tag').hidden = !(ds.model || !c.exact || (g && !g.exact));
     });
+    var vals = main == null ? [] : [main];
 
     var pctEl = $('a-pct'), track = $('uchart');
     var red = function (s) { return '<span class="k">' + s + '</span>'; };
@@ -1173,10 +1178,10 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
       pctEl.textContent = '-'; pctEl.dataset.v = '';
       $('a-rank').textContent = '2.50 넘는 평균은 아직 공개된 분포 자료가 없어서 % 계산이 어려움';
     } else {
-      var p = vals.reduce(function (a, b) { return a + b; }, 0) / vals.length;
-      var lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
+      var p = main, g9 = g9of(p);
       tween(pctEl, p, 1);
-      $('a-rank').textContent = '전국으로 치면 약 ' + fmtN(p / 100 * N) + '등' + (vals.length > 1 && hi - lo >= 0.1 ? '  (자료에 따라 ' + lo.toFixed(1) + '~' + hi.toFixed(1) + '%)' : '');
+      var r1 = ref.length ? ref.reduce(function (a, b) { return a + b; }, 0) / ref.length : null;
+      $('a-rank').textContent = '전국으로 치면 약 ' + fmtN(p / 100 * N) + '등' + (g9 != null ? ' · 9등급으로 치면 약 ' + g9.toFixed(2) : '') + (r1 != null && Math.abs(r1 - p) >= 0.1 ? '  (1학년 자료만 쓰면 ' + r1.toFixed(1) + '%)' : '');
     }
 
     // 결과: 내 등수가 수시 학생부 자리를 위에서부터 채운 줄의 어디에 떨어지는지 (그림도 같은 LINES)
@@ -1187,9 +1192,13 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     if (li >= 0) {
       var L0 = LINES[li];
       sub.push('이 라인 자리는 전국 상위 ' + L0.p0.toFixed(1) + '%부터 ' + L0.p1.toFixed(1) + '%까지야');
-      var r = reach(L0.name, x);
+      var r = reach(L0.name, g9);
       if (r != null) sub.push('작년 합격선으로 검산하면 이 라인 학과 중 ' + Math.round(r * 100) + '%가 닿아');
-      if (L0.name === '거점국립대' || L0.name === '교대') sub.push('학과마다 수준이 넓게 퍼져 있어서 따로 묶은 라인이야');
+      else sub.push('이 라인은 학과별 입결 자료가 아직 없어서 검산은 못 해');
+      // 작년 합격선 기준: 학과 절반 넘게 닿는 가장 위 라인
+      for (var bi = 0; bi < LINES.length; bi++) { var rb = reach(LINES[bi].name, g9); if (rb != null && rb >= 0.5) break; }
+      if (bi < LINES.length && bi !== li) sub.push('작년 합격선 기준으로 학과 절반 넘게 닿는 건 ' + red(LINES[bi].name) + ' 라인부터야');
+      if (L0.name === '거점국립대') sub.push('학과마다 수준이 넓게 퍼져 있어서 따로 묶은 라인이야');
     }
     if (sub.length) txt += '<span class="ans-sub">' + sub.join('<br>') + '</span>';
     $('a-line').innerHTML = txt;
@@ -1202,7 +1211,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
   var W = 640, H = 300, L = 46, R = 18, T = 14, B = 42, xmin = 1, xmax = 2.5, ymax = 35;
   var sx = function (v) { return L + (v - xmin) / (xmax - xmin) * (W - L - R); };
   var sy = function (v) { return T + (1 - v / ymax) * (H - T - B); };
-  $('legend').innerHTML = D.datasets.map(function (ds) { return '<span><i class="sw" style="background:' + tok(ds.color) + '"></i>' + ds.name + '</span>'; }).join('') + '<span><i class="sw" style="background:' + tok('pink-soft') + '"></i>입력한 평균</span>';
+  $('legend').innerHTML = D.datasets.map(function (ds) { return '<span><i class="sw" style="background:' + tok(ds.color) + '"></i>' + ds.name + '</span>'; }).join('') + '<span><i class="sw" style="width:11px;height:11px;border-radius:50%;background:' + tok('paper') + ';border:2.5px solid ' + tok('accent') + '"></i>고2 누적 발표값</span><span><i class="sw" style="background:' + tok('pink-soft') + '"></i>입력한 평균</span>';
   function drawChart(x) {
     var s = '';
     [0, 10, 20, 30].forEach(function (y) {
@@ -1214,9 +1223,12 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
     if (x != null && x <= xmax) s += '<line x1="' + sx(x) + '" x2="' + sx(x) + '" y1="' + T + '" y2="' + (H - B) + '" style="stroke:' + tok('pink-soft') + '" stroke-width="2" stroke-dasharray="5 5"/>';
     D.datasets.forEach(function (ds) {
       var p = ds.points.filter(function (q) { return q.cum != null; });
-      s += '<path d="' + p.map(function (q, i) { return (i ? 'L' : 'M') + sx(q.avg).toFixed(1) + ' ' + sy(q.cum).toFixed(1); }).join(' ') + '" style="fill:none;stroke:' + tok(ds.color) + '" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>';
-      p.forEach(function (q) { s += '<circle cx="' + sx(q.avg) + '" cy="' + sy(q.cum) + '" r="4.5" style="fill:' + tok(ds.color) + '"/>'; });
+      s += '<path d="' + p.map(function (q, i) { return (i ? 'L' : 'M') + sx(q.avg).toFixed(1) + ' ' + sy(q.cum).toFixed(1); }).join(' ') + '" style="fill:none;stroke:' + tok(ds.color) + '" stroke-width="' + (ds.model ? 4 : 2.5) + '" stroke-linejoin="round" stroke-linecap="round"/>';
+      // 추정선은 점 없이 선만 · 공개된 점만 동그라미로
+      if (!ds.model) p.forEach(function (q) { s += '<circle cx="' + sx(q.avg) + '" cy="' + sy(q.cum) + '" r="4.5" style="fill:' + tok(ds.color) + '"/>'; });
     });
+    // 고2 누적 발표값 (추정선을 맞춘 기준점)
+    (D.anchors3 || []).forEach(function (a) { s += '<circle cx="' + sx(a.avg) + '" cy="' + sy(a.cum) + '" r="5.5" style="fill:' + tok('paper') + ';stroke:' + tok('accent') + '" stroke-width="2.5"><title>' + a.t + ' ' + a.cum + '%</title></circle>'; });
     if (x != null && x <= xmax) D.datasets.forEach(function (ds) {
       var r = interp(ds.points, 'cum', x);
       if (r) s += '<circle cx="' + sx(x) + '" cy="' + sy(r.v) + '" r="7" style="fill:' + tok('paper') + ';stroke:' + tok(ds.color) + '" stroke-width="3"/>';
@@ -1245,7 +1257,7 @@ footer { padding-block: var(--space-lg) var(--space-2xl); border-top: var(--rule
   $('dist').innerHTML = B2.bands.map(function (b, i) { return '<div style="width:' + b.pct + '%;background:' + tok('seg-' + (i + 1)) + ';animation-delay:' + (i * 80) + 'ms" title="' + b.label + ' ' + b.pct + '%"></div>'; }).join('');
   $('distleg').innerHTML = B2.bands.map(function (b, i) { return '<div><i class="d" style="background:' + tok('seg-' + (i + 1)) + '"></i><span>' + b.label + '</span><b>' + b.pct + '%</b></div>'; }).join('');
 
-  $('tables').innerHTML = D.datasets.map(function (ds) {
+  $('tables').innerHTML = D.datasets.filter(function (ds) { return !ds.model; }).map(function (ds) {
     var rows = ds.points.map(function (p) {
       return '<tr><td>' + p.avg.toFixed(3) + '</td>' + (p.cum == null ? '<td class="no">없음</td>' : '<td>' + p.cum.toFixed(2) + '%</td>') + (p.g9 == null ? '<td class="no">없음</td>' : '<td>' + p.g9.toFixed(2) + '</td>') + '</tr>';
     }).join('');
